@@ -19,9 +19,10 @@ The menu source of truth is `food.html` and `drinks.html` in the Dream repo (`~/
    - Regenerate an image only when the dish or vessel changed.
 5. **Rebuild the site.** `node src/build.mjs` (writes `index.html`, reports missing images). Check it in a browser at desktop and phone width.
 6. **Crockery checklist artifact (claude.ai).** Publish `src/crockery-source.html` to https://claude.ai/artifact/MkGM2HfkUPEgK7cZSjz5zv with its photos at `g/<photoId>.jpg` (copy `img/crockery/*.jpg` into a temp folder `g/`). It keeps the owner's ticks stored in the browser under key `dd-crockery-ticks-v2`, so keep item ids stable.
-7. **Push.** Commit and push this repo to `main`; GitHub Pages rebuilds at https://singhgenics.github.io/Menu/ . Verify the live page loads with no broken images.
-8. **Record it.** `node src/check-menu.mjs --update` so the hook goes quiet.
-9. Tell the owner what changed on each surface.
+7. **Photo menus.** `python3 src/build-menus.py` rebuilds `food-menu.html` and `drinks-menu.html` (the guest menus with a plated photo beside each dish, text from the live Dream menu, photos from `img/plating`). A new dish needs a plating photo and, if its name differs from its plating card, an entry in `GROUP`/`LINE_IMGS` in the script. Print them to A3 PDF: `chrome --headless=new --no-pdf-header-footer --print-to-pdf=food-menu.pdf food-menu.html` (same for drinks).
+8. **Push.** Commit and push this repo to `main`; GitHub Pages rebuilds at https://singhgenics.github.io/Menu/ . Verify the live page loads with no broken images.
+9. **Record it.** `node src/check-menu.mjs --update` so the hook goes quiet.
+10. Tell the owner what changed on each surface.
 
 ## Files
 
@@ -31,3 +32,4 @@ The menu source of truth is `food.html` and `drinks.html` in the Dream repo (`~/
 - `src/crockery-source.html`: crockery data (also the source of the claude.ai checklist artifact).
 - `src/plating_data.py`: plating specs and image prompts.
 - `src/check-menu.mjs`, `src/menu.hash`: change detector used by the hook.
+- `src/build-menus.py`, `src/menus.css`: build the two photo menus; `food-menu.html`, `drinks-menu.html` (+ `.pdf`) are generated, do not edit by hand.

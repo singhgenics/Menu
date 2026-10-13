@@ -9,3 +9,10 @@ Menu, crockery and plating guide for a Pan-Asian dim sum and craft-beer pub in B
 Dumplings & Draught is a working name. Dish, crockery and plating images were generated with Google Flow as visual targets and show the style, not a specific supplier's product.
 
 Open `index.html` in a browser; there is nothing to build or install.
+
+## Menus with photos
+
+- Food: [food-menu.html](food-menu.html) · [PDF](food-menu.pdf)
+- Drinks: [drinks-menu.html](drinks-menu.html) · [PDF](drinks-menu.pdf)
+
+Self-contained (photos embedded), responsive on screen, A3 when printed. Built with `python3 src/build-menus.py`.

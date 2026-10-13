@@ -78,6 +78,7 @@ a{color:inherit}
 .view-head h2{font:400 clamp(44px,7vw,68px)/1 var(--script);color:var(--orange)}
 .sub-tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .sub-tabs .sp{flex:1}
+#pnav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}#pnav::-webkit-scrollbar{display:none}#pnav .btn{flex:none}#pnav .sp{flex:0 0 12px}
 .sticky-sub{position:sticky;top:calc(var(--barh,53px) + env(safe-area-inset-top,0px));z-index:10;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);padding-block:10px;border-bottom:1px solid var(--line)}
 @media (max-width:520px){:root{--barh:92px}}
 .legend{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 11.5px/1.4 var(--mono);color:var(--muted)}

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dumplings & Draught · Menu, crockery and plating</title>
+<meta name="description" content="The full Dumplings & Draught package for Betalbatim: food and drinks menu, crockery and glassware list, and a plating guide for every dish and drink.">
+<meta property="og:title" content="Dumplings & Draught">
+<meta property="og:description" content="Menu, crockery and plating for a Pan-Asian dim sum and craft-beer pub in Betalbatim, Goa.">
+<meta property="og:image" content="img/plating/crystal.jpg">
+<meta name="theme-color" content="#efe3d0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c3582a'/%3E%3Cpath d='M14 34h36a18 18 0 0 1-36 0z' fill='%23efe3d0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Yellowtail&display=swap">
+<style>
+/* Layout: one long paper menu — a poster-style hero with arched dish photos, a sticky three-way tab bar (Menu · Crockery · Plating), and a shared card language so every dish links across all three views */
+:root{
+  --paper:#efe3d0; --card:#f7eedf; --ink:#2a2420; --muted:#6a5d4e; --line:#cdb99c;
+  --olive:#5f6b3a; --orange:#c3582a; --veg:#2f7d32; --nonveg:#7a3b1d; --shade:rgba(42,36,32,.08);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .13 0 0 0 0 .1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  --script:'Yellowtail','Brush Script MT',cursive;
+  --display:'Bricolage Grotesque','Avenir Next','Segoe UI',sans-serif;
+  --body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1f1a16; --card:#2a2420; --ink:#efe3d0; --muted:#b5a690; --line:#4a3f34;
+  --olive:#a9b67a; --orange:#e2814f; --veg:#7cc47f; --nonveg:#d08a62; --shade:rgba(239,227,208,.06); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1f1a16; --card:#2a2420; --ink:#efe3d0; --muted:#b5a690; --line:#4a3f34;
+  --olive:#a9b67a; --orange:#e2814f; --veg:#7cc47f; --nonveg:#d08a62; --shade:rgba(239,227,208,.06); color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper) var(--grain);color:var(--ink);font:15px/1.55 var(--body);-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+p{margin:0;max-width:68ch}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:24px}
+@media (max-width:520px){.wrap{padding-inline:16px}}
+.eyebrow{font:600 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--olive);margin:0}
+.script{font-family:var(--script);font-weight:400;color:var(--orange);line-height:1}
+.muted{color:var(--muted)}
+.btn{appearance:none;font:600 11.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap}
+.btn:hover,.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.btn:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+
+/* ---------- top bar */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--ink);padding-top:env(safe-area-inset-top,0px)}
+.bar .in{display:flex;align-items:center;gap:14px;padding-block:8px}
+.bar .logo{font:400 26px/1 var(--script);color:var(--orange);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:6px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;border-radius:999px;text-decoration:none;color:var(--ink);border:1.5px solid transparent;white-space:nowrap}
+.tabs a:hover{border-color:var(--ink)}
+.tabs a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+@media (max-width:520px){.bar .in{flex-direction:column;align-items:stretch;gap:2px;padding-block:6px}.bar .logo{font-size:24px;text-align:center}.tabs{margin-left:0;justify-content:space-between;gap:4px}.tabs a{flex:1;text-align:center;padding:9px 6px}}
+
+/* ---------- hero */
+.hero{padding-block:44px 30px;display:grid;gap:26px;justify-items:center;text-align:center;border-bottom:2px solid var(--ink)}
+.hero h1{font:400 clamp(58px,11vw,128px)/.95 var(--script);color:var(--orange)}
+.hero .tag{font:700 clamp(18px,2.6vw,26px)/1.25 var(--display)}
+.hero p.lede{color:var(--muted);max-width:60ch}
+.arches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1.6vw,20px);width:100%;max-width:980px;align-items:end}
+.arches figure{margin:0;aspect-ratio:3/4;border-radius:999px 999px 10px 10px;overflow:hidden;border:2px solid var(--ink);background:var(--shade)}
+.arches figure:nth-child(2n){transform:translateY(14px)}
+.arches img{width:100%;height:100%;object-fit:cover}
+@media (max-width:640px){.arches{grid-template-columns:repeat(3,minmax(0,1fr))}.arches figure:nth-child(n+4){display:none}}
+.facts{display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:center;font:600 11.5px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.facts b{color:var(--ink);font-size:15px;margin-right:4px}
+
+/* ---------- views */
+.view[hidden]{display:none}
+.view{padding-block:30px 70px;display:grid;gap:40px}
+.view-head{display:grid;gap:6px;justify-items:start}
+.view-head h2{font:400 clamp(44px,7vw,68px)/1 var(--script);color:var(--orange)}
+.sub-tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sub-tabs .sp{flex:1}
+.sticky-sub{position:sticky;top:calc(var(--barh,53px) + env(safe-area-inset-top,0px));z-index:10;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);padding-block:10px;border-bottom:1px solid var(--line)}
+@media (max-width:520px){:root{--barh:92px}}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 11.5px/1.4 var(--mono);color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.mk{width:12px;height:12px;border:1.5px solid currentColor;display:inline-grid;place-items:center;flex:none;box-sizing:border-box}
+.mk.v{color:var(--veg)} .mk.v::after{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.mk.nv{color:var(--nonveg)} .mk.nv::after{content:"";width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-bottom:6px solid currentColor}
+.badge{font:600 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--paper);padding:3px 6px;border-radius:4px;white-space:nowrap}
+.badge.kol{background:var(--orange)} .badge.goa{background:var(--olive)}
+.heat{font:600 11px/1 var(--mono);color:var(--orange);letter-spacing:1px;white-space:nowrap}
+
+/* ---------- menu */
+.menu{columns:2 440px;column-gap:48px}
+.msec{break-inside:avoid-column;margin:0 0 34px;scroll-margin-top:130px}
+.msec h3{font:400 44px/1 var(--script);color:var(--orange)}
+.msec .kick{font:500 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--olive);margin:6px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.mi{padding:12px 0;border-bottom:1px dashed color-mix(in srgb,var(--ink) 18%,transparent);break-inside:avoid}
+.mi:last-child{border-bottom:0}
+.mi .top{display:flex;align-items:baseline;gap:8px}
+.mi .nm{font:700 16.5px/1.25 var(--display);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mi .lead{flex:1;border-bottom:1.5px dotted color-mix(in srgb,var(--ink) 30%,transparent);min-width:12px;transform:translateY(-4px)}
+.mi .pr{font:500 14.5px/1.25 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mi .sb{font:italic 500 13px/1.3 var(--body);color:var(--muted);margin-top:1px}
+.mi .ing,.mi .how{font-size:13.3px;color:var(--muted);margin-top:4px;max-width:60ch}
+.mi b.k{font:600 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-right:6px}
+.mi .links{margin-top:6px}
+.chip{font:600 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--olive);border-bottom:1.5px solid currentColor;padding-bottom:2px;margin-right:12px}
+.chip:hover{color:var(--orange)}
+.sets{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:6px 18px 10px}
+.mnote{display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:space-between;border-top:2px solid var(--ink);padding-top:14px;font:500 11.5px/1.5 var(--mono);color:var(--muted)}
+
+/* ---------- cards (crockery + plating) */
+.grp-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:36px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--ink);scroll-margin-top:130px}
+.grp-h h3{font:400 34px/1 var(--script);color:var(--orange)}
+.grp-h span{font:500 11.5px/1.4 var(--mono);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:20px}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;scroll-margin-top:130px;min-width:0;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(42,36,32,.5)}
+.card.flash{outline:2px solid var(--orange);outline-offset:2px}
+.card figure{margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--shade)}
+.card figure img{width:100%;height:100%;object-fit:cover}
+.card .body{padding:13px 15px 15px;display:grid;gap:8px;align-content:start;min-width:0}
+.card h4{font:700 17px/1.25 var(--display)}
+.card .sub{font:italic 400 13px/1.3 var(--body);color:var(--muted)}
+.card .spec{font:500 11.5px/1.45 var(--mono);color:var(--olive)}
+.card .use{font-size:13px;color:var(--muted)}
+.card .use b{font:600 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-right:5px}
+.card .foot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:2px;padding-top:9px;border-top:1px dashed var(--line)}
+.qty{font:600 13px/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.qty small{font-weight:500;color:var(--muted)}
+.ves{display:inline-block;font:600 10.5px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--paper);background:var(--olive);padding:4px 7px;border-radius:4px;justify-self:start;text-decoration:none}
+a.ves:hover{background:var(--orange)}
+ol.build{margin:0;padding-left:20px;display:grid;gap:4px;font-size:13.5px}
+ol.build li::marker{font:600 12px var(--mono);color:var(--orange)}
+dl.kv{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;padding-top:8px;border-top:1px dashed var(--line)}
+dl.kv dt{font:600 10px/1.8 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+dl.kv dd{margin:0;min-width:0}
+.note{font-size:13px;color:var(--muted);border-left:3px solid var(--orange);padding-left:10px}
+
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:22px}
+.fam article{display:grid;gap:9px;align-content:start}
+.fam figure{margin:0;aspect-ratio:4/3;overflow:hidden;border-radius:8px;border:1.5px solid var(--ink)}
+.fam figure img{width:100%;height:100%;object-fit:cover}
+.fam h3{font:700 18px/1.25 var(--display)}
+.fam .tag{font:600 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:var(--olive);padding:4px 7px;border-radius:4px;justify-self:start}
+.fam article:nth-child(2) .tag{background:var(--orange)}
+.fam article:nth-child(3) .tag{background:var(--ink)}
+.fam article:nth-child(4) .tag{background:var(--muted)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px 22px}
+.rule{padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px;display:grid;gap:4px;align-content:start}
+.rule b{font:700 15px/1.3 var(--display)}
+.rule span{font-size:13.5px;color:var(--muted)}
+
+.mapwrap{overflow-x:auto;border-top:2px solid var(--ink)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+tr.grp td{font:400 26px/1 var(--script);color:var(--orange);padding-top:18px;border-bottom:1px solid var(--ink)}
+td.dish{font:700 14.5px/1.3 var(--display);width:22%}
+td.dish small{display:block;font:italic 400 12px/1.3 var(--body);color:var(--muted);margin-top:2px}
+td.ves{width:30%}
+.vchip{display:flex;gap:10px;align-items:center}
+.vchip img{width:56px;height:42px;object-fit:cover;border-radius:4px;border:1px solid var(--line);flex:none}
+.vchip a{font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+.vchip a:hover{color:var(--orange);border-color:var(--orange)}
+td.why{color:var(--muted)}
+
+.setting{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:760px){.setting{grid-template-columns:1fr}}
+.setting svg{width:100%;max-width:480px;height:auto}
+.setting ol{margin:0;padding-left:20px;display:grid;gap:7px}
+.setting li b{font-family:var(--display)}
+
+footer.site{border-top:2px solid var(--ink);padding-block:22px 40px;display:grid;gap:8px;font-size:12px;color:var(--muted)}
+footer.site b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap in">
+    <a class="logo" href="#menu">dumplings &amp; draught</a>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#menu" data-tab="menu">Menu</a>
+      <a href="#crockery" data-tab="crockery">Crockery</a>
+      <a href="#plating" data-tab="plating">Plating</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap" aria-label="Introduction">
+  <p class="eyebrow">Betalbatim · a short walk from the Arabian Sea · working name</p>
+  <h1>dumplings &amp; draught</h1>
+  <p class="tag">Pan-Asian, pub-style: dim sum, bao, Thai curries and cold craft beer</p>
+  <div class="arches" id="arches" aria-hidden="true"></div>
+  <p class="lede">Indo-Chinese the way the old cabins of the City of Joy cook it, hand-folded dim sum, a short run from Seoul to Bangkok, and three craft taps from up the coast. This page holds the whole package: what we serve, what we serve it in, and how every plate and glass leaves the pass.</p>
+  <div class="facts" id="facts"></div>
+</section>
+
+<main class="wrap">
+
+<!-- ================================================= MENU -->
+<div class="view" id="v-menu" hidden>
+  <div class="view-head">
+    <p class="eyebrow">What we serve</p>
+    <h2>the menu</h2>
+  </div>
+  <div class="sticky-sub">
+    <div class="sub-tabs" id="menuTabs">
+      <button class="btn" data-kind="food" aria-pressed="true" type="button">Food</button>
+      <button class="btn" data-kind="drinks" aria-pressed="false" type="button">Drinks</button>
+    </div>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div class="menu" id="menuCols"></div>
+  <div class="mnote" id="menuNote"></div>
+</div>
+
+<!-- ================================================= CROCKERY -->
+<div class="view" id="v-crockery" hidden>
+  <div class="view-head">
+    <p class="eyebrow">What we serve it in</p>
+    <h2>crockery, glass &amp; cutlery</h2>
+    <p class="muted">Sized for 28 covers and a three-person bar. Anything a guest eats or drinks from is counted at about three per cover: one in use, one in the wash, one spare. Add 10% for breakage on ceramics and glass. Images show the style to buy, not a specific supplier's product.</p>
+  </div>
+
+  <section aria-labelledby="h-fam">
+    <h3 id="h-fam" class="script" style="font-size:40px;margin-bottom:14px">four materials, one story</h3>
+    <div class="fam" id="fam"></div>
+  </section>
+
+  <section aria-labelledby="h-cmap">
+    <h3 id="h-cmap" class="script" style="font-size:40px;margin-bottom:6px">what goes in what</h3>
+    <p class="muted" style="margin-bottom:14px">Every dish and drink, the vessel it is served in, what goes alongside, and why. Click a vessel to jump to it in the buying list.</p>
+    <div class="sub-tabs" id="cmapTabs" style="margin-bottom:12px">
+      <button class="btn" data-map="food" aria-pressed="true" type="button">Food menu</button>
+      <button class="btn" data-map="drinks" aria-pressed="false" type="button">Drinks menu</button>
+    </div>
+    <div class="mapwrap"><table id="cmap"><thead><tr><th id="cmapH">Dish</th><th>Served in</th><th>Alongside</th><th>Why</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="h-clist">
+    <h3 id="h-clist" class="script" style="font-size:40px;margin-bottom:6px">the buying list</h3>
+    <div class="sub-tabs" id="cfilters" style="margin:10px 0 0"></div>
+    <div id="clist"></div>
+  </section>
+
+  <section aria-labelledby="h-set">
+    <h3 id="h-set" class="script" style="font-size:40px;margin-bottom:6px">laying a place</h3>
+    <p class="muted" style="margin-bottom:16px">What is on the table before the first plate arrives. Forks and spoons sit in a cutlery cup on each table.</p>
+    <div class="setting">
+      <svg viewBox="0 0 480 300" role="img" aria-labelledby="svgT">
+        <title id="svgT">Top view of one place setting: side plate with rice bowl, dipping dish, soup spoon, chopsticks on a rest and a water glass</title>
+        <rect x="1" y="1" width="478" height="298" rx="10" fill="none" stroke="var(--line)" stroke-dasharray="4 5"/>
+        <circle cx="210" cy="160" r="92" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="210" cy="160" r="78" fill="none" stroke="var(--olive)" stroke-width="5"/>
+        <circle cx="210" cy="160" r="50" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="210" cy="160" r="34" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+        <circle cx="330" cy="62" r="20" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="330" cy="62" r="11" fill="var(--orange)" opacity=".75"/>
+        <circle cx="395" cy="70" r="24" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="395" cy="70" r="18" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+        <rect x="352" y="222" width="28" height="12" rx="4" fill="var(--olive)"/>
+        <rect x="362" y="100" width="5" height="165" rx="2" fill="var(--ink)" transform="rotate(4 364 180)"/>
+        <rect x="373" y="100" width="5" height="165" rx="2" fill="var(--ink)" transform="rotate(4 375 180)"/>
+        <path d="M327 140 q-12 20 0 40 l6 70 h6 l6 -70 q12 -20 0 -40 z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">
+          <text x="30" y="36">1 side plate 7.5"</text><text x="30" y="52">2 rice bowl on top</text>
+          <text x="270" y="26">3 dip dish</text><text x="380" y="26">6 water</text>
+          <text x="30" y="285">4 soup spoon</text><text x="300" y="285">5 chopsticks + rest</text>
+        </g>
+      </svg>
+      <ol>
+        <li><b>Side plate, 7.5".</b> Eat from it, and set a steamer basket on it when dim sum arrives.</li>
+        <li><b>Rice bowl.</b> Rice, noodles, curry and gravy are served into it from the sharing vessel; jasmine rice comes in it.</li>
+        <li><b>Dipping dish.</b> Soy and chilli vinegar to start; swapped for black vinegar or kasundi mayo as the dish needs.</li>
+        <li><b>Porcelain soup spoon.</b> For every soup.</li>
+        <li><b>Chopsticks on a ceramic rest.</b> Reusable, square-edged so they don't roll.</li>
+        <li><b>Water glass,</b> filled from a table carafe, and a folded cotton napkin.</li>
+        <li><b>Per table:</b> one condiment set, a cutlery cup and coasters.</li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================= PLATING -->
+<div class="view" id="v-plating" hidden>
+  <div class="view-head">
+    <p class="eyebrow">How it leaves the pass</p>
+    <h2>plating</h2>
+    <p class="muted">One card per menu item: the target photo, the vessel, the build order, garnish, serving temperature and a kitchen note. Photos are visual targets made for this guide; the chef sets final portion weights at the first tasting.</p>
+  </div>
+
+  <section aria-labelledby="h-rules">
+    <h3 id="h-rules" class="script" style="font-size:40px;margin-bottom:14px">six rules for the pass</h3>
+    <div class="rules">
+      <div class="rule"><b>Warm the hot, chill the cold.</b><span>Hot plates and bowls rinsed in hot water. Beer glasses, shots and coupes come from the fridge or freezer.</span></div>
+      <div class="rule"><b>Build off-centre, low and loose.</b><span>Heap wok food in a low mound with the rim showing. Air under fried food keeps it crisp.</span></div>
+      <div class="rule"><b>Wipe every rim.</b><span>A clean rim is the cheapest finish. Wipe plates, bowls, glasses and sauce dishes before they leave.</span></div>
+      <div class="rule"><b>Sauces on the side, in their own dish.</b><span>Dipping dishes carry sauces so fried and steamed food stays dry.</span></div>
+      <div class="rule"><b>Garnish last, and only what is on the card.</b><span>Herbs, sesame, chilli and crumbs go on in the final 10 seconds so they stay bright and crisp.</span></div>
+      <div class="rule"><b>Out within a minute.</b><span>Fried and wok food waits no longer than 60 seconds on the pass. Steam leaves lidded; the lid comes off at the table.</span></div>
+    </div>
+  </section>
+
+  <div class="sticky-sub"><div class="sub-tabs" id="pnav"></div></div>
+  <div id="plist"></div>
+</div>
+
+</main>
+
+<footer class="site"><div class="wrap">
+  <p><b>Dumplings &amp; Draught</b> is a working name. Betalbatim, Goa. Prices in ₹, taxes extra. Alcohol is served only to guests aged 21 and over; please drink responsibly.</p>
+  <p>Menu, crockery list and plating guide for the fit-out and opening. Dish, crockery and plating images were generated with Google Flow as visual targets and show the style, not a specific supplier's product.</p>
+</div></footer>
+
+<script>
+const DATA={"food":[{"id":"soups","t":"Soups","k":"Slurp first · by the bowl","items":[["Wonton Kenobi|Chicken wonton soup","Our chicken wontons, clear ginger-chicken broth, bok choy, spring onion, white pepper","The same wontons as Fire Starters, poached and floated in a light broth. Gentle, clean, one bowl each.",220,"nv","",0,null],["Hot & Bothered|Hot & sour · veg 180 · chicken 210","Mushroom, bamboo shoot, tofu, egg ribbons, soy, black vinegar, white pepper","Thickened, egg swirled in, finished sharp with vinegar and a lot of pepper.","180+","vn","",2,null],["Coconut Cuddle|Tom kha · veg 220 · chicken 250","Coconut milk, galangal, lemongrass, lime leaf, mushroom, chilli, lime","A Thai coconut broth, sour and soothing, poured over the protein to order.","220+","vn","",1,null]]},{"id":"kolkata","t":"Cabin starters","k":"From the wok · pick your protein","items":[["Cabin Fever|Chilli, dry · paneer 280 · chicken 320 · pork 360","Your protein, egg-cornflour batter, green chilli, onion, capsicum, soy, garlic (pork is braised belly, Tangra style)","Double-fried for crunch, then tossed on full flame so the sauce catches and smokes. The bestseller of the old cabins.","280+","vn","kol",2,null],["Honey Trap|Honey chilli · potato 220 · chicken 320","Potato fingers or chicken strips, honey, red chilli, sesame, spring onion","Twice-fried, then tossed in a sticky honey-chilli glaze. Dangerous with beer.","220+","vn","",1,null],["Salt & Pepa|Salt & pepper · mushroom 260 · chonak 420 · prawns 460","Your pick in a light batter, crushed pepper, fried garlic, green chilli, spring onion, with kasundi mayo","Fried crisp, then tossed dry with salt, pepper and garlic crumbs. Chonak is our own coast’s bhetki; prawns are 5 to a plate.","260+","vn","goa",1,null]]},{"id":"dimsum","t":"Dim sum","k":"4 to a basket · folded in batches, steamed to order","items":[["Crystal Clear|Crystal veg dumplings","Water chestnut, carrot, edamame, spring onion, wheat-starch skin","So clear you can see the colours through the skin.",220,"v","",0,null],["Fire Starters|Chicken wontons in chilli oil","Chicken, ginger, spring onion, house chilli oil, black vinegar, sesame","Poached silky, then drowned in chilli oil and vinegar.",280,"nv","",2,null],["Siu Mai Goodness|Chouriço & chicken siu mai","Chouriço (the coast’s smoky pork sausage), chicken, chilli oil","Open-topped and steamed; the chouriço brings smoke and spice.",300,"nv","goa",1,null],["Prawn to Be Wild|Prawn & chive dumplings","Prawn, garlic chives, bamboo shoot, wheat-starch skin","Plump, pink and pleated, with chilli-soy on the side.",340,"nv","",0,null]]},{"id":"bao","t":"Bao","k":"Soft steamed buns · 2 to a plate","items":[["Bao Down|Pork belly bao","Braised pork belly, hoisin, cucumber, peanut crumb, coriander","Belly braised three hours in soy and star anise, seared to order.",320,"nv","",0,null],["Fever Pitch|Chilli chicken bao","Our Cabin Fever chicken, pickled onion, chilli mayo","The cabin classic, tucked into a soft bun.",280,"nv","kol",2,null],["Seoul Mate|Gochujang paneer bao","Charred paneer, gochujang glaze, cucumber, sesame","Paneer seared hard and glazed sticky-spicy.",260,"v","",1,null]]},{"id":"korean","t":"Seoul to Bangkok","k":"Small plates for the beer","items":[["K-Pop Wings|Korean fried wings, 6 pc","Wings, potato-starch crust; soy-garlic or sweet-spicy gochujang","Fried twice for a glass-crisp shell, then brushed with sauce.",380,"nv","",1,null],["Fry Hard|Kimchi fries","Fries, house kimchi, melted cheese, gochujang mayo","Loaded, then finished under the torch.",240,"v","",1,null],["Slap Happy|Raw papaya salad","Green papaya, long beans, tomato, peanuts, lime, palm sugar, chilli","Pounded to order in the mortar: sour, sweet, hot, crunchy.",240,"v","",2,null]]},{"id":"mains","t":"Noodles & rice","k":"From the wok · pick your protein","items":[["Noodle Around|Hakka noodles · veg 240 · chicken 280 · mixed 340","Thin noodles, cabbage, carrot, spring onion, soy, chilli vinegar (mixed adds egg, chicken, prawn)","Tossed dry on high heat, street-cabin style.","240+","vn","kol",1,null],["Rice Rice Baby|Fried rice · burnt garlic veg 240 · chicken 280 · mixed 320","Day-old rice, egg (not in veg), carrot, beans, spring onion, garlic fried deep gold","Every grain separate, cooked with real wok smoke.","240+","vn","",0,null],["Holy Basil, Batman!|Thai basil chicken rice bowl","Minced chicken, holy basil (our courtyard tulsi), bird’s-eye chilli, garlic, rice, fried egg","Thai street food: fast, hot and fragrant, with a runny egg on top.",320,"nv","",2,null],["Plain Jane|Steamed jasmine rice","Fragrant jasmine rice","For the curries and gravies.",120,"v","",0,null]]},{"id":"curries","t":"Gravies & curries","k":"Best with rice or noodles","items":[["Man, Churian!|Manchurian gravy · veg 260 · chicken 300","Veg dumplings or chicken, dark ginger-garlic-soy gravy, spring onion","Fried crisp, then simmered briefly in Manchurian sauce. Made for fried rice.","260+","vn","",1,null],["Green With Envy|Thai green curry · veg 300 · chicken 340 · prawn 440","House green paste, coconut milk, aubergine, long beans, basil, lime leaf","Paste pounded in house each week, simmered gently in coconut. Order with jasmine rice.","300+","vn","",2,null],["Suey Generis|Khao suey · veg 320 · chicken 360","Coconut curry, egg noodles, fried onion, garlic, lime, crispy noodles, chilli","A Burmese bowl: build it yourself from the plate of toppings.","320+","vn","",1,null]]},{"id":"sweet","t":"Sweet","k":"To finish","items":[["Honey, I Shrunk the Noodles|Darsaan with ice cream","Flat noodles, honey, sesame, vanilla ice cream","The old cabins’ dessert: noodles fried crisp, then tossed in hot honey.",220,"v","kol",0,null],["Sticky Situation|Coconut sticky rice with ice cream","Sticky rice, coconut cream, palm jaggery, toasted sesame, vanilla ice cream","Steamed rice soaked in warm salted coconut, poured over ice cream.",220,"v","",0,null]]},{"id":"table","t":"For the table","k":"Sets & happy hour","sets":true,"drink":true,"items":[["Steamer for two","2 baskets of dim sum (8 pieces) + a plate of 2 bao, chef’s pick","Our pick from today’s steamers, about 15% under ordering separately.","₹799","",0,["set"]],["Cabin feast for four","4 soups of your choice, Cabin Fever chicken, Salt & Pepa chonak, mixed Noodle Around, Green With Envy chicken with jasmine rice, darsaan","The greatest hits, served family style, about 12% under ordering separately.","₹2,299","kol",0,["set"]],["Bowl game (lunch)","Any noodles or fried rice + Cabin Fever chicken (₹440) or paneer (₹380), or a green curry with rice (₹360)","Noon to 4 pm. One big plate, served together.","₹360+","",0,null],["Happy hour, 4–7 pm","330 ml taps ₹179 · Kings 330 ml ₹99 · Crystal Clear dumplings ₹179 · Cabin Fever chicken ₹249","Every day at the bar and in the beer garden.","daily","",0,null]]}],"drinks":[{"id":"tap","t":"Beer","k":"Three craft taps from up the coast, plus two in the bottle · draught 330 ml / 500 ml","drink":true,"items":[["Comrade Crisp|People’s Lager · on tap","Pilsner malt, Japanese rice, noble hops","A light rice lager from a small farm-to-barrel brewery in Sangolda. Crisp and clean: the beach beer.","₹220 / 300","",0,["pint","#f2c24a"]],["Gose Bumps|Susegado Kokum Gose · on tap","Wheat, kokum, sea salt, lactic culture","Tart, salty and pink, soured with kokum from our own coast. The one to try first.","₹260 / 350","goa",0,["pint","#d86a7a"]],["Gimme Gimme Gimme|Guest tap · rotating","Eight Finger Eddie IPA, Susegado Vanilla Porter or a Maka Di ale, whichever is pouring","A new keg from up the coast every couple of weeks. Ask what’s on.","₹260 / 360","",0,["pint","#d99a3a"]],["Kings|Premium pilsner · bottle","Crisp, light, a little malty","The coast’s own cult lager, ice-cold. 330 ml or the 650 ml to share.","₹120 / 180","",0,null],["Budweiser|American lager · bottle","Light, clean, gently sweet","The easy classic. 330 ml or 650 ml.","₹180 / 260","",0,null],["Pitcher or tasting paddle","1.5 L pitcher of Comrade Crisp ₹850 (craft ₹950) · 3 × 150 ml paddle of all three taps ₹320","The paddle is the best way to meet the taps.","₹320+","",0,["paddle"]]]},{"id":"spirits","t":"Whisky","k":"Single malt, blended Scotch & Irish · 30 ml / 60 ml","drink":true,"items":[["Paul John Brilliance|Indian single malt","Honey, vanilla, toffee, a little spice","Distilled in Cuncolim, 15 km away. Neat or on one large cube.","₹320 / 600","goa",0,null],["Amrut Fusion|Indian single malt","Malt, dark chocolate, soft peat smoke","Neat, with a few drops of water.","₹420 / 800","",0,null],["Glenlivet 12|Speyside single malt","Pineapple, pear, vanilla","The easy first malt. Neat or on a rock.","₹420 / 800","",0,null],["Talisker 10|Isle of Skye single malt","Sea salt, black pepper, bonfire smoke","For peat lovers. Neat, water on the side.","₹520 / 1,000","",0,null],["Dewar’s White Label|Blended Scotch","Honey, heather, soft oak","Our highball whisky: tall, ice, soda, lemon.","₹200 / 380","",0,null],["William Lawson’s|Blended Scotch","Apple, toffee, light spice","Easy on ice, with soda or ginger ale.","₹180 / 340","",0,null],["Monkey Shoulder|Blended malt Scotch","Vanilla, orange, honeyed malt","Made for mixing; great on the rocks.","₹380 / 720","",0,null],["Johnnie Walker Black Label|Blended Scotch, 12 years","Dried fruit, vanilla, gentle smoke","The classic. Neat, on the rocks or with soda.","₹340 / 650","",0,null],["Jameson|Irish whiskey","Vanilla, toasted wood, light and smooth","Neat, with ginger ale, or in our Irish coffee.","₹280 / 520","",0,null],["Suntory Toki highball|Japanese blended whisky","Green apple, honey, white pepper","Tall, lots of ice, soda and a lemon twist.","₹420","",0,null],["Single malt flight","Paul John, Glenlivet 12 and Talisker 10, 20 ml each","India to Speyside to Skye, on a board with tasting notes, water and chilli peanuts.","₹650","",0,null]]},{"id":"vodka","t":"Vodka","k":"Two premium, two infused in house · 30 ml / 60 ml","drink":true,"items":[["Haku|Japanese rice vodka","Soft, clean, slightly sweet","Bamboo-charcoal filtered. Ice-cold neat, or with soda and lime.","₹360 / 680","",0,null],["Belvedere|Polish rye vodka","Creamy, vanilla, white pepper","From the freezer, or in our lychee martini.","₹380 / 720","",0,null],["House lemongrass-ginger vodka","Infused 48 hours with lemongrass and ginger","A chilled shot, or with tonic.","₹240 / 440","",0,null],["House chilli-garlic vodka","Infused with bird’s-eye chilli and roasted garlic","An ice-cold shot alongside chilli chicken.","₹240 / 440","kol",0,null]]},{"id":"cocktails","t":"Cocktails","k":"Shaken, stirred & poured","drink":true,"items":[["Kokum feni sour","Cashew feni, kokum, lime, aquafaba","Shaken hard with aquafaba for a silky foam, served up.","₹420","goa",0,["coupe","#c84a6a","egg"]],["Coconut feni highball","Coconut feni, lemongrass syrup, soda","Built over ice and topped with soda: our long, easy drink.","₹380","goa",0,["highball","#f2ead0","leaf"]],["Lychee & lemongrass martini","Vodka, lychee, lemongrass, lime","Shaken, double-strained, garnished with a lychee.","₹440","",0,["coupe","#f6e0e6","lime"]],["Tamarind chilli margarita","Agave spirit, tamarind, lime, chilli-salt rim","Shaken, served on the rocks with a chilli-salt rim.","₹460","",0,["rocks","#a8501e","chilli"]],["Sichuan G&T","Gin, tonic, Sichuan pepper, grapefruit","Built tall. The Sichuan pepper gives a gentle tingle.","₹420","",0,["highball","#f6efe0","lime"]],["Kimchi Mary","Vodka, tomato, kimchi brine, gochugaru rim","Rolled between tins to keep it smooth, served spicy.","₹420","",0,["highball","#c8301a","salt"]],["Soju Yakult","Soju, Yakult, lime","Shaken and served over ice: the Seoul bar classic.","₹420","",0,["rocks","#f6f0e6","leaf"]],["Somaek","Soju and lager","A shot of soju dropped into a cold lager.","₹360","",0,["somaek"]]]},{"id":"zero","t":"Zero proof & soft drinks","k":"For drivers, kids & everyone else","drink":true,"items":[["Fresh lime soda","Lime, soda, sweet or salted","Pressed to order, the cabin-table standard.","₹120","",0,null],["Kokum soda","Kokum, black salt, soda","The coast’s summer cooler, salty-sour and pink.","₹140","goa",0,null],["Lemongrass-ginger iced tea","Black tea, lemongrass, ginger","Brewed in house and chilled.","₹160","",0,null],["Water","Packaged drinking water 1 L · sparkling water 330 ml","Served chilled.","₹60 / 120","",0,null],["Soft drinks","Coke, Diet Coke, Thums Up, Sprite","Chilled, with ice and lime on the side.","₹80","",0,null],["Tonic or ginger ale","Indian tonic water or ginger ale","Our mixers, on their own over ice.","₹120","",0,null]]},{"id":"coffee","t":"Hot coffee","k":"Freshly brewed at the bar, all day","drink":true,"items":[["Brewed coffee","Single-estate Indian arabica, medium roast","Filter-brewed in small batches through the day and poured at the bar. Black, or with hot milk.","₹120 / 140","",0,null],["Irish coffee","Brewed coffee, Jameson Irish whiskey, brown sugar, lightly whipped cream","Our one hot cocktail: sweet, spiked and capped with cold cream.","₹360","",0,null]]}],"crock":{"groups":{"cover":["Per cover","On every table setting"],"food":["Food serving","From the pass to the table"],"service":["Table & service","Shared on each table"],"beer":["Beer","Three taps, two bottles, pitchers, paddles"],"spirits":["Whisky, vodka & cocktails","Neat, on the rocks, tall and up"],"zero":["Zero-proof & coffee","Sodas, water, brewed coffee"],"tools":["Bar tools","Behind the bar"]},"items":[["side","cover","side","Side plate, 7.5\"","Stoneware, sand-cream glaze with darker rim","Eating plate; underplate for steamer baskets and soup bowls",100,"pcs"],["rice","cover","rice","Rice bowl","~11 cm, 300 ml, reactive glaze","Rice, noodles and curry at the table; jasmine rice",84,"pcs"],["dip","cover","dip","Dipping dish","~8 cm, 50 ml, glazed","Soy, chilli vinegar, kasundi, chilli mayo, black vinegar, gochujang mayo",110,"pcs"],["cspoon","cover","cspoon","Porcelain soup spoon","White porcelain, ~14 cm","Wonton Kenobi, Hot & Bothered, Coconut Cuddle (tom kha)",84,"pcs"],["chop","cover","chop","Reusable chopsticks","Square-edged, dark fibreglass or lacquered wood, dishwasher-safe","One pair per cover",100,"pairs"],["crest","cover","crest","Chopstick rest","Ceramic, glaze to match the stoneware","One per cover",40,"pcs"],["cutlery","cover","cutlery","Dinner fork & dinner spoon","Matte brushed stainless steel, one range","Rice, noodles, darsaan; for guests who prefer them",60,"each"],["teaspoon","cover","teaspoon","Teaspoon","Same stainless range as the forks","Coffee, ice cream, sugar",40,"pcs"],["napkin","cover","napkin","Cotton napkin","Oatmeal khadi with olive stripe; or printed paper napkins","One per cover",120,"pcs"],["water","cover","water","Water glass","~300 ml straight tumbler, tempered","Water from the carafe at every cover",84,"pcs"],["susan","food","susan","Lazy susan","50 cm wooden turntable; fits a 75 cm 4-top","Cabin feast for four: four soups plus five shared dishes on one turning table",2,"pcs"],["steamer6","food","steamer6","Bamboo steamer, 6\"","Steel-banded rim, with lid; holds 4 dim sum","Crystal Clear, Siu Mai Goodness, Prawn to Be Wild; happy-hour dumplings",40,"baskets + lids"],["steamer8","food","steamer8","Bamboo steamer, 8\"","Steel-banded, stackable, with lid","Steamer for two: two tiers, 8 dim sum then 2 bao",6,"baskets + 4 lids"],["liner","food","liner","Steamer liners","Perforated parchment rounds 6\" and 8\", or reusable silicone","Under every dumpling so skins don't tear",2000,"rounds a month"],["enplate","food","enplate","Enamel plate, 10\"","White enamel, olive or rust rolled rim","Cabin Fever, Honey Trap, happy-hour Cabin Fever; Slap Happy salad on request",40,"pcs"],["cabinplate","food","cabinplate","Large deep plate, 12\"","White enamel or white stoneware, with a well","Holy Basil, Batman! rice bowl with fried egg; Bowl game lunch",24,"pcs"],["basket","food","basket","Fry basket, paper-lined","Black wire or enamel basket ~25 × 15 cm; printed greaseproof paper","Salt & Pepa (mushroom, chonak, prawns), K-Pop Wings, Fry Hard",30,"baskets"],["paper","food","paper","Printed greaseproof paper","Food-safe, branded, cut to basket size","Lining every fried item",3000,"sheets a month"],["enbowl","food","enbowl","Small enamel bowl","~14 cm, white with dark rim","Bone and shell bowl for wings and prawn tails",16,"pcs"],["bao","food","bao","Long rectangular plate","~30 × 12 cm, matte white or charcoal","All three bao (Bao Down, Fever Pitch, Seoul Mate), 2 to a plate",24,"pcs"],["soup","food","soup","Soup bowl","~14 cm, 450 ml, rust or olive glaze","Wonton Kenobi, Hot & Bothered, Coconut Cuddle; Fire Starters wontons in chilli oil; Cabin feast soups",40,"pcs"],["noodle","food","noodle","Wide shallow bowl","~23 cm, 900 ml, sand glaze","Noodle Around (Hakka noodles), Suey Generis khao suey, Slap Happy papaya salad",28,"pcs"],["oval","food","oval","Oval sharing platter","~30 cm, olive or cream glaze","Rice Rice Baby (burnt garlic veg, chicken and mixed fried rice)",24,"pcs"],["claypot","food","claypot","Small claypot with stand","~600 ml glazed earthenware, with lid","Man, Churian! gravy and Green With Envy Thai green curry; keeps hot on the table",20,"pots"],["toptray","food","toptray","Divided topping tray","~25 cm stoneware, 5 compartments","Suey Generis khao suey: crispy noodles, shallots, fried garlic, lime, chilli flakes",8,"pcs"],["dessert","food","dessert","Dessert bowl","~15 cm stoneware, shallow","Honey, I Shrunk the Noodles (darsaan) and Sticky Situation (coconut sticky rice), each with ice cream",24,"pcs"],["board","food","board","Wooden serving board","~40 × 25 cm with handle; mango or acacia","Steamer for two: two stacked baskets, a plate of bao and dips",6,"pcs"],["serve","food","serve","Serving spoons & noodle tongs","Matte stainless, same range as cutlery","Shared rice, noodles, gravy and curry",30,"spoons + 12 tongs"],["sauces","service","sauces","Condiment set","Caddy with 3 glass cruets: soy, green chillies in vinegar, chilli oil","One per table, the Kolkata cabin habit",12,"caddies + 36 cruets"],["cutcup","service","cutcup","Cutlery cup","Glass or enamel cup","Forks and spoons standing on each table",12,"pcs"],["enmug","service","enmug","Enamel mug","~350 ml, white with dark rim","Chopstick holder or bill cup; staff chai",12,"pcs"],["carafe","service","carafe","Water carafe, 1 L","Clear glass, narrow neck","Water on every table",12,"pcs"],["coaster","service","coaster","Coasters","Printed thick card, branded","Under every glass, bar and garden",1000,"a month"],["bill","service","bill","Bill tray","Small enamel tray to match the cabin plates","Bills and the card machine",10,"pcs"],["pint","beer","pint","Pint glass, 500 ml","Nonic or straight, tempered, with a fill line","Large pours of Comrade Crisp, Gose Bumps and the guest tap; Kings and Budweiser bottles",48,"pcs"],["beer330","beer","beer330","Beer glass, 330 ml","Straight-sided, tempered, fill line","Small pours; happy-hour 330 taps and Kings; somaek",48,"pcs"],["pitcher","beer","pitcher","Beer pitcher, 1.5 L","Clear glass or polycarbonate for the garden","Pitcher of Comrade Crisp or a craft tap",6,"pcs"],["paddle","beer","paddle3","Tasting paddle + taster glasses","Wooden paddle with 3 holes; 150 ml taster glasses","Tasting paddle: all three taps, 3 × 150 ml",6,"paddles + 20 glasses"],["nosing","spirits","nosing","Whisky nosing glass","Glencairn-style tulip, ~175 ml","Single malts neat: Paul John, Amrut, Glenlivet, Talisker",24,"pcs"],["flight","spirits","flight","Whisky flight board","Wooden board for 3 nosing glasses, chalk or card notes","Single malt flight with water and chilli peanuts",4,"boards + 4 water droppers"],["rocks","spirits","rocks","Rocks glass","Double old fashioned, ~300 ml, heavy base","Whisky on the rocks, tamarind chilli margarita, Soju Yakult",36,"pcs"],["highball","spirits","highball","Highball glass","~350 ml, tall and straight","Whisky highballs, Toki highball, coconut feni highball, Sichuan G&T, Kimchi Mary, vodka tonic",48,"pcs"],["coupe","spirits","coupe","Coupe glass","~180 ml stemmed coupe","Kokum feni sour, lychee & lemongrass martini",24,"pcs"],["shot","spirits","shot","Shot glass","30/60 ml, heavy base, freezer-safe","Chilled vodka shots, house infusions, soju, somaek drop",36,"pcs"],["soju","spirits","soju","Soju glass","Small 50 ml tumbler","Soju neat, served with the bottle",12,"pcs"],["ice","spirits","ice","Large-ice moulds","Silicone 5 cm cube trays; clear-ice box if budget allows","One big cube for whisky and the margarita",6,"trays"],["highball2","zero","highball","Highball (shared)","Same highball as cocktails","Fresh lime soda, kokum soda, iced tea, soft drinks, tonic",0,"counted above"],["straws","zero","straws","Straws","Bamboo or paper, no plastic","Sodas, iced tea, highballs on request",1000,"a month"],["cup","zero","cup","Coffee cup & saucer","~200 ml, white or sand glaze","Brewed coffee, black or with milk",24,"sets"],["milk","zero","milk","Milk jug & sugar pot","Small ceramic jug ~150 ml, lidded sugar pot","With every coffee",8,"each"],["irish","zero","irish","Irish coffee glass","Stemmed toddy glass with handle, ~240 ml","Irish coffee: coffee, Jameson, sugar, cold cream",12,"pcs"],["shaker","tools","shaker","Boston shaker set","Two weighted stainless tins","Feni sour, lychee martini, margarita, Soju Yakult",3,"sets"],["bartools","tools","bartools","Bar tool kit","Jigger 30/60 ml, Hawthorne + fine strainer, bar spoon, muddler, bottle opener (Kings, Budweiser, soju, soft drinks)","Every cocktail; opening bottled beer, soju and soft drinks",3,"kits"],["squeezer","tools","squeezer","Citrus squeezer","Hand press, stainless or enamel","Fresh lime soda, margarita, G&T, sours",2,"pcs"],["icebucket","tools","icebucket","Ice bucket, scoop & tongs","Insulated bucket; stainless scoop and tongs","Bar well and table ice for highballs; chilling Kings and Budweiser bottles at garden tables",4,"sets"],["rim","tools","rim","Rimming dish & garnish tray","Shallow rim dish; lidded garnish tray","Chilli-salt and gochugaru rims; lime, lychee, lemon twists",2,"each"]],"fmap":[["Soups",[["Wonton Kenobi","Chicken wonton soup","soup","Side plate underneath, porcelain spoon","One bowl, one person. The plate lets it travel without spilling."],["Hot & Bothered","Hot & sour, veg or chicken","soup","Side plate underneath, porcelain spoon","Dark soup, so a light glaze shows it off."],["Coconut Cuddle","Tom kha, veg or chicken","soup","Side plate underneath, porcelain spoon","Creamy coconut broth looks best in a rust or olive glaze."]]],["Cabin starters",[["Cabin Fever","Chilli, dry: paneer, chicken or pork","enplate","Green chillies in vinegar in a dipping dish","The cabin plate. Red-brown wok food pops on white."],["Honey Trap","Honey chilli: potato or chicken","enplate","Toothpicks at the bar","A sticky glaze needs a plate with a well, not paper."],["Salt & Pepa","Mushroom, chonak or prawns","basket","Kasundi mayo in a dipping dish, enamel bowl for prawn tails","Paper keeps the batter crisp."]]],["Dim sum",[["Crystal Clear","Crystal veg dumplings, 4","steamer6","Side plate under the basket, soy-chilli dip","Translucent skins: the lid-off moment."],["Fire Starters","Chicken wontons in chilli oil","soup","Black vinegar in a dipping dish","Served in a bowl because the chilli oil pools."],["Siu Mai Goodness","Chouriço & chicken siu mai, 4","steamer6","Chilli oil in a dipping dish",""],["Prawn to Be Wild","Prawn & chive dumplings, 4","steamer6","Soy-chilli dip",""]]],["Bao",[["Bao Down","Pork belly bao, 2","bao","","A long plate lines the buns up for the photo."],["Fever Pitch","Chilli chicken bao, 2","bao","",""],["Seoul Mate","Gochujang paneer bao, 2","bao","",""]]],["Seoul to Bangkok",[["K-Pop Wings","Korean fried wings, 6","basket","Enamel bowl for bones, wet wipes","Pub food, eaten with a pint in the other hand."],["Fry Hard","Kimchi fries","basket","Gochujang mayo on top","The basket goes under the torch without cracking."],["Slap Happy","Raw papaya salad","noodle","Serving spoons","A wide bowl lets the salad be tossed at the table."]]],["Noodles & rice",[["Noodle Around","Hakka noodles: veg, chicken or mixed","noodle","Rice bowls, noodle tongs, chilli vinegar from the caddy","A wide bowl lets noodles be lifted out."],["Rice Rice Baby","Fried rice: burnt garlic veg, chicken or mixed","oval","Rice bowls, serving spoon","Mounded on an oval, the cabin way."],["Holy Basil, Batman!","Thai basil chicken rice bowl","cabinplate","Fried egg on top, bird's-eye chillies in a dipping dish","One deep plate, eaten alone."],["Plain Jane","Steamed jasmine rice","rice","Serving spoon","Comes to the table in the same bowl guests eat from."]]],["Gravies & curries",[["Man, Churian!","Manchurian gravy, veg or chicken","claypot","Serving spoon; pair with a fried rice","Clay keeps the gravy hot."],["Green With Envy","Thai green curry: veg, chicken or prawn","claypot","Plain Jane jasmine rice, serving spoon","Green curry holds heat well in clay."],["Suey Generis","Khao suey, veg or chicken","noodle","Divided topping tray: crispy noodles, shallots, fried garlic, lime, chilli flakes","The tray makes it a build-it-yourself bowl."]]],["Sweet",[["Honey, I Shrunk the Noodles","Darsaan with ice cream","dessert","Dessert spoon","Honey noodles beside one scoop."],["Sticky Situation","Coconut sticky rice with ice cream","dessert","Dessert spoon","Dark glaze shows off the white scoop."]]],["For the table",[["Steamer for two","2 baskets of dim sum + 2 bao","board","Two-tier 8\" steamer for the baskets, long plate for the bao, dips","One board, carried out as a stack."],["Cabin feast for four","4 soups + Cabin Fever, Salt & Pepa, Noodle Around, green curry with rice, darsaan","susan","Four soup bowls and spoons first; shared dishes on the lazy susan","Five shared dishes for four people fit only if the table turns."],["Bowl game (lunch)","Noodles or rice with Cabin Fever, or a green curry with rice","cabinplate","Chilli vinegar","One big plate, served together."],["Happy hour, 4–7 pm","Crystal Clear dumplings and Cabin Fever chicken","enplate","Dumplings in a 6\" steamer","Quick from the bar."]]]],"dmap":[["Beer",[["Comrade Crisp","People's Lager, on tap","pint","330 ml or 500 ml","The beach beer; a chilled glass."],["Gose Bumps","Kokum gose, on tap","beer330","330 ml shows off the pink",""],["Gimme Gimme Gimme","Rotating guest tap","pint","330 ml or 500 ml","IPA, porter or ale, whichever is pouring."],["Kings","Premium pilsner, bottle","pint","Bottle opened at the table, chilled in the ice bucket outdoors","Bottle plus a glass."],["Budweiser","American lager, bottle","pint","Bottle opened at the table",""],["Pitcher","1.5 L, Comrade Crisp or craft","pitcher","330 ml glasses for the table","Garden tables order these."],["Tasting paddle","3 × 150 ml, all three taps","paddle","Paddle with taster glasses","Guests taste the whole tap list."]]],["Whisky",[["Single malts, neat","Paul John, Amrut, Glenlivet, Talisker","nosing","Water dropper on the side","A tulip glass holds the nose."],["On the rocks","Any whisky","rocks","One large clear cube","A big cube melts slowly."],["Dewar's / Suntory Toki highball","","highball","Lots of ice, soda, lemon twist","Tall and fizzy."],["Blends with soda or ginger ale","Lawson's, Monkey Shoulder, JW Black, Jameson","highball","Ice; mixer bottle on the side",""],["Single malt flight","3 × 20 ml","flight","Water, chilli peanuts in a dipping dish","On a board with tasting notes."]]],["Vodka",[["Haku, Belvedere","Neat, from the freezer","shot","Chilled glass","Kept in the freezer."],["House infused shots","Lemongrass-ginger, chilli-garlic","shot","Served with chilli chicken",""],["Vodka & tonic or soda","","highball","Ice, lime",""]]],["Cocktails",[["Kokum feni sour","","coupe","Served up, no ice","Silky foam shows best in a coupe."],["Coconut feni highball","","highball","Ice, soda, lemongrass",""],["Lychee & lemongrass martini","","coupe","Lychee on a pick","Double-strained, served up."],["Tamarind chilli margarita","","rocks","Chilli-salt rim, big cube","Rim made in the rimming dish."],["Sichuan G&T","","highball","Grapefruit, Sichuan pepper",""],["Kimchi Mary","","highball","Gochugaru rim",""],["Soju Yakult","","rocks","Over ice, lime",""],["Somaek","Soju and lager","beer330","Soju in a shot glass, dropped in","The shot glass goes in the beer."]]],["Zero proof & soft",[["Fresh lime soda","Sweet or salted","highball","Pressed to order on the squeezer","The cabin-table standard."],["Kokum soda","","highball","Black salt",""],["Lemongrass-ginger iced tea","","highball","Ice, straw",""],["Water","1 L still · 330 ml sparkling","carafe","Water glass at every cover",""],["Soft drinks, tonic, ginger ale","","highball","Ice, lime on the side",""]]],["Hot coffee",[["Brewed coffee","Black or with milk","cup","Milk jug and sugar pot, teaspoon",""],["Irish coffee","Jameson, brown sugar, cream","irish","Cold cream floated on top","The layers need clear glass."]]]]},"plating":[{"id":"wonton","sec":"Soups","name":"Wonton Kenobi","sub":"Chicken wonton soup","refs":["soup"],"vessel":"Soup bowl on a side plate, porcelain spoon","build":["Warm the bowl with hot water and tip it out.","Lay the bok choy half on the left of the bowl.","Slip in five poached wontons, pleats up.","Ladle clear broth to 1 cm below the rim."],"garnish":"Spring onion rings, white pepper","side":"Porcelain spoon on the side plate","temp":"Piping hot, 75 °C","note":"One bowl, one person. Keep the broth clear: never boil the wontons in it."},{"id":"hotsour","sec":"Soups","name":"Hot & Bothered","sub":"Hot & sour, veg or chicken","refs":["soup"],"vessel":"Soup bowl on a side plate, porcelain spoon","build":["Warm the bowl.","Ladle soup to 1 cm below the rim, stirring once so the solids are even.","Swirl the egg ribbons to the surface.","Finish with a splash of black vinegar."],"garnish":"White pepper, spring onion greens","side":"Chilli vinegar from the caddy","temp":"Piping hot, 75 °C","note":"Chicken version: add the shredded chicken before the soup. Pepper goes on last so it stays sharp."},{"id":"tomkha","sec":"Soups","name":"Coconut Cuddle","sub":"Tom kha, veg or chicken","refs":["soup"],"vessel":"Soup bowl on a side plate, porcelain spoon","build":["Warm the bowl.","Place mushrooms and the protein in the centre.","Pour the hot coconut broth over them to order.","Finish with lime juice."],"garnish":"Red chilli slices, coriander, lime leaf","side":"Lime wedge on the side plate","temp":"Piping hot, 75 °C","note":"Do not let coconut milk boil hard or it splits. Pull the lemongrass piece out before serving if guests object."},{"id":"cabinfever","sec":"Cabin starters","name":"Cabin Fever","sub":"Chilli, dry: paneer, chicken or pork","refs":["enplate"],"vessel":"10\" enamel plate","build":["Warm the plate.","Toss the fried protein in the wok on full flame until the sauce catches.","Heap in a low mound, off-centre, so the rim shows.","Scatter onion and capsicum over the top."],"garnish":"Spring onion greens","side":"Green chillies in vinegar in a dipping dish","temp":"Hot from the wok","note":"Pork version is braised belly, Tangra style, plated the same way. Sauce should cling, never pool."},{"id":"honeytrap","sec":"Cabin starters","name":"Honey Trap","sub":"Honey chilli, potato or chicken","refs":["enplate"],"vessel":"10\" enamel plate","build":["Warm the plate.","Toss twice-fried fingers in the hot glaze for 10 seconds.","Stack criss-cross so air gets under them.","Spoon any glaze left in the wok over the top."],"garnish":"Toasted sesame, chilli flakes, spring onion","side":"Cocktail sticks at the bar","temp":"Hot from the wok","note":"A sticky glaze goes soft in a basket, so it stays on a plate. Send within a minute of glazing."},{"id":"saltpepa","sec":"Cabin starters","name":"Salt & Pepa","sub":"Salt & pepper: mushroom, chonak or prawns","refs":["basket"],"vessel":"Paper-lined fry basket","build":["Line the basket with a sheet of greaseproof paper, corners up.","Fry the protein once, drain on a rack for 10 seconds.","Toss with salt, pepper and garlic crumbs in the wok.","Pile in the basket, prawns tails up (5 to a serve)."],"garnish":"Fried garlic crumbs, green chilli rings, spring onion","side":"Kasundi mayo in a dipping dish","temp":"Hot, straight from the fryer","note":"Chonak goes in as fillet fingers, mushrooms as halves. Paper takes up the oil, so replace it for every order."},{"id":"crystal","sec":"Dim sum","name":"Crystal Clear","sub":"Crystal veg dumplings, 4","refs":["steamer6"],"vessel":"6\" bamboo steamer on a side plate","build":["Wet the liner and lay it in the basket.","Place four dumplings with 1 cm between them.","Steam 6 minutes, lid on.","Carry out lidded, set the basket on a side plate."],"garnish":"None: the colour shows through the skin","side":"Soy-chilli dip","temp":"Steaming hot","note":"Lid comes off at the table. Skins tear if they touch, so keep the gaps."},{"id":"firestarters","sec":"Dim sum","name":"Fire Starters","sub":"Chicken wontons in chilli oil","refs":["soup"],"vessel":"Soup bowl on a side plate","build":["Warm the bowl, spoon in 2 tbsp chilli oil and vinegar.","Slide in five poached wontons.","Spoon a little more oil over the top.","Finish with sesame and spring onion."],"garnish":"Toasted sesame, spring onion, a thread of black vinegar","side":"Black vinegar in a dipping dish","temp":"Hot","note":"The same wontons as Wonton Kenobi, so poach one batch for both. Oil goes in the bowl first so the skins do not stick."},{"id":"siumai","sec":"Dim sum","name":"Siu Mai Goodness","sub":"Chouriço & chicken siu mai, 4","refs":["steamer6"],"vessel":"6\" bamboo steamer on a side plate","build":["Wet the liner and lay it in the basket.","Place four siu mai, open tops up.","Steam 8 minutes.","Dot a little chilli oil on each top."],"garnish":"Chilli oil dot","side":"Chilli oil in a dipping dish","temp":"Steaming hot","note":"The chouriço will stain the wrapper orange; that is the look."},{"id":"prawndump","sec":"Dim sum","name":"Prawn to Be Wild","sub":"Prawn & chive dumplings, 4","refs":["steamer6"],"vessel":"6\" bamboo steamer on a side plate","build":["Wet the liner and lay it in the basket.","Place four dumplings, pleats facing up.","Steam 6 minutes until the skin turns clear.","Serve with the chilli-soy on the side."],"garnish":"None: pink prawn and green chive show through","side":"Chilli-soy dip","temp":"Steaming hot","note":"Overcooked prawn goes rubbery fast, so time the steam exactly."},{"id":"baodown","sec":"Bao","name":"Bao Down","sub":"Pork belly bao, 2","refs":["bao"],"vessel":"Long rectangular plate","build":["Steam the buns 4 minutes and open them.","Smear hoisin inside each.","Lay 2 slices of seared belly and 3 cucumber ribbons in each.","Set the two buns side by side, tilted slightly to the same side."],"garnish":"Peanut crumb, coriander","side":"Extra hoisin in a dipping dish","temp":"Hot","note":"Sear the belly to order so the edges are crisp. Buns go on the plate seam-side up."},{"id":"feverpitch","sec":"Bao","name":"Fever Pitch","sub":"Chilli chicken bao, 2","refs":["bao"],"vessel":"Long rectangular plate","build":["Steam the buns 4 minutes and open them.","Fill each with Cabin Fever chicken.","Top with pickled onion.","Zig-zag the chilli mayo."],"garnish":"Pickled red onion, chilli mayo","side":"None","temp":"Hot","note":"Uses the Cabin Fever chicken straight from the wok, so fill to order."},{"id":"seoulmate","sec":"Bao","name":"Seoul Mate","sub":"Gochujang paneer bao, 2","refs":["bao"],"vessel":"Long rectangular plate","build":["Steam the buns 4 minutes and open them.","Sear the paneer hard, then glaze it.","Fill each bun with paneer and cucumber.","Sprinkle sesame."],"garnish":"Toasted sesame, cucumber","side":"None","temp":"Hot","note":"Glaze the paneer in the pan, not in the bun, so the bun stays white."},{"id":"kpop","sec":"Seoul to Bangkok","name":"K-Pop Wings","sub":"Korean fried wings, 6 pc","refs":["basket"],"vessel":"Paper-lined fry basket","build":["Line the basket with greaseproof paper.","Fry twice, then brush the wings with sauce.","Pile six wings, tips up.","Place the empty bone bowl and a wet wipe beside it."],"garnish":"Sesame, spring onion","side":"Bone bowl and a wet wipe","temp":"Hot","note":"Sauce brushed on, not tossed: keeps the crust glass-crisp. Soy-garlic or gochujang on request."},{"id":"fryhard","sec":"Seoul to Bangkok","name":"Fry Hard","sub":"Kimchi fries","refs":["basket"],"vessel":"Paper-lined fry basket","build":["Line the basket with greaseproof paper.","Fill with hot fries.","Top with cheese and torch it until it blisters.","Spoon the kimchi over the top and zig-zag the mayo."],"garnish":"Spring onion, sesame","side":"Gochujang mayo already on top","temp":"Hot","note":"Torch right before service. The basket is paper-lined, so keep the flame low and away from the paper."},{"id":"slaphappy","sec":"Seoul to Bangkok","name":"Slap Happy","sub":"Raw papaya salad","refs":["noodle"],"vessel":"Wide shallow bowl","build":["Pound the dressing and beans in the mortar.","Add the papaya and bruise lightly.","Pile high in the bowl, tomatoes on top.","Finish with peanuts."],"garnish":"Crushed peanuts, lime wedge, chilli slices","side":"Lime wedge","temp":"Cold, made to order","note":"Pound to order so it stays crunchy. Serve within 2 minutes."},{"id":"noodlearound","sec":"Noodles & rice","name":"Noodle Around","sub":"Hakka noodles: veg, chicken or mixed","refs":["noodle"],"vessel":"Wide shallow bowl, noodle tongs","build":["Warm the bowl.","Lift the noodles from the wok with tongs and swirl into a nest.","Rest the protein on top.","Add the chilli vinegar on the side."],"garnish":"Spring onion greens","side":"Chilli vinegar from the caddy","temp":"Hot from the wok","note":"Mixed version adds egg, chicken and prawn. Noodles should be dry, not sauced."},{"id":"ricebaby","sec":"Noodles & rice","name":"Rice Rice Baby","sub":"Fried rice: burnt garlic veg, chicken or mixed","refs":["oval"],"vessel":"Oval sharing platter","build":["Warm the platter.","Pack the rice into a ladle and tip it out as a dome.","Scatter garlic chips over the dome.","Lay the serving spoon alongside."],"garnish":"Burnt garlic chips, spring onion","side":"Serving spoon","temp":"Hot from the wok","note":"Day-old rice only. Garlic chips go on at the end so they stay crisp."},{"id":"holybasil","sec":"Noodles & rice","name":"Holy Basil, Batman!","sub":"Thai basil chicken rice bowl","refs":["cabinplate"],"vessel":"Large deep plate","build":["Warm the plate.","Mound the rice on one side.","Spoon the chicken beside it, basil leaves on top.","Lay the fried egg over the chicken."],"garnish":"Fresh holy basil, red chilli slices","side":"Bird's-eye chillies in fish sauce, in a dipping dish","temp":"Hot","note":"Fry the egg last and send it with the yolk runny."},{"id":"plainjane","sec":"Noodles & rice","name":"Plain Jane","sub":"Steamed jasmine rice","refs":["rice"],"vessel":"Rice bowl","build":["Warm the bowl.","Press the rice into the bowl with a wet spoon.","Turn it out as a dome back into the bowl."],"garnish":"None","side":"Serving spoon for the table","temp":"Steaming hot","note":"The same bowl guests eat from, so there is nothing extra to wash."},{"id":"manchurian","sec":"Gravies & curries","name":"Man, Churian!","sub":"Manchurian gravy, veg or chicken","refs":["claypot"],"vessel":"Small claypot on a rattan stand","build":["Heat the claypot with the lid on.","Add the fried veg balls (or chicken) to the simmering gravy for 30 seconds.","Pour into the pot to 2 cm from the rim.","Sprinkle spring onion and carry out with the lid beside."],"garnish":"Spring onion greens","side":"Serve with Rice Rice Baby or jasmine rice","temp":"Bubbling hot","note":"Fry the balls just before you sauce them. They soften in minutes."},{"id":"greencurry","sec":"Gravies & curries","name":"Green With Envy","sub":"Thai green curry: veg, chicken or prawn","refs":["claypot","rice"],"vessel":"Small claypot on a stand, jasmine rice bowl","build":["Heat the claypot.","Add the curry and the protein, simmer 2 minutes.","Pour into the pot, then float basil and lime leaf.","Serve with a bowl of Plain Jane beside it."],"garnish":"Thai basil, torn lime leaf, red chilli slice","side":"Plain Jane jasmine rice","temp":"Bubbling hot","note":"Pour a thin line of coconut cream on top just before it leaves the pass."},{"id":"khaosuey","sec":"Gravies & curries","name":"Suey Generis","sub":"Khao suey, veg or chicken","refs":["noodle","toptray"],"vessel":"Wide shallow bowl + divided topping tray","build":["Warm the bowl.","Put the egg noodles in, then the curry over them.","Fill the five compartments of the tray.","Place the tray beside the bowl, not on top."],"garnish":"Crispy noodles, shallots, fried garlic, lime, chilli flakes in the tray","side":"Divided topping tray","temp":"Hot","note":"Guests build it themselves. Crispy noodles stay in the tray until they take them, so they never go soggy."},{"id":"darsaan","sec":"Sweet","name":"Honey, I Shrunk the Noodles","sub":"Darsaan with ice cream","refs":["dessert"],"vessel":"Dessert bowl, dessert spoon","build":["Warm the bowl slightly.","Toss the crisp noodles in hot honey.","Pile into the bowl.","Add one scoop of ice cream at the edge and sprinkle sesame."],"garnish":"Toasted sesame","side":"None","temp":"Noodles warm, ice cream cold","note":"Honey must be hot when it meets the noodles. Scoop the ice cream last."},{"id":"sticky","sec":"Sweet","name":"Sticky Situation","sub":"Coconut sticky rice with ice cream","refs":["dessert"],"vessel":"Dessert bowl, dessert spoon","build":["Warm the bowl slightly.","Mound the sticky rice and pour over the warm salted coconut.","Drizzle palm jaggery.","Add one scoop of ice cream and sprinkle sesame."],"garnish":"Toasted sesame","side":"None","temp":"Rice warm, ice cream cold","note":"Pour the coconut at the table edge so it stays glossy."},{"id":"steamer2","sec":"For the table","name":"Steamer for two","sub":"2 baskets of dim sum + 2 bao","refs":["board","steamer8","bao"],"vessel":"Serving board, 8\" two-tier steamer, long plate","build":["Steam the dim sum and bao separately.","Stack the two baskets on the board.","Put the bao plate beside them.","Add two dipping dishes."],"garnish":"None","side":"Two dipping dishes","temp":"Steaming hot","note":"Carry out as one board so the table sees the whole spread. Chef picks the dim sum of the day."},{"id":"feast","sec":"For the table","name":"Cabin feast for four","sub":"4 soups + five shared dishes","refs":["susan","soup"],"vessel":"Lazy susan, four soup bowls on side plates","build":["Serve the four soups first, each on a side plate.","Clear the soups, then bring the shared dishes together.","Place them on the lazy susan, heaviest at the edge.","Dessert follows as one darsaan with four spoons."],"garnish":"As per each dish","side":"Four rice bowls and serving spoons","temp":"Everything hot","note":"Five dishes for four people only fit if the table turns. Send all five together so nothing sits."},{"id":"bowlgame","sec":"For the table","name":"Bowl game (lunch)","sub":"Noodles or rice with Cabin Fever, or a curry with rice","refs":["cabinplate"],"vessel":"Large deep plate","build":["Warm the plate.","Put the noodles (or rice) on one half.","Put the Cabin Fever chicken on the other half.","Spoon the chilli vinegar into the dipping dish."],"garnish":"Spring onion greens","side":"Chilli vinegar","temp":"Hot from the wok","note":"Noon to 4 pm. One plate keeps the lunch rush fast."},{"id":"crisp","sec":"Beer","name":"Comrade Crisp","sub":"People's Lager, on tap","refs":["pint"],"vessel":"Pint glass","build":["Use a chilled, clean glass.","Pour at 45 degrees, then straighten.","Leave a 2 cm head."],"garnish":"None","side":"","temp":"3 °C","note":"Wash glasses in a no-oil rack: grease kills the head."},{"id":"gose","sec":"Beer","name":"Gose Bumps","sub":"Kokum gose, on tap","refs":["beer330"],"vessel":"330 ml beer glass","build":["Chilled glass.","Pour gently to keep the haze.","Wipe the rim."],"garnish":"None","side":"","temp":"4 °C","note":"330 ml shows off the pink colour."},{"id":"kings","sec":"Beer","name":"Kings","sub":"Premium pilsner, bottle","refs":["pint"],"vessel":"Bottle plus pint glass","build":["Chill the bottle to 3 °C.","Open at the table.","Serve with a clean pint glass."],"garnish":"None","side":"","temp":"3 °C","note":"Garden tables get the bottle in a small ice bucket."},{"id":"pitcher","sec":"Beer","name":"Pitcher","sub":"1.5 L of Comrade Crisp or a craft tap","refs":["pitcher","beer330"],"vessel":"Pitcher with 330 ml glasses","build":["Pour into a chilled pitcher.","Bring two or more 330 glasses.","Top up at the table."],"garnish":"None","side":"","temp":"3 °C","note":"Garden tables order these: bring extra coasters."},{"id":"paddle","sec":"Beer","name":"Tasting paddle","sub":"3 × 150 ml, all three taps","refs":["paddle3"],"vessel":"Wooden paddle, 150 ml taster glasses","build":["Fill each taster to 1 cm below the rim.","Order: lightest to darkest, left to right.","Hand over the paddle with a note of the order."],"garnish":"None","side":"","temp":"3 °C","note":"Same paddle as the checklist, so no new image."},{"id":"neat","sec":"Whisky","name":"Single malts, neat","sub":"Paul John, Amrut, Glenlivet, Talisker","refs":["nosing"],"vessel":"Nosing glass, water dropper","build":["Pour 30 ml.","Set it with the water dropper beside it.","Offer water on the side."],"garnish":"None","side":"","temp":"Room temperature","note":"A tulip glass holds the nose."},{"id":"rocks","sec":"Whisky","name":"Whisky on the rocks","sub":"Any whisky","refs":["rocks"],"vessel":"Rocks glass","build":["Chill the glass.","Add the large cube.","Pour 60 ml over it."],"garnish":"None","side":"","temp":"Cold","note":"A big cube melts slowly."},{"id":"toki","sec":"Whisky","name":"Suntory Toki highball","sub":"Japanese blended whisky","refs":["highball"],"vessel":"Highball glass","build":["Fill the glass with ice.","Add 30 ml whisky and top with soda.","Stir once and twist a lemon peel over it."],"garnish":"Lemon twist","side":"","temp":"Ice cold","note":"Lots of ice keeps it fizzy."},{"id":"vodka","sec":"Vodka","name":"Vodka shots","sub":"Haku, Belvedere, house infusions","refs":["shot"],"vessel":"Chilled shot glass","build":["Keep glasses in the freezer.","Pour 30 ml.","Serve with the chilli chicken."],"garnish":"Chilli and garlic in the house infusion","side":"","temp":"-5 °C","note":"Pour the infusion straight from its bottle."},{"id":"kokumsour","sec":"Cocktails","name":"Kokum feni sour","sub":"Cashew feni, kokum, lime, aquafaba","refs":["coupe"],"vessel":"Coupe glass","build":["Dry shake, then shake hard with ice.","Double-strain into a chilled coupe.","Dot bitters on the foam."],"garnish":"Bitters dots","side":"","temp":"Ice cold, served up","note":"Silky foam shows best in a coupe."},{"id":"coconuthigh","sec":"Cocktails","name":"Coconut feni highball","sub":"Coconut feni, lemongrass syrup, soda","refs":["highball"],"vessel":"Highball glass","build":["Fill with ice.","Add feni and lemongrass syrup.","Top with soda and stir."],"garnish":"Lemongrass stalk","side":"","temp":"Ice cold","note":"Our long, easy drink."},{"id":"lychee","sec":"Cocktails","name":"Lychee & lemongrass martini","sub":"Vodka, lychee, lemongrass, lime","refs":["coupe"],"vessel":"Coupe glass","build":["Shake with ice.","Double-strain into a chilled coupe.","Rest a lychee on a pick across the rim."],"garnish":"Lychee on a pick","side":"","temp":"Ice cold, served up","note":"Double-strained so there are no ice chips."},{"id":"margarita","sec":"Cocktails","name":"Tamarind chilli margarita","sub":"Agave spirit, tamarind, lime, chilli-salt rim","refs":["rocks"],"vessel":"Rocks glass with chilli-salt rim","build":["Rim half the glass with chilli salt.","Shake and strain over a large cube.","Add a lime wheel."],"garnish":"Lime wheel","side":"","temp":"Ice cold","note":"Rim only half the glass so guests can choose."},{"id":"sichuan","sec":"Cocktails","name":"Sichuan G&T","sub":"Gin, tonic, Sichuan pepper, grapefruit","refs":["highball"],"vessel":"Highball glass","build":["Fill with ice.","Add gin and a slice of grapefruit.","Top with tonic and drop in the peppercorns."],"garnish":"Grapefruit slice, Sichuan pepper","side":"","temp":"Ice cold","note":"The pepper gives a gentle tingle."},{"id":"kimchimary","sec":"Cocktails","name":"Kimchi Mary","sub":"Vodka, tomato, kimchi brine, gochugaru rim","refs":["highball"],"vessel":"Highball glass with gochugaru rim","build":["Rim the glass with gochugaru.","Roll the drink between tins to keep it smooth.","Pour over ice, add the skewer."],"garnish":"Kimchi and tomato skewer","side":"","temp":"Ice cold","note":"Roll, never shake: shaking makes it foamy."},{"id":"soju","sec":"Cocktails","name":"Soju Yakult","sub":"Soju, Yakult, lime","refs":["rocks"],"vessel":"Rocks glass","build":["Fill the glass with ice.","Shake soju, Yakult and lime and strain.","Add a lime wheel."],"garnish":"Lime wheel","side":"","temp":"Ice cold","note":"The Seoul bar classic."},{"id":"somaek","sec":"Cocktails","name":"Somaek","sub":"Soju and lager","refs":["beer330","shot"],"vessel":"330 ml glass plus shot glass","build":["Pour the lager into a chilled glass.","Fill a shot glass with soju.","Drop it in at the table."],"garnish":"None","side":"","temp":"Ice cold","note":"The shot goes in the beer at the table."},{"id":"limesoda","sec":"Zero proof","name":"Fresh lime soda","sub":"Sweet or salted","refs":["highball"],"vessel":"Highball glass","build":["Press the lime to order.","Add sugar syrup or salt.","Top with soda over ice."],"garnish":"Lime wedge, bamboo straw","side":"","temp":"Ice cold","note":"Pressed to order: the cabin-table standard."},{"id":"kokumsoda","sec":"Zero proof","name":"Kokum soda","sub":"Kokum, black salt, soda","refs":["highball"],"vessel":"Highball glass","build":["Add kokum syrup and black salt.","Top with soda over ice.","Stir once."],"garnish":"Pinch of black salt, bamboo straw","side":"","temp":"Ice cold","note":"Salty-sour and pink."},{"id":"icedtea","sec":"Zero proof","name":"Lemongrass-ginger iced tea","sub":"Black tea, lemongrass, ginger","refs":["highball"],"vessel":"Highball glass","build":["Fill with ice.","Pour the chilled tea.","Add the lemongrass and ginger."],"garnish":"Lemongrass stalk, ginger slice","side":"","temp":"Ice cold","note":"Brewed in house and chilled."},{"id":"irish","sec":"Hot coffee","name":"Irish coffee","sub":"Jameson, brown sugar, cream","refs":["irish"],"vessel":"Irish coffee glass","build":["Warm the glass with hot water.","Stir coffee, Jameson and brown sugar.","Float lightly whipped cream over the back of a spoon."],"garnish":"Cream cap","side":"","temp":"Hot","note":"The layers need clear glass."},{"id":"coffee","sec":"Hot coffee","name":"Brewed coffee","sub":"Black or with milk","refs":["cup","milk"],"vessel":"Cup and saucer, milk jug and sugar pot","build":["Warm the cup.","Pour the filter coffee.","Bring milk and sugar on the side."],"garnish":"None","side":"","temp":"Hot","note":"Teaspoon on the saucer."}]};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- cross-link lookup: menu name -> plating id */
+const PL=Object.fromEntries(DATA.plating.map(p=>[p.name.toLowerCase(),p.id]));
+const ALIAS={'paul john brilliance':'neat','amrut fusion':'neat','glenlivet 12':'neat','talisker 10':'neat','suntory toki highball':'toki','haku':'vodka','belvedere':'vodka','house lemongrass-ginger vodka':'vodka','house chilli-garlic vodka':'vodka','budweiser':'kings','pitcher or tasting paddle':'pitcher','tasting paddle':'paddle','soft drinks':'limesoda'};
+const platingFor=n=>{const k=n.split('|')[0].toLowerCase();return PL[k]||ALIAS[k]||null};
+
+/* ---------- hero */
+const ARCH=['crystal','cabinfever','baodown','crisp','khaosuey'];
+$('#arches').innerHTML=ARCH.map(id=>`<figure><img src="img/plating/${id}.jpg" alt="" loading="eager"></figure>`).join('');
+const nDish=DATA.food.reduce((n,s)=>n+s.items.length,0), nDrink=DATA.drinks.reduce((n,s)=>n+s.items.length,0);
+$('#facts').innerHTML=[[nDish,'menu lines'],[nDrink,'drinks'],[DATA.crock.items.filter(i=>i[6]>0).length,'pieces of serveware'],[DATA.plating.length,'plating cards']].map(([n,t])=>`<span><b>${n}</b>${t}</span>`).join('');
+
+/* ---------- tabs / routing */
+const TABS=['menu','crockery','plating'];
+function setTab(t,instant){
+  if(!TABS.includes(t))t='menu';
+  TABS.forEach(x=>{$('#v-'+x).hidden=x!==t});
+  $$('.tabs a').forEach(a=>{if(a.dataset.tab===t)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  document.title=({menu:'Menu',crockery:'Crockery',plating:'Plating'})[t]+' · Dumplings & Draught';
+}
+function go(tab,id){
+  setTab(tab);
+  history.replaceState(null,'','#'+tab);
+  requestAnimationFrame(()=>{
+    const el=id&&document.getElementById(id);
+    if(el){el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});el.classList.add('flash');setTimeout(()=>el.classList.remove('flash'),1600)}
+    else scrollTo({top:document.querySelector('.hero').offsetHeight>0?document.querySelector('.hero').offsetHeight:0,behavior:reduce?'auto':'smooth'});
+  });
+}
+$$('.tabs a, .logo').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(a.getAttribute('href').slice(1)||'menu')}));
+document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(!a)return;e.preventDefault();
+  const [tab,id]=a.dataset.go.split(':');
+  if(tab==='plating'&&pfilter!=='all'){pfilter='all';renderPlating()}
+  if(tab==='crockery'&&cfilter!=='all'){cfilter='all';renderCrock()}
+  go(tab,id);});
+
+/* ---------- menu */
+let kind='food';
+const price=p=>{p=String(p);return /[₹]|daily/.test(p)?p:'₹'+p};
+const marks=m=>m==='v'?'<i class="mk v" title="Veg"></i>':m==='nv'?'<i class="mk nv" title="Non-veg"></i>':m==='vn'?'<i class="mk v" title="Veg option"></i><i class="mk nv" title="Non-veg option"></i>':'';
+const badge=b=>b==='kol'?'<span class="badge kol">Cabin classic</span>':b==='goa'?'<span class="badge goa">Konkan touch</span>':'';
+function item(sec,it){
+  let n0,ing,how,p,m,b,h;
+  if(sec.drink){[n0,ing,how,p,b,h]=it;m=''}else{[n0,ing,how,p,m,b,h]=it}
+  const [n,sub]=n0.split('|'); const pid=platingFor(n0);
+  const links=pid?`<div class="links"><a class="chip" href="#plating" data-go="plating:p-${pid}">Plating →</a></div>`:'';
+  return `<div class="mi"><div class="top"><div class="nm">${marks(m)}${esc(n)}${badge(b)}${h?`<span class="heat" title="Spice ${h} of 3">${'•'.repeat(h)}</span>`:''}</div><span class="lead"></span><span class="pr">${esc(price(p))}</span></div>
+   ${sub?`<div class="sb">${esc(sub)}</div>`:''}<div class="ing"><b class="k">In it</b>${esc(ing)}</div><div class="how"><b class="k">How</b>${esc(how)}</div>${links}</div>`;
+}
+function renderMenu(){
+  const data=kind==='food'?DATA.food:DATA.drinks;
+  $('#menuCols').innerHTML=data.map(sec=>`<section class="msec${sec.sets?' sets':''}" id="m-${sec.id}"><h3>${esc(sec.t.toLowerCase())}</h3><div class="kick">${esc(sec.k)}</div>${sec.items.map(i=>item(sec,i)).join('')}</section>`).join('');
+  $('#legend').innerHTML=kind==='food'
+    ?'<span><i class="mk v"></i>Veg</span><span><i class="mk nv"></i>Non-veg</span><span><i class="mk v"></i><i class="mk nv"></i>Pick your protein</span><span><span class="badge kol">Cabin classic</span></span><span><span class="badge goa">Konkan touch</span></span><span><span class="heat">••</span>Spice, one to three</span>'
+    :'<span><span class="badge kol">Cabin classic</span></span><span><span class="badge goa">Konkan touch</span></span>';
+  $('#menuNote').innerHTML=kind==='food'
+    ?'<span>Prices in ₹, taxes extra. Dim sum come 4 to a basket, bao 2 to a plate.</span><span>Tell us about allergies: shellfish, pork, peanuts, gluten, egg, soy, sesame.</span><span>Drinks are on the drinks menu.</span>'
+    :'<span>Prices in ₹, taxes extra. Spirits are poured in 30 ml / 60 ml.</span><span>Happy hour 4–7 pm daily: 330 ml taps ₹179 · Kings 330 ml ₹99. The guest tap changes every couple of weeks.</span><span>Please drink responsibly. Alcohol is served only to guests aged 21 and over.</span>';
+  $$('#menuTabs [data-kind]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kind===kind)));
+}
+$('#menuTabs').addEventListener('click',e=>{const b=e.target.closest('[data-kind]');if(!b)return;kind=b.dataset.kind;renderMenu()});
+
+/* ---------- crockery */
+const C=DATA.crock, CBY=Object.fromEntries(C.items.map(i=>[i[0],i]));
+let cfilter='all', cmap='food';
+const FAM=[['enplate','Cabin enamel','White enamel with a coloured rim','Cabin starters, fried bar bites, the Thai basil bowl and the lunch plates. The old Kolkata cabin plate: it doesn\'t shatter on the beer-garden floor, and chilli-red food looks loud on white.'],
+['steamer8','Bamboo & porcelain','Steamers, soup spoons, chopstick rests','Dim sum arrive in the basket they were steamed in, so lifting the lid is the photo moment. White porcelain spoons for every soup.'],
+['soup','Konkan stoneware','Hand-glazed bowls and plates','Bao, noodles, rice, soups, curries and desserts, in sand, olive, rust and charcoal glazes that sit well with limewash and wood.'],
+['pint','Clear glass','Plain, sturdy, dishwasher-safe glass','Six shapes cover the drinks menu: pint, 330, highball, rocks, coupe and nosing glass, plus shots and an Irish coffee glass.']];
+$('#fam').innerHTML=FAM.map(([im,tag,h,p])=>`<article><figure><img src="img/crockery/${im}.jpg" alt="" loading="lazy"></figure><span class="tag">${tag}</span><h3>${h}</h3><p class="muted">${p}</p></article>`).join('');
+function renderCmap(){
+  const data=cmap==='food'?C.fmap:C.dmap;
+  $('#cmapH').textContent=cmap==='food'?'Dish':'Drink';
+  $('#cmap tbody').innerHTML=data.map(([sec,rows])=>`<tr class="grp"><td colspan="4">${esc(sec.toLowerCase())}</td></tr>`+rows.map(([d,sub,v,al,why])=>{const it=CBY[v];
+    const pic=it[2]?`<img src="img/crockery/${it[2]}.jpg" alt="" loading="lazy">`:'';
+    return `<tr><td class="dish">${esc(d)}${sub?`<small>${esc(sub)}</small>`:''}</td><td class="ves"><div class="vchip">${pic}<a href="#crockery" data-go="crockery:c-${it[0]}">${esc(it[3])}</a></div></td><td>${esc(al)}</td><td class="why">${esc(why)}</td></tr>`}).join('')).join('');
+  $$('#cmapTabs [data-map]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.map===cmap)));
+}
+$('#cmapTabs').addEventListener('click',e=>{const b=e.target.closest('[data-map]');if(!b)return;cmap=b.dataset.map;renderCmap()});
+function ccard(i){const [id,g,img,n,spec,use,q,u]=i;
+  const qty=q>0?`${q.toLocaleString('en-IN')} <small>${esc(u)}</small>`:`<small>${esc(u)}</small>`;
+  return `<article class="card" id="c-${id}"><figure><img src="img/crockery/${img}.jpg" alt="${esc(n)}" loading="lazy"></figure><div class="body"><h4>${esc(n)}</h4><div class="spec">${esc(spec)}</div><div class="use"><b>For</b>${esc(use)}</div><div class="foot"><span class="qty">${qty}</span></div></div></article>`;}
+function renderCrock(){
+  $('#clist').innerHTML=Object.entries(C.groups).filter(([k])=>cfilter==='all'||cfilter===k).map(([k,[t,s]])=>{const its=C.items.filter(i=>i[1]===k);
+    return `<div class="grp-h"><h3>${esc(t.toLowerCase())}</h3><span>${esc(s)} · ${its.filter(i=>i[6]>0).length} items</span></div><div class="grid">${its.map(ccard).join('')}</div>`}).join('');
+  $('#cfilters').innerHTML=[['all','All'],...Object.entries(C.groups).map(([k,v])=>[k,v[0]])].map(([k,v])=>`<button class="btn" type="button" data-f="${k}" aria-pressed="${cfilter===k}">${esc(v)}</button>`).join('');
+}
+$('#cfilters').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;cfilter=b.dataset.f;renderCrock()});
+
+/* ---------- plating */
+const P=DATA.plating, DRINK=['Beer','Whisky','Vodka','Cocktails','Zero proof','Hot coffee'];
+const PSECS=[...new Set(P.map(p=>p.sec))];
+let pfilter='all';
+const vesLink=d=>{const r=d.refs[0].replace('paddle3','paddle');return CBY[r]?`<a class="ves" href="#crockery" data-go="crockery:c-${r}" title="See in the crockery list">${esc(d.vessel)}</a>`:`<span class="ves">${esc(d.vessel)}</span>`};
+function pcard(d){
+  const kv=[['Garnish',d.garnish],['With',d.side],['Serve',d.temp]].filter(r=>r[1]).map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('');
+  return `<article class="card" id="p-${d.id}"><figure><img src="img/plating/${d.id}.jpg" alt="${esc(d.name)} plated" loading="lazy"></figure>
+   <div class="body"><div><h4>${esc(d.name)}</h4><div class="sub">${esc(d.sub)}</div></div>${vesLink(d)}
+   <ol class="build">${d.build.map(b=>`<li>${esc(b)}</li>`).join('')}</ol><dl class="kv">${kv}</dl><p class="note">${esc(d.note)}</p></div></article>`;}
+function renderPlating(){
+  const list=P.filter(d=>pfilter==='all'||(pfilter==='food'&&!DRINK.includes(d.sec))||(pfilter==='drinks'&&DRINK.includes(d.sec)));
+  const ss=PSECS.filter(s=>list.some(d=>d.sec===s));
+  $('#plist').innerHTML=ss.map(s=>{const its=list.filter(d=>d.sec===s);
+    return `<div class="grp-h" id="ps-${PSECS.indexOf(s)}"><h3>${esc(s.toLowerCase())}</h3><span>${its.length} ${its.length===1?'card':'cards'}</span></div><div class="grid wide">${its.map(pcard).join('')}</div>`}).join('');
+  $('#pnav').innerHTML=[['all','All'],['food','Food'],['drinks','Drinks']].map(([k,v])=>`<button class="btn" type="button" data-pf="${k}" aria-pressed="${pfilter===k}">${v}</button>`).join('')+'<span class="sp"></span>'+
+    ss.map(s=>`<a class="btn" href="#plating" data-jumpsec="ps-${PSECS.indexOf(s)}">${esc(s)}</a>`).join('');
+}
+$('#pnav').addEventListener('click',e=>{
+  const b=e.target.closest('[data-pf]');if(b){pfilter=b.dataset.pf;renderPlating();return}
+  const a=e.target.closest('[data-jumpsec]');if(a){e.preventDefault();document.getElementById(a.dataset.jumpsec).scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}});
+
+renderMenu();renderCmap();renderCrock();renderPlating();
+const init=(location.hash||'#menu').slice(1);
+setTab(TABS.includes(init)?init:'menu');
+addEventListener('hashchange',()=>{const t=location.hash.slice(1);if(TABS.includes(t))setTab(t)});
+</script>
+</body>
+</html>

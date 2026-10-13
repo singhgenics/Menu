@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dumplings & Draught · Menu, crockery and plating</title>
+<meta name="description" content="The full Dumplings & Draught package for Betalbatim: food and drinks menu, crockery and glassware list, and a plating guide for every dish and drink.">
+<meta property="og:title" content="Dumplings & Draught">
+<meta property="og:description" content="Menu, crockery and plating for a Pan-Asian dim sum and craft-beer pub in Betalbatim, Goa.">
+<meta property="og:image" content="img/plating/crystal.jpg">
+<meta name="theme-color" content="#efe3d0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c3582a'/%3E%3Cpath d='M14 34h36a18 18 0 0 1-36 0z' fill='%23efe3d0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Yellowtail&display=swap">
+<style>
+/* Layout: one long paper menu — a poster-style hero with arched dish photos, a sticky three-way tab bar (Menu · Crockery · Plating), and a shared card language so every dish links across all three views */
+:root{
+  --paper:#efe3d0; --card:#f7eedf; --ink:#2a2420; --muted:#6a5d4e; --line:#cdb99c;
+  --olive:#5f6b3a; --orange:#c3582a; --veg:#2f7d32; --nonveg:#7a3b1d; --shade:rgba(42,36,32,.08);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .13 0 0 0 0 .1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  --script:'Yellowtail','Brush Script MT',cursive;
+  --display:'Bricolage Grotesque','Avenir Next','Segoe UI',sans-serif;
+  --body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1f1a16; --card:#2a2420; --ink:#efe3d0; --muted:#b5a690; --line:#4a3f34;
+  --olive:#a9b67a; --orange:#e2814f; --veg:#7cc47f; --nonveg:#d08a62; --shade:rgba(239,227,208,.06); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1f1a16; --card:#2a2420; --ink:#efe3d0; --muted:#b5a690; --line:#4a3f34;
+  --olive:#a9b67a; --orange:#e2814f; --veg:#7cc47f; --nonveg:#d08a62; --shade:rgba(239,227,208,.06); color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper) var(--grain);color:var(--ink);font:15px/1.55 var(--body);-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+p{margin:0;max-width:68ch}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:24px}
+@media (max-width:520px){.wrap{padding-inline:16px}}
+.eyebrow{font:600 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--olive);margin:0}
+.script{font-family:var(--script);font-weight:400;color:var(--orange);line-height:1}
+.muted{color:var(--muted)}
+.btn{appearance:none;font:600 11.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap}
+.btn:hover,.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.btn:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+
+/* ---------- top bar */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--ink);padding-top:env(safe-area-inset-top,0px)}
+.bar .in{display:flex;align-items:center;gap:14px;padding-block:8px}
+.bar .logo{font:400 26px/1 var(--script);color:var(--orange);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:6px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{font:600 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;border-radius:999px;text-decoration:none;color:var(--ink);border:1.5px solid transparent;white-space:nowrap}
+.tabs a:hover{border-color:var(--ink)}
+.tabs a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+@media (max-width:520px){.bar .in{flex-direction:column;align-items:stretch;gap:2px;padding-block:6px}.bar .logo{font-size:24px;text-align:center}.tabs{margin-left:0;justify-content:space-between;gap:4px}.tabs a{flex:1;text-align:center;padding:9px 6px}}
+
+/* ---------- hero */
+.hero{padding-block:44px 30px;display:grid;gap:26px;justify-items:center;text-align:center;border-bottom:2px solid var(--ink)}
+.hero h1{font:400 clamp(58px,11vw,128px)/.95 var(--script);color:var(--orange)}
+.hero .tag{font:700 clamp(18px,2.6vw,26px)/1.25 var(--display)}
+.hero p.lede{color:var(--muted);max-width:60ch}
+.arches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1.6vw,20px);width:100%;max-width:980px;align-items:end}
+.arches figure{margin:0;aspect-ratio:3/4;border-radius:999px 999px 10px 10px;overflow:hidden;border:2px solid var(--ink);background:var(--shade)}
+.arches figure:nth-child(2n){transform:translateY(14px)}
+.arches img{width:100%;height:100%;object-fit:cover}
+@media (max-width:640px){.arches{grid-template-columns:repeat(3,minmax(0,1fr))}.arches figure:nth-child(n+4){display:none}}
+.facts{display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:center;font:600 11.5px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.facts b{color:var(--ink);font-size:15px;margin-right:4px}
+
+/* ---------- views */
+.view[hidden]{display:none}
+.view>*{min-width:0}
+.view{padding-block:30px 70px;display:grid;gap:40px}
+.view-head{display:grid;gap:6px;justify-items:start}
+.view-head h2{font:400 clamp(44px,7vw,68px)/1 var(--script);color:var(--orange)}
+.sub-tabs{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sub-tabs .sp{flex:1}
+#pnav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}#pnav::-webkit-scrollbar{display:none}#pnav .btn{flex:none}#pnav .sp{flex:0 0 12px}
+.sticky-sub{position:sticky;top:calc(var(--barh,53px) + env(safe-area-inset-top,0px));z-index:10;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);padding-block:10px;border-bottom:1px solid var(--line)}
+@media (max-width:520px){:root{--barh:92px}}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 11.5px/1.4 var(--mono);color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.mk{width:12px;height:12px;border:1.5px solid currentColor;display:inline-grid;place-items:center;flex:none;box-sizing:border-box}
+.mk.v{color:var(--veg)} .mk.v::after{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.mk.nv{color:var(--nonveg)} .mk.nv::after{content:"";width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-bottom:6px solid currentColor}
+.badge{font:600 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--paper);padding:3px 6px;border-radius:4px;white-space:nowrap}
+.badge.kol{background:var(--orange)} .badge.goa{background:var(--olive)}
+.heat{font:600 11px/1 var(--mono);color:var(--orange);letter-spacing:1px;white-space:nowrap}
+
+/* ---------- menu */
+.menu{columns:2 440px;column-gap:48px}
+.msec{break-inside:avoid-column;margin:0 0 34px;scroll-margin-top:130px}
+.msec h3{font:400 44px/1 var(--script);color:var(--orange)}
+.msec .kick{font:500 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--olive);margin:6px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.mi{padding:12px 0;border-bottom:1px dashed color-mix(in srgb,var(--ink) 18%,transparent);break-inside:avoid}
+.mi:last-child{border-bottom:0}
+.mi .top{display:flex;align-items:baseline;gap:8px}
+.mi .nm{font:700 16.5px/1.25 var(--display);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mi .lead{flex:1;border-bottom:1.5px dotted color-mix(in srgb,var(--ink) 30%,transparent);min-width:12px;transform:translateY(-4px)}
+.mi .pr{font:500 14.5px/1.25 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mi .sb{font:italic 500 13px/1.3 var(--body);color:var(--muted);margin-top:1px}
+.mi .ing,.mi .how{font-size:13.3px;color:var(--muted);margin-top:4px;max-width:60ch}
+.mi b.k{font:600 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-right:6px}
+.mi .links{margin-top:6px}
+.chip{font:600 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--olive);border-bottom:1.5px solid currentColor;padding-bottom:2px;margin-right:12px}
+.chip:hover{color:var(--orange)}
+.sets{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;padding:6px 18px 10px}
+.mnote{display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:space-between;border-top:2px solid var(--ink);padding-top:14px;font:500 11.5px/1.5 var(--mono);color:var(--muted)}
+
+/* ---------- cards (crockery + plating) */
+.grp-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:36px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--ink);scroll-margin-top:130px}
+.grp-h h3{font:400 34px/1 var(--script);color:var(--orange)}
+.grp-h span{font:500 11.5px/1.4 var(--mono);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:20px}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;scroll-margin-top:130px;min-width:0;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(42,36,32,.5)}
+.card.flash{outline:2px solid var(--orange);outline-offset:2px}
+.card figure{margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--shade)}
+.card figure img{width:100%;height:100%;object-fit:cover}
+.card .body{padding:13px 15px 15px;display:grid;gap:8px;align-content:start;min-width:0}
+.card h4{font:700 17px/1.25 var(--display)}
+.card .sub{font:italic 400 13px/1.3 var(--body);color:var(--muted)}
+.card .spec{font:500 11.5px/1.45 var(--mono);color:var(--olive)}
+.card .use{font-size:13px;color:var(--muted)}
+.card .use b{font:600 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-right:5px}
+.card .foot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:2px;padding-top:9px;border-top:1px dashed var(--line)}
+.qty{font:600 13px/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.qty small{font-weight:500;color:var(--muted)}
+.ves{display:inline-block;font:600 10.5px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--paper);background:var(--olive);padding:4px 7px;border-radius:4px;justify-self:start;text-decoration:none}
+a.ves:hover{background:var(--orange)}
+ol.build{margin:0;padding-left:20px;display:grid;gap:4px;font-size:13.5px}
+ol.build li::marker{font:600 12px var(--mono);color:var(--orange)}
+dl.kv{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;padding-top:8px;border-top:1px dashed var(--line)}
+dl.kv dt{font:600 10px/1.8 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+dl.kv dd{margin:0;min-width:0}
+.note{font-size:13px;color:var(--muted);border-left:3px solid var(--orange);padding-left:10px}
+
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:22px}
+.fam article{display:grid;gap:9px;align-content:start}
+.fam figure{margin:0;aspect-ratio:4/3;overflow:hidden;border-radius:8px;border:1.5px solid var(--ink)}
+.fam figure img{width:100%;height:100%;object-fit:cover}
+.fam h3{font:700 18px/1.25 var(--display)}
+.fam .tag{font:600 10.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--paper);background:var(--olive);padding:4px 7px;border-radius:4px;justify-self:start}
+.fam article:nth-child(2) .tag{background:var(--orange)}
+.fam article:nth-child(3) .tag{background:var(--ink)}
+.fam article:nth-child(4) .tag{background:var(--muted)}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px 22px}
+.rule{padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px;display:grid;gap:4px;align-content:start}
+.rule b{font:700 15px/1.3 var(--display)}
+.rule span{font-size:13.5px;color:var(--muted)}
+
+.mapwrap{overflow-x:auto;border-top:2px solid var(--ink)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+tr.grp td{font:400 26px/1 var(--script);color:var(--orange);padding-top:18px;border-bottom:1px solid var(--ink)}
+td.dish{font:700 14.5px/1.3 var(--display);width:22%}
+td.dish small{display:block;font:italic 400 12px/1.3 var(--body);color:var(--muted);margin-top:2px}
+td.ves{width:30%}
+.vchip{display:flex;gap:10px;align-items:center}
+.vchip img{width:56px;height:42px;object-fit:cover;border-radius:4px;border:1px solid var(--line);flex:none}
+.vchip a{font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+.vchip a:hover{color:var(--orange);border-color:var(--orange)}
+td.why{color:var(--muted)}
+
+.setting{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:760px){.setting{grid-template-columns:1fr}}
+.setting svg{width:100%;max-width:480px;height:auto}
+.setting ol{margin:0;padding-left:20px;display:grid;gap:7px}
+.setting li b{font-family:var(--display)}
+
+footer.site{border-top:2px solid var(--ink);padding-block:22px 40px;display:grid;gap:8px;font-size:12px;color:var(--muted)}
+footer.site b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap in">
+    <a class="logo" href="#menu">dumplings &amp; draught</a>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#menu" data-tab="menu">Menu</a>
+      <a href="#crockery" data-tab="crockery">Crockery</a>
+      <a href="#plating" data-tab="plating">Plating</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap" aria-label="Introduction">
+  <p class="eyebrow">Betalbatim · a short walk from the Arabian Sea · working name</p>
+  <h1>dumplings &amp; draught</h1>
+  <p class="tag">Pan-Asian, pub-style: dim sum, bao, Thai curries and cold craft beer</p>
+  <div class="arches" id="arches" aria-hidden="true"></div>
+  <p class="lede">Indo-Chinese the way the old cabins of the City of Joy cook it, hand-folded dim sum, a short run from Seoul to Bangkok, and three craft taps from up the coast. This page holds the whole package: what we serve, what we serve it in, and how every plate and glass leaves the pass.</p>
+  <div class="facts" id="facts"></div>
+</section>
+
+<main class="wrap">
+
+<!-- ================================================= MENU -->
+<div class="view" id="v-menu" hidden>
+  <div class="view-head">
+    <p class="eyebrow">What we serve</p>
+    <h2>the menu</h2>
+  </div>
+  <div class="sticky-sub">
+    <div class="sub-tabs" id="menuTabs">
+      <button class="btn" data-kind="food" aria-pressed="true" type="button">Food</button>
+      <button class="btn" data-kind="drinks" aria-pressed="false" type="button">Drinks</button>
+    </div>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div class="menu" id="menuCols"></div>
+  <div class="mnote" id="menuNote"></div>
+</div>
+
+<!-- ================================================= CROCKERY -->
+<div class="view" id="v-crockery" hidden>
+  <div class="view-head">
+    <p class="eyebrow">What we serve it in</p>
+    <h2>crockery, glass &amp; cutlery</h2>
+    <p class="muted">Sized for 28 covers and a three-person bar. Anything a guest eats or drinks from is counted at about three per cover: one in use, one in the wash, one spare. Add 10% for breakage on ceramics and glass. Images show the style to buy, not a specific supplier's product.</p>
+  </div>
+
+  <section aria-labelledby="h-fam">
+    <h3 id="h-fam" class="script" style="font-size:40px;margin-bottom:14px">four materials, one story</h3>
+    <div class="fam" id="fam"></div>
+  </section>
+
+  <section aria-labelledby="h-cmap">
+    <h3 id="h-cmap" class="script" style="font-size:40px;margin-bottom:6px">what goes in what</h3>
+    <p class="muted" style="margin-bottom:14px">Every dish and drink, the vessel it is served in, what goes alongside, and why. Click a vessel to jump to it in the buying list.</p>
+    <div class="sub-tabs" id="cmapTabs" style="margin-bottom:12px">
+      <button class="btn" data-map="food" aria-pressed="true" type="button">Food menu</button>
+      <button class="btn" data-map="drinks" aria-pressed="false" type="button">Drinks menu</button>
+    </div>
+    <div class="mapwrap"><table id="cmap"><thead><tr><th id="cmapH">Dish</th><th>Served in</th><th>Alongside</th><th>Why</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="h-clist">
+    <h3 id="h-clist" class="script" style="font-size:40px;margin-bottom:6px">the buying list</h3>
+    <div class="sub-tabs" id="cfilters" style="margin:10px 0 0"></div>
+    <div id="clist"></div>
+  </section>
+
+  <section aria-labelledby="h-set">
+    <h3 id="h-set" class="script" style="font-size:40px;margin-bottom:6px">laying a place</h3>
+    <p class="muted" style="margin-bottom:16px">What is on the table before the first plate arrives. Forks and spoons sit in a cutlery cup on each table.</p>
+    <div class="setting">
+      <svg viewBox="0 0 480 300" role="img" aria-labelledby="svgT">
+        <title id="svgT">Top view of one place setting: side plate with rice bowl, dipping dish, soup spoon, chopsticks on a rest and a water glass</title>
+        <rect x="1" y="1" width="478" height="298" rx="10" fill="none" stroke="var(--line)" stroke-dasharray="4 5"/>
+        <circle cx="210" cy="160" r="92" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="210" cy="160" r="78" fill="none" stroke="var(--olive)" stroke-width="5"/>
+        <circle cx="210" cy="160" r="50" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="210" cy="160" r="34" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+        <circle cx="330" cy="62" r="20" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="330" cy="62" r="11" fill="var(--orange)" opacity=".75"/>
+        <circle cx="395" cy="70" r="24" fill="none" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="395" cy="70" r="18" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+        <rect x="352" y="222" width="28" height="12" rx="4" fill="var(--olive)"/>
+        <rect x="362" y="100" width="5" height="165" rx="2" fill="var(--ink)" transform="rotate(4 364 180)"/>
+        <rect x="373" y="100" width="5" height="165" rx="2" fill="var(--ink)" transform="rotate(4 375 180)"/>
+        <path d="M327 140 q-12 20 0 40 l6 70 h6 l6 -70 q12 -20 0 -40 z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--muted)">
+          <text x="30" y="36">1 side plate 7.5"</text><text x="30" y="52">2 rice bowl on top</text>
+          <text x="270" y="26">3 dip dish</text><text x="380" y="26">6 water</text>
+          <text x="30" y="285">4 soup spoon</text><text x="300" y="285">5 chopsticks + rest</text>
+        </g>
+      </svg>
+      <ol>
+        <li><b>Side plate, 7.5".</b> Eat from it, and set a steamer basket on it when dim sum arrives.</li>
+        <li><b>Rice bowl.</b> Rice, noodles, curry and gravy are served into it from the sharing vessel; jasmine rice comes in it.</li>
+        <li><b>Dipping dish.</b> Soy and chilli vinegar to start; swapped for black vinegar or kasundi mayo as the dish needs.</li>
+        <li><b>Porcelain soup spoon.</b> For every soup.</li>
+        <li><b>Chopsticks on a ceramic rest.</b> Reusable, square-edged so they don't roll.</li>
+        <li><b>Water glass,</b> filled from a table carafe, and a folded cotton napkin.</li>
+        <li><b>Per table:</b> one condiment set, a cutlery cup and coasters.</li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================= PLATING -->
+<div class="view" id="v-plating" hidden>
+  <div class="view-head">
+    <p class="eyebrow">How it leaves the pass</p>
+    <h2>plating</h2>
+    <p class="muted">One card per menu item: the target photo, the vessel, the build order, garnish, serving temperature and a kitchen note. Photos are visual targets made for this guide; the chef sets final portion weights at the first tasting.</p>
+  </div>
+
+  <section aria-labelledby="h-rules">
+    <h3 id="h-rules" class="script" style="font-size:40px;margin-bottom:14px">six rules for the pass</h3>
+    <div class="rules">
+      <div class="rule"><b>Warm the hot, chill the cold.</b><span>Hot plates and bowls rinsed in hot water. Beer glasses, shots and coupes come from the fridge or freezer.</span></div>
+      <div class="rule"><b>Build off-centre, low and loose.</b><span>Heap wok food in a low mound with the rim showing. Air under fried food keeps it crisp.</span></div>
+      <div class="rule"><b>Wipe every rim.</b><span>A clean rim is the cheapest finish. Wipe plates, bowls, glasses and sauce dishes before they leave.</span></div>
+      <div class="rule"><b>Sauces on the side, in their own dish.</b><span>Dipping dishes carry sauces so fried and steamed food stays dry.</span></div>
+      <div class="rule"><b>Garnish last, and only what is on the card.</b><span>Herbs, sesame, chilli and crumbs go on in the final 10 seconds so they stay bright and crisp.</span></div>
+      <div class="rule"><b>Out within a minute.</b><span>Fried and wok food waits no longer than 60 seconds on the pass. Steam leaves lidded; the lid comes off at the table.</span></div>
+    </div>
+  </section>
+
+  <div class="sticky-sub"><div class="sub-tabs" id="pnav"></div></div>
+  <div id="plist"></div>
+</div>
+
+</main>
+
+<footer class="site"><div class="wrap">
+  <p><b>Dumplings &amp; Draught</b> is a working name. Betalbatim, Goa. Prices in ₹, taxes extra. Alcohol is served only to guests aged 21 and over; please drink responsibly.</p>
+  <p>Menu, crockery list and plating guide for the fit-out and opening. Dish, crockery and plating images were generated with Google Flow as visual targets and show the style, not a specific supplier's product.</p>
+</div></footer>
+
+<script>
+const DATA=/*DATA*/;
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- cross-link lookup: menu name -> plating id */
+const PL=Object.fromEntries(DATA.plating.map(p=>[p.name.toLowerCase(),p.id]));
+const ALIAS={'paul john brilliance':'neat','amrut fusion':'neat','glenlivet 12':'neat','talisker 10':'neat','suntory toki highball':'toki','haku':'vodka','belvedere':'vodka','house lemongrass-ginger vodka':'vodka','house chilli-garlic vodka':'vodka','budweiser':'kings','pitcher or tasting paddle':'pitcher','tasting paddle':'paddle','soft drinks':'limesoda'};
+const platingFor=n=>{const k=n.split('|')[0].toLowerCase();return PL[k]||ALIAS[k]||null};
+
+/* ---------- hero */
+const ARCH=['crystal','cabinfever','baodown','crisp','khaosuey'];
+$('#arches').innerHTML=ARCH.map(id=>`<figure><img src="img/plating/${id}.jpg" alt="" loading="eager"></figure>`).join('');
+const nDish=DATA.food.reduce((n,s)=>n+s.items.length,0), nDrink=DATA.drinks.reduce((n,s)=>n+s.items.length,0);
+$('#facts').innerHTML=[[nDish,'menu lines'],[nDrink,'drinks'],[DATA.crock.items.filter(i=>i[6]>0).length,'pieces of serveware'],[DATA.plating.length,'plating cards']].map(([n,t])=>`<span><b>${n}</b>${t}</span>`).join('');
+
+/* ---------- tabs / routing */
+const TABS=['menu','crockery','plating'];
+function setTab(t,instant){
+  if(!TABS.includes(t))t='menu';
+  TABS.forEach(x=>{$('#v-'+x).hidden=x!==t});
+  $$('.tabs a').forEach(a=>{if(a.dataset.tab===t)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  document.title=({menu:'Menu',crockery:'Crockery',plating:'Plating'})[t]+' · Dumplings & Draught';
+}
+function go(tab,id){
+  setTab(tab);
+  history.replaceState(null,'','#'+tab);
+  requestAnimationFrame(()=>{
+    const el=id&&document.getElementById(id);
+    if(el){el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});el.classList.add('flash');setTimeout(()=>el.classList.remove('flash'),1600)}
+    else scrollTo({top:document.querySelector('.hero').offsetHeight>0?document.querySelector('.hero').offsetHeight:0,behavior:reduce?'auto':'smooth'});
+  });
+}
+$$('.tabs a, .logo').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(a.getAttribute('href').slice(1)||'menu')}));
+document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(!a)return;e.preventDefault();
+  const [tab,id]=a.dataset.go.split(':');
+  if(tab==='plating'&&pfilter!=='all'){pfilter='all';renderPlating()}
+  if(tab==='crockery'&&cfilter!=='all'){cfilter='all';renderCrock()}
+  go(tab,id);});
+
+/* ---------- menu */
+let kind='food';
+const price=p=>{p=String(p);return /[₹]|daily/.test(p)?p:'₹'+p};
+const marks=m=>m==='v'?'<i class="mk v" title="Veg"></i>':m==='nv'?'<i class="mk nv" title="Non-veg"></i>':m==='vn'?'<i class="mk v" title="Veg option"></i><i class="mk nv" title="Non-veg option"></i>':'';
+const badge=b=>b==='kol'?'<span class="badge kol">Cabin classic</span>':b==='goa'?'<span class="badge goa">Konkan touch</span>':'';
+function item(sec,it){
+  let n0,ing,how,p,m,b,h;
+  if(sec.drink){[n0,ing,how,p,b,h]=it;m=''}else{[n0,ing,how,p,m,b,h]=it}
+  const [n,sub]=n0.split('|'); const pid=platingFor(n0);
+  const links=pid?`<div class="links"><a class="chip" href="#plating" data-go="plating:p-${pid}">Plating →</a></div>`:'';
+  return `<div class="mi"><div class="top"><div class="nm">${marks(m)}${esc(n)}${badge(b)}${h?`<span class="heat" title="Spice ${h} of 3">${'•'.repeat(h)}</span>`:''}</div><span class="lead"></span><span class="pr">${esc(price(p))}</span></div>
+   ${sub?`<div class="sb">${esc(sub)}</div>`:''}<div class="ing"><b class="k">In it</b>${esc(ing)}</div><div class="how"><b class="k">How</b>${esc(how)}</div>${links}</div>`;
+}
+function renderMenu(){
+  const data=kind==='food'?DATA.food:DATA.drinks;
+  $('#menuCols').innerHTML=data.map(sec=>`<section class="msec${sec.sets?' sets':''}" id="m-${sec.id}"><h3>${esc(sec.t.toLowerCase())}</h3><div class="kick">${esc(sec.k)}</div>${sec.items.map(i=>item(sec,i)).join('')}</section>`).join('');
+  $('#legend').innerHTML=kind==='food'
+    ?'<span><i class="mk v"></i>Veg</span><span><i class="mk nv"></i>Non-veg</span><span><i class="mk v"></i><i class="mk nv"></i>Pick your protein</span><span><span class="badge kol">Cabin classic</span></span><span><span class="badge goa">Konkan touch</span></span><span><span class="heat">••</span>Spice, one to three</span>'
+    :'<span><span class="badge kol">Cabin classic</span></span><span><span class="badge goa">Konkan touch</span></span>';
+  $('#menuNote').innerHTML=kind==='food'
+    ?'<span>Prices in ₹, taxes extra. Dim sum come 4 to a basket, bao 2 to a plate.</span><span>Tell us about allergies: shellfish, pork, peanuts, gluten, egg, soy, sesame.</span><span>Drinks are on the drinks menu.</span>'
+    :'<span>Prices in ₹, taxes extra. Spirits are poured in 30 ml / 60 ml.</span><span>Happy hour 4–7 pm daily: 330 ml taps ₹179 · Kings 330 ml ₹99. The guest tap changes every couple of weeks.</span><span>Please drink responsibly. Alcohol is served only to guests aged 21 and over.</span>';
+  $$('#menuTabs [data-kind]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kind===kind)));
+}
+$('#menuTabs').addEventListener('click',e=>{const b=e.target.closest('[data-kind]');if(!b)return;kind=b.dataset.kind;renderMenu()});
+
+/* ---------- crockery */
+const C=DATA.crock, CBY=Object.fromEntries(C.items.map(i=>[i[0],i]));
+let cfilter='all', cmap='food';
+const FAM=[['enplate','Cabin enamel','White enamel with a coloured rim','Cabin starters, fried bar bites, the Thai basil bowl and the lunch plates. The old Kolkata cabin plate: it doesn\'t shatter on the beer-garden floor, and chilli-red food looks loud on white.'],
+['steamer8','Bamboo & porcelain','Steamers, soup spoons, chopstick rests','Dim sum arrive in the basket they were steamed in, so lifting the lid is the photo moment. White porcelain spoons for every soup.'],
+['soup','Konkan stoneware','Hand-glazed bowls and plates','Bao, noodles, rice, soups, curries and desserts, in sand, olive, rust and charcoal glazes that sit well with limewash and wood.'],
+['pint','Clear glass','Plain, sturdy, dishwasher-safe glass','Six shapes cover the drinks menu: pint, 330, highball, rocks, coupe and nosing glass, plus shots and an Irish coffee glass.']];
+$('#fam').innerHTML=FAM.map(([im,tag,h,p])=>`<article><figure><img src="img/crockery/${im}.jpg" alt="" loading="lazy"></figure><span class="tag">${tag}</span><h3>${h}</h3><p class="muted">${p}</p></article>`).join('');
+function renderCmap(){
+  const data=cmap==='food'?C.fmap:C.dmap;
+  $('#cmapH').textContent=cmap==='food'?'Dish':'Drink';
+  $('#cmap tbody').innerHTML=data.map(([sec,rows])=>`<tr class="grp"><td colspan="4">${esc(sec.toLowerCase())}</td></tr>`+rows.map(([d,sub,v,al,why])=>{const it=CBY[v];
+    const pic=it[2]?`<img src="img/crockery/${it[2]}.jpg" alt="" loading="lazy">`:'';
+    return `<tr><td class="dish">${esc(d)}${sub?`<small>${esc(sub)}</small>`:''}</td><td class="ves"><div class="vchip">${pic}<a href="#crockery" data-go="crockery:c-${it[0]}">${esc(it[3])}</a></div></td><td>${esc(al)}</td><td class="why">${esc(why)}</td></tr>`}).join('')).join('');
+  $$('#cmapTabs [data-map]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.map===cmap)));
+}
+$('#cmapTabs').addEventListener('click',e=>{const b=e.target.closest('[data-map]');if(!b)return;cmap=b.dataset.map;renderCmap()});
+function ccard(i){const [id,g,img,n,spec,use,q,u]=i;
+  const qty=q>0?`${q.toLocaleString('en-IN')} <small>${esc(u)}</small>`:`<small>${esc(u)}</small>`;
+  return `<article class="card" id="c-${id}"><figure><img src="img/crockery/${img}.jpg" alt="${esc(n)}" loading="lazy"></figure><div class="body"><h4>${esc(n)}</h4><div class="spec">${esc(spec)}</div><div class="use"><b>For</b>${esc(use)}</div><div class="foot"><span class="qty">${qty}</span></div></div></article>`;}
+function renderCrock(){
+  $('#clist').innerHTML=Object.entries(C.groups).filter(([k])=>cfilter==='all'||cfilter===k).map(([k,[t,s]])=>{const its=C.items.filter(i=>i[1]===k);
+    return `<div class="grp-h"><h3>${esc(t.toLowerCase())}</h3><span>${esc(s)} · ${its.filter(i=>i[6]>0).length} items</span></div><div class="grid">${its.map(ccard).join('')}</div>`}).join('');
+  $('#cfilters').innerHTML=[['all','All'],...Object.entries(C.groups).map(([k,v])=>[k,v[0]])].map(([k,v])=>`<button class="btn" type="button" data-f="${k}" aria-pressed="${cfilter===k}">${esc(v)}</button>`).join('');
+}
+$('#cfilters').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;cfilter=b.dataset.f;renderCrock()});
+
+/* ---------- plating */
+const P=DATA.plating, DRINK=['Beer','Whisky','Vodka','Cocktails','Zero proof','Hot coffee'];
+const PSECS=[...new Set(P.map(p=>p.sec))];
+let pfilter='all';
+const vesLink=d=>{const r=d.refs[0].replace('paddle3','paddle');return CBY[r]?`<a class="ves" href="#crockery" data-go="crockery:c-${r}" title="See in the crockery list">${esc(d.vessel)}</a>`:`<span class="ves">${esc(d.vessel)}</span>`};
+function pcard(d){
+  const kv=[['Garnish',d.garnish],['With',d.side],['Serve',d.temp]].filter(r=>r[1]).map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('');
+  return `<article class="card" id="p-${d.id}"><figure><img src="img/plating/${d.id}.jpg" alt="${esc(d.name)} plated" loading="lazy"></figure>
+   <div class="body"><div><h4>${esc(d.name)}</h4><div class="sub">${esc(d.sub)}</div></div>${vesLink(d)}
+   <ol class="build">${d.build.map(b=>`<li>${esc(b)}</li>`).join('')}</ol><dl class="kv">${kv}</dl><p class="note">${esc(d.note)}</p></div></article>`;}
+function renderPlating(){
+  const list=P.filter(d=>pfilter==='all'||(pfilter==='food'&&!DRINK.includes(d.sec))||(pfilter==='drinks'&&DRINK.includes(d.sec)));
+  const ss=PSECS.filter(s=>list.some(d=>d.sec===s));
+  $('#plist').innerHTML=ss.map(s=>{const its=list.filter(d=>d.sec===s);
+    return `<div class="grp-h" id="ps-${PSECS.indexOf(s)}"><h3>${esc(s.toLowerCase())}</h3><span>${its.length} ${its.length===1?'card':'cards'}</span></div><div class="grid wide">${its.map(pcard).join('')}</div>`}).join('');
+  $('#pnav').innerHTML=[['all','All'],['food','Food'],['drinks','Drinks']].map(([k,v])=>`<button class="btn" type="button" data-pf="${k}" aria-pressed="${pfilter===k}">${v}</button>`).join('')+'<span class="sp"></span>'+
+    ss.map(s=>`<a class="btn" href="#plating" data-jumpsec="ps-${PSECS.indexOf(s)}">${esc(s)}</a>`).join('');
+}
+$('#pnav').addEventListener('click',e=>{
+  const b=e.target.closest('[data-pf]');if(b){pfilter=b.dataset.pf;renderPlating();return}
+  const a=e.target.closest('[data-jumpsec]');if(a){e.preventDefault();document.getElementById(a.dataset.jumpsec).scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}});
+
+renderMenu();renderCmap();renderCrock();renderPlating();
+const init=(location.hash||'#menu').slice(1);
+setTab(TABS.includes(init)?init:'menu');
+addEventListener('hashchange',()=>{const t=location.hash.slice(1);if(TABS.includes(t))setTab(t)});
+</script>
+</body>
+</html>

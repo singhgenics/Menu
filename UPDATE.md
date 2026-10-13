@@ -1,0 +1,33 @@
+# Updating everything when the menu changes
+
+Standing rule from the owner: **any change to the menu or its items updates everything**: the crockery checklist, the plating cards and this site.
+
+The menu source of truth is `food.html` and `drinks.html` in the Dream repo (`~/Documents/Code/Dream`). A Claude Code hook in that project runs `src/check-menu.mjs` after edits and raises a reminder when the menu data no longer matches `src/menu.hash` (the hash of the menu this site was last built from).
+
+## Checklist
+
+1. **See what changed.** `git -C ~/Documents/Code/Dream diff` (or compare dish names). List new, renamed, removed and re-priced items.
+2. **Crockery.** Edit the arrays in `src/crockery-source.html`:
+   - `ITEMS`: add, remove or re-quantify vessels (id, group, photo id, name, spec, use, qty, unit).
+   - `FOOD` / `DRINKS`: the dish-to-vessel map, one row per menu line (`[name, sub, vesselId, alongside, why]`). Every menu line needs a row.
+   - If a new vessel is needed, generate its image (see Images).
+3. **Plating.** Edit `src/plating_data.py`: one entry per food item or drink (`add(...)` / `dadd(...)`), with the image prompt, build steps, garnish, side, serving temperature and note. Remove entries for dropped items.
+4. **Images** (free, via Google Flow; never use a paid generator without asking first):
+   - Sign in is saved as the `brandcanvastc` gflow profile (`gflow auth status`). Flow project id `5657dbf4-d0a4-414b-9fda-48d501728c40`.
+   - Crockery photos: `gflow image t2i "<prompt>" --model nano2 --aspect 4:3 -n 1 --project <id> -o <file>.png`, then resize to 800x600 JPEG into `img/crockery/<photoId>.jpg`. Style: catalogue studio shot on plain warm sand-beige paper, soft daylight from the left, no text.
+   - Plating photos: `gflow image i2i "<prompt>" --ref img/crockery/<vessel>.jpg ... -o <file>.png`, resize to 900x675 JPEG into `img/plating/<id>.jpg`. See `src/plating-image-jobs.tsv` for the prompt style (warm oak table for food, dark bar top for drinks).
+   - Regenerate an image only when the dish or vessel changed.
+5. **Rebuild the site.** `node src/build.mjs` (writes `index.html`, reports missing images). Check it in a browser at desktop and phone width.
+6. **Crockery checklist artifact (claude.ai).** Publish `src/crockery-source.html` to https://claude.ai/artifact/MkGM2HfkUPEgK7cZSjz5zv with its photos at `g/<photoId>.jpg` (copy `img/crockery/*.jpg` into a temp folder `g/`). It keeps the owner's ticks stored in the browser under key `dd-crockery-ticks-v2`, so keep item ids stable.
+7. **Push.** Commit and push this repo to `main`; GitHub Pages rebuilds at https://singhgenics.github.io/Menu/ . Verify the live page loads with no broken images.
+8. **Record it.** `node src/check-menu.mjs --update` so the hook goes quiet.
+9. Tell the owner what changed on each surface.
+
+## Files
+
+- `index.html`: generated, do not edit by hand.
+- `src/template.html`: page design and scripts.
+- `src/build.mjs`, `src/menu-data.mjs`: build and menu reader.
+- `src/crockery-source.html`: crockery data (also the source of the claude.ai checklist artifact).
+- `src/plating_data.py`: plating specs and image prompts.
+- `src/check-menu.mjs`, `src/menu.hash`: change detector used by the hook.

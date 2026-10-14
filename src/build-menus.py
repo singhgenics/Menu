@@ -33,20 +33,38 @@ def marks(m):
             'vn': '<i class="mk v"></i><i class="mk nv"></i>'}.get(m, '')
 def badge(b):
     return {'kol': ' <span class="badge kol">Cabin classic</span>', 'goa': ' <span class="badge goa">Konkan touch</span>'}.get(b, '')
-def item(sec, it):
+def has_vars(it):
+    n = it[0].partition('|')[0].lower()
+    return n in PL and bool(PL[n].get('vars')) and not LINE_IMGS.get(n)
+def item(sec, it, wide=False):
     if sec.get('drink'): n0, ing, how, p, b, h = it[:6]; m = ''
     else: n0, ing, how, p, m, b, h = it[:7]
     n, _, sub = n0.partition('|'); key = n.lower()
     ids = LINE_IMGS.get(key) or ([PL[key]['id']] if key in PL else [])
     if key in GROUP: ids = []
     pic = ''
-    if ids:
+    pv = PL[key].get('vars') if key in PL and not LINE_IMGS.get(key) else None
+    if pv:   # one photo per veg / non-veg option, each with its own label chip
+        pic = '<figure class="ph vars v%d">%s</figure>' % (len(pv), ''.join(
+            '<div class="tile"><img src="%s" alt="%s, %s, plated" loading="lazy"><span class="chip"><i class="mk %s"></i>%s</span></div>' % (
+                thumb(o['img']), esc(PL[key]['name']), esc(o['label']), o['mk'], esc(o['label'])) for o in pv))
+    elif ids:
         pic = '<figure class="ph%s">%s</figure>' % (' two' if len(ids) > 1 else '', ''.join('<img src="%s" alt="%s plated" loading="lazy">' % (thumb(i), esc(BYID[i]['name'])) for i in ids))
     heat = '<span class="heat" title="Spice %d of 3">%s</span>' % (h, '•' * h) if h else ''
     return ('<article class="mi%s">%s<div class="tx"><div class="rt"><div class="nm">%s%s%s%s</div><span class="pr">%s</span></div>%s'
             '<p class="ing"><b>In it</b>%s</p><p class="how"><b>How</b>%s</p></div></article>') % (
-        '' if pic else ' nopic', pic, marks(m), esc(n), badge(b), heat, esc(price(p)),
+        (' vn' if pv else ('' if pic else ' nopic')) + (' wide' if wide and not pv else ''), pic, marks(m), esc(n), badge(b), heat, esc(price(p)),
         '<div class="sb">%s</div>' % esc(sub) if sub else '', esc(ing), esc(how))
+def single_flags(items):
+    # an ordinary dish left alone between two full-width option rows would sit beside a blank cell: let it span the row
+    v = [has_vars(i) for i in items]; flags = [False] * len(items); i = 0
+    while i < len(items):
+        if v[i]: i += 1; continue
+        j = i
+        while j < len(items) and not v[j]: j += 1
+        if j - i == 1 and any(v): flags[i] = True
+        i = j
+    return flags
 def section(sec):
     strip = ''
     gids = []
@@ -57,7 +75,7 @@ def section(sec):
         strip = '<div class="strip">%s</div>' % ''.join(
             '<figure><img src="%s" alt="%s"><figcaption>%s<small>%s</small></figcaption></figure>' % (thumb(g), esc(BYID[g]['name']), esc(BYID[g]['name']), esc(BYID[g]['sub'])) for g in gids)
     return '<section class="sec%s" id="s-%s"><h2>%s</h2><p class="kick">%s</p>%s<div class="items">%s</div></section>' % (
-        ' sets' if sec.get('sets') else '', sec['id'], esc(sec['t'].lower()), esc(sec['k']), strip, ''.join(item(sec, i) for i in sec['items']))
+        ' sets' if sec.get('sets') else '', sec['id'], esc(sec['t'].lower()), esc(sec['k']), strip, ''.join(item(sec, i, w) for i, w in zip(sec['items'], single_flags(sec['items']))))
 CSS = open(os.path.join(HERE, 'menus.css')).read()
 def page(kind):
     secs = menu[kind]

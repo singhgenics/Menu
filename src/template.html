@@ -122,6 +122,11 @@ a{color:inherit}
 .card.flash{outline:2px solid var(--orange);outline-offset:2px}
 .card figure{margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--shade)}
 .card figure img{width:100%;height:100%;object-fit:cover}
+.card figure{position:relative}
+.vtabs{position:absolute;left:8px;right:8px;bottom:8px;display:flex;flex-wrap:wrap;gap:5px}
+.vtabs button{appearance:none;display:inline-flex;align-items:center;gap:5px;font:600 10.5px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;padding:6px 9px;border-radius:999px;border:1.5px solid rgba(42,36,32,.55);background:color-mix(in srgb,var(--paper) 92%,transparent);color:var(--ink);cursor:pointer;backdrop-filter:blur(4px)}
+.vtabs button .mk{margin:0}
+.vtabs button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .card .body{padding:13px 15px 15px;display:grid;gap:8px;align-content:start;min-width:0}
 .card h4{font:700 17px/1.25 var(--display)}
 .card .sub{font:italic 400 13px/1.3 var(--body);color:var(--muted)}
@@ -382,6 +387,9 @@ function renderMenu(){
     :'<span>Prices in ₹, taxes extra. Spirits are poured in 30 ml / 60 ml.</span><span>Happy hour 4–7 pm daily: 330 ml taps ₹179 · Kings 330 ml ₹99. The guest tap changes every couple of weeks.</span><span>Please drink responsibly. Alcohol is served only to guests aged 21 and over.</span>';
   $$('#menuTabs [data-kind]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kind===kind)));
 }
+document.addEventListener('click',e=>{const b=e.target.closest('[data-pv]');if(!b)return;const f=b.closest('figure'),img=f.querySelector('img');
+  img.src='img/plating/'+b.dataset.pv+'.jpg';img.alt=img.alt.split(',')[0]+', '+b.dataset.lbl+', plated';
+  f.querySelectorAll('[data-pv]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))});
 $('#menuTabs').addEventListener('click',e=>{const b=e.target.closest('[data-kind]');if(!b)return;kind=b.dataset.kind;renderMenu()});
 
 /* ---------- crockery */
@@ -418,7 +426,9 @@ let pfilter='all';
 const vesLink=d=>{const r=d.refs[0].replace('paddle3','paddle');return CBY[r]?`<a class="ves" href="#crockery" data-go="crockery:c-${r}" title="See in the crockery list">${esc(d.vessel)}</a>`:`<span class="ves">${esc(d.vessel)}</span>`};
 function pcard(d){
   const kv=[['Garnish',d.garnish],['With',d.side],['Serve',d.temp]].filter(r=>r[1]).map(r=>`<dt>${r[0]}</dt><dd>${esc(r[1])}</dd>`).join('');
-  return `<article class="card" id="p-${d.id}"><figure><img src="img/plating/${d.id}.jpg" alt="${esc(d.name)} plated" loading="lazy"></figure>
+  const v=d.vars, v0=v?v[0].img:d.id;
+  const tabs=v?`<div class="vtabs" role="group" aria-label="Choose the option">${v.map((o,i)=>`<button type="button" data-pv="${o.img}" data-lbl="${esc(o.label)}" aria-pressed="${i===0}"><i class="mk ${o.mk}"></i>${esc(o.label)}</button>`).join('')}</div>`:'';
+  return `<article class="card" id="p-${d.id}"><figure><img src="img/plating/${v0}.jpg" alt="${esc(d.name)}${v?', '+esc(v[0].label):''}, plated" loading="lazy">${tabs}</figure>
    <div class="body"><div><h4>${esc(d.name)}</h4><div class="sub">${esc(d.sub)}</div></div>${vesLink(d)}
    <ol class="build">${d.build.map(b=>`<li>${esc(b)}</li>`).join('')}</ol><dl class="kv">${kv}</dl><p class="note">${esc(d.note)}</p></div></article>`;}
 function renderPlating(){

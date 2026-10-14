@@ -190,6 +190,40 @@ dadd('coffee','Hot coffee','Brewed coffee','Black or with milk',['cup','milk'],'
  'a sand-glazed stoneware coffee cup and saucer of black coffee beside a small white milk jug and a lidded sugar pot on a dark wood table',
  ['Warm the cup.','Pour the filter coffee.','Bring milk and sugar on the side.'],'None','Hot','Teaspoon on the saucer.')
 
+# ---- drinks that had no photo of their own (images made by src/gen-variants.sh from src/plating-variant-jobs.py)
+dadd('gimme','Beer','Gimme Gimme Gimme','Guest tap, rotating',['pint'],'Pint glass',
+ 'a 500 ml pint glass of hazy amber-orange craft IPA with a thick white foam head',
+ ['Rinse the pint cold.','Pour at 45 degrees, straighten for the head.','Wipe the base.'],'None','Cold, 4–6 °C','Whatever is on the guest tap: ask the brewer for the pour and the abv. Rotates every couple of weeks.',gen=False)
+dadd('budweiser','Beer','Budweiser','American lager, bottle',['pint'],'Bottle with a pint glass',
+ 'a chilled lager bottle beside a pint glass of pale golden lager','Open at the table or pour at the bar.'.split('|'),'None','Ice cold, 2–4 °C','330 ml or 650 ml. Serve from the coldest fridge, with the pint glass on the side.',gen=False)
+dadd('maltflight','Whisky','Single malt flight','Paul John, Glenlivet 12, Talisker 10',['flight','nosing'],'Flight board with nosing glasses',
+ 'a wooden flight board with three nosing glasses of whisky',
+ ['Pour 20 ml of each into a nosing glass.','Set them in order, lightest to peatiest, left to right.','Add a small glass of water and the dish of chilli peanuts.'],'Chilli peanuts, water','Room temperature','Hand over the tasting notes card with the board.',gen=False)
+dadd('water','Zero proof','Water','Still 1 L, sparkling 330 ml',['water'],'Water bottle and tumbler',
+ 'a bottle of still water and a tumbler','Pour at the table.'.split('|'),'Lemon slice on request','Chilled','Always offered with the first order; bring an extra tumbler for the table.',gen=False)
+dadd('softdrinks','Zero proof','Soft drinks','Coke, Diet Coke, Thums Up, Sprite',['highball'],'Highball glass',
+ 'a tall glass of cola with ice and lime beside a bottle and a can','Fill the glass with ice.|Pour the soft drink down the side.|Add a lime wedge.'.split('|'),'Lime wedge','Ice cold','Open at the table so the fizz is part of the service.',gen=False)
+dadd('tonic','Zero proof','Tonic or ginger ale','Over ice with lime',['highball'],'Highball glass',
+ 'a tall highball of tonic over ice with lime','Fill with ice.|Pour tonic or ginger ale.|Add a lime wheel.'.split('|'),'Lime wheel','Ice cold','The same mixers we use in the cocktails, on their own.',gen=False)
+
+# ---- veg / non-veg options: one plating photo per option the menu offers.
+# (key, label, mark v|nv, image id). The first photo already existed under the dish id; the others were added with gen-variants.sh.
+VARS = {
+ 'hotsour':[('veg','Veg','v','hotsour'),('chicken','Chicken','nv','hotsour-chicken')],
+ 'tomkha':[('veg','Veg','v','tomkha'),('chicken','Chicken','nv','tomkha-chicken')],
+ 'cabinfever':[('paneer','Paneer','v','cabinfever-paneer'),('chicken','Chicken','nv','cabinfever'),('pork','Pork','nv','cabinfever-pork')],
+ 'honeytrap':[('potato','Potato','v','honeytrap'),('chicken','Chicken','nv','honeytrap-chicken')],
+ 'saltpepa':[('mushroom','Mushroom','v','saltpepa-mushroom'),('chonak','Chonak','nv','saltpepa-chonak'),('prawns','Prawns','nv','saltpepa')],
+ 'noodlearound':[('veg','Veg','v','noodlearound-veg'),('chicken','Chicken','nv','noodlearound-chicken'),('mixed','Mixed','nv','noodlearound')],
+ 'ricebaby':[('veg','Burnt garlic veg','v','ricebaby'),('chicken','Chicken','nv','ricebaby-chicken'),('mixed','Mixed','nv','ricebaby-mixed')],
+ 'manchurian':[('veg','Veg','v','manchurian'),('chicken','Chicken','nv','manchurian-chicken')],
+ 'greencurry':[('veg','Veg','v','greencurry'),('chicken','Chicken','nv','greencurry-chicken'),('prawn','Prawn','nv','greencurry-prawn')],
+ 'khaosuey':[('veg','Veg','v','khaosuey-veg'),('chicken','Chicken','nv','khaosuey-chicken')],
+}
+for x in F + D:
+    v = VARS.get(x['id'])
+    if v: x['vars'] = [dict(k=k, label=l, mk=m, img=i) for k, l, m, i in v]
+
 ALL = F + D
 if __name__ == '__main__':
     import sys

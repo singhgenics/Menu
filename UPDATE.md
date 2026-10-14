@@ -17,6 +17,7 @@ The menu source of truth is `food.html` and `drinks.html` in the Dream repo (`~/
    - Crockery photos: `gflow image t2i "<prompt>" --model nano2 --aspect 4:3 -n 1 --project <id> -o <file>.png`, then resize to 800x600 JPEG into `img/crockery/<photoId>.jpg`. Style: catalogue studio shot on plain warm sand-beige paper, soft daylight from the left, no text.
    - Plating photos: `gflow image i2i "<prompt>" --ref img/crockery/<vessel>.jpg ... -o <file>.png`, resize to 900x675 JPEG into `img/plating/<id>.jpg`. See `src/plating-image-jobs.tsv` for the prompt style (warm oak table for food, dark bar top for drinks).
    - Regenerate an image only when the dish or vessel changed.
+   - **Veg / non-veg options:** every option the menu offers has its own plating photo. `VARS` in `src/plating_data.py` lists the options per dish (label, veg/non-veg mark, image id); the plating cards show them as tabs and the photo menus as one photo per option. To add an option or a photo-less item, add its prompt to `src/plating-variant-jobs.py` and run `src/gen-variants.sh <id>` (free Flow images, same project, writes `img/plating/<id>.jpg`; it skips ids that exist, so delete a file to redo it).
 5. **Rebuild the site.** `node src/build.mjs` (writes `index.html`, reports missing images). Check it in a browser at desktop and phone width.
 6. **Crockery checklist artifact (claude.ai).** Publish `src/crockery-source.html` to https://claude.ai/artifact/MkGM2HfkUPEgK7cZSjz5zv with its photos at `g/<photoId>.jpg` (copy `img/crockery/*.jpg` into a temp folder `g/`). It keeps the owner's ticks stored in the browser under key `dd-crockery-ticks-v2`, so keep item ids stable.
 7. **Photo menus.** `python3 src/build-menus.py` rebuilds `food-menu.html` and `drinks-menu.html` (the guest menus with a plated photo beside each dish, text from the live Dream menu, photos from `img/plating`). A new dish needs a plating photo and, if its name differs from its plating card, an entry in `GROUP`/`LINE_IMGS` in the script. Print them to A3 PDF: `chrome --headless=new --no-pdf-header-footer --print-to-pdf=food-menu.pdf food-menu.html` (same for drinks).
@@ -32,4 +33,5 @@ The menu source of truth is `food.html` and `drinks.html` in the Dream repo (`~/
 - `src/crockery-source.html`: crockery data (also the source of the claude.ai checklist artifact).
 - `src/plating_data.py`: plating specs and image prompts.
 - `src/check-menu.mjs`, `src/menu.hash`: change detector used by the hook.
+- `src/plating-variant-jobs.py`, `src/gen-variants.sh`: prompts and runner for the option photos and the drinks that had none.
 - `src/build-menus.py`, `src/menus.css`: build the two photo menus; `food-menu.html`, `drinks-menu.html` (+ `.pdf`) are generated, do not edit by hand.

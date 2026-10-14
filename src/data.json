@@ -41,7 +41,21 @@
   "side": "Chilli vinegar from the caddy",
   "temp": "Piping hot, 75 °C",
   "note": "Chicken version: add the shredded chicken before the soup. Pepper goes on last so it stays sharp.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "veg",
+    "label": "Veg",
+    "mk": "v",
+    "img": "hotsour"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "hotsour-chicken"
+   }
+  ]
  },
  {
   "id": "tomkha",
@@ -63,7 +77,21 @@
   "side": "Lime wedge on the side plate",
   "temp": "Piping hot, 75 °C",
   "note": "Do not let coconut milk boil hard or it splits. Pull the lemongrass piece out before serving if guests object.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "veg",
+    "label": "Veg",
+    "mk": "v",
+    "img": "tomkha"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "tomkha-chicken"
+   }
+  ]
  },
  {
   "id": "cabinfever",
@@ -85,7 +113,27 @@
   "side": "Green chillies in vinegar in a dipping dish",
   "temp": "Hot from the wok",
   "note": "Pork version is braised belly, Tangra style, plated the same way. Sauce should cling, never pool.",
-  "gen": false
+  "gen": false,
+  "vars": [
+   {
+    "k": "paneer",
+    "label": "Paneer",
+    "mk": "v",
+    "img": "cabinfever-paneer"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "cabinfever"
+   },
+   {
+    "k": "pork",
+    "label": "Pork",
+    "mk": "nv",
+    "img": "cabinfever-pork"
+   }
+  ]
  },
  {
   "id": "honeytrap",
@@ -107,7 +155,21 @@
   "side": "Cocktail sticks at the bar",
   "temp": "Hot from the wok",
   "note": "A sticky glaze goes soft in a basket, so it stays on a plate. Send within a minute of glazing.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "potato",
+    "label": "Potato",
+    "mk": "v",
+    "img": "honeytrap"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "honeytrap-chicken"
+   }
+  ]
  },
  {
   "id": "saltpepa",
@@ -129,7 +191,27 @@
   "side": "Kasundi mayo in a dipping dish",
   "temp": "Hot, straight from the fryer",
   "note": "Chonak goes in as fillet fingers, mushrooms as halves. Paper takes up the oil, so replace it for every order.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "mushroom",
+    "label": "Mushroom",
+    "mk": "v",
+    "img": "saltpepa-mushroom"
+   },
+   {
+    "k": "chonak",
+    "label": "Chonak",
+    "mk": "nv",
+    "img": "saltpepa-chonak"
+   },
+   {
+    "k": "prawns",
+    "label": "Prawns",
+    "mk": "nv",
+    "img": "saltpepa"
+   }
+  ]
  },
  {
   "id": "crystal",
@@ -371,7 +453,27 @@
   "side": "Chilli vinegar from the caddy",
   "temp": "Hot from the wok",
   "note": "Mixed version adds egg, chicken and prawn. Noodles should be dry, not sauced.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "veg",
+    "label": "Veg",
+    "mk": "v",
+    "img": "noodlearound-veg"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "noodlearound-chicken"
+   },
+   {
+    "k": "mixed",
+    "label": "Mixed",
+    "mk": "nv",
+    "img": "noodlearound"
+   }
+  ]
  },
  {
   "id": "ricebaby",
@@ -393,7 +495,27 @@
   "side": "Serving spoon",
   "temp": "Hot from the wok",
   "note": "Day-old rice only. Garlic chips go on at the end so they stay crisp.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "veg",
+    "label": "Burnt garlic veg",
+    "mk": "v",
+    "img": "ricebaby"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "ricebaby-chicken"
+   },
+   {
+    "k": "mixed",
+    "label": "Mixed",
+    "mk": "nv",
+    "img": "ricebaby-mixed"
+   }
+  ]
  },
  {
   "id": "holybasil",
@@ -458,7 +580,21 @@
   "side": "Serve with Rice Rice Baby or jasmine rice",
   "temp": "Bubbling hot",
   "note": "Fry the balls just before you sauce them. They soften in minutes.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "veg",
+    "label": "Veg",
+    "mk": "v",
+    "img": "manchurian"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "manchurian-chicken"
+   }
+  ]
  },
  {
   "id": "greencurry",
@@ -481,7 +617,27 @@
   "side": "Plain Jane jasmine rice",
   "temp": "Bubbling hot",
   "note": "Pour a thin line of coconut cream on top just before it leaves the pass.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "veg",
+    "label": "Veg",
+    "mk": "v",
+    "img": "greencurry"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "greencurry-chicken"
+   },
+   {
+    "k": "prawn",
+    "label": "Prawn",
+    "mk": "nv",
+    "img": "greencurry-prawn"
+   }
+  ]
  },
  {
   "id": "khaosuey",
@@ -504,7 +660,21 @@
   "side": "Divided topping tray",
   "temp": "Hot",
   "note": "Guests build it themselves. Crispy noodles stay in the tray until they take them, so they never go soggy.",
-  "gen": true
+  "gen": true,
+  "vars": [
+   {
+    "k": "veg",
+    "label": "Veg",
+    "mk": "v",
+    "img": "khaosuey-veg"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "khaosuey-chicken"
+   }
+  ]
  },
  {
   "id": "darsaan",
@@ -1083,5 +1253,128 @@
   "temp": "Hot",
   "note": "Teaspoon on the saucer.",
   "gen": true
+ },
+ {
+  "id": "gimme",
+  "sec": "Beer",
+  "name": "Gimme Gimme Gimme",
+  "sub": "Guest tap, rotating",
+  "refs": [
+   "pint"
+  ],
+  "vessel": "Pint glass",
+  "prompt": "a 500 ml pint glass of hazy amber-orange craft IPA with a thick white foam head",
+  "build": [
+   "Rinse the pint cold.",
+   "Pour at 45 degrees, straighten for the head.",
+   "Wipe the base."
+  ],
+  "garnish": "None",
+  "side": "",
+  "temp": "Cold, 4–6 °C",
+  "note": "Whatever is on the guest tap: ask the brewer for the pour and the abv. Rotates every couple of weeks.",
+  "gen": false
+ },
+ {
+  "id": "budweiser",
+  "sec": "Beer",
+  "name": "Budweiser",
+  "sub": "American lager, bottle",
+  "refs": [
+   "pint"
+  ],
+  "vessel": "Bottle with a pint glass",
+  "prompt": "a chilled lager bottle beside a pint glass of pale golden lager",
+  "build": [
+   "Open at the table or pour at the bar."
+  ],
+  "garnish": "None",
+  "side": "",
+  "temp": "Ice cold, 2–4 °C",
+  "note": "330 ml or 650 ml. Serve from the coldest fridge, with the pint glass on the side.",
+  "gen": false
+ },
+ {
+  "id": "maltflight",
+  "sec": "Whisky",
+  "name": "Single malt flight",
+  "sub": "Paul John, Glenlivet 12, Talisker 10",
+  "refs": [
+   "flight",
+   "nosing"
+  ],
+  "vessel": "Flight board with nosing glasses",
+  "prompt": "a wooden flight board with three nosing glasses of whisky",
+  "build": [
+   "Pour 20 ml of each into a nosing glass.",
+   "Set them in order, lightest to peatiest, left to right.",
+   "Add a small glass of water and the dish of chilli peanuts."
+  ],
+  "garnish": "Chilli peanuts, water",
+  "side": "",
+  "temp": "Room temperature",
+  "note": "Hand over the tasting notes card with the board.",
+  "gen": false
+ },
+ {
+  "id": "water",
+  "sec": "Zero proof",
+  "name": "Water",
+  "sub": "Still 1 L, sparkling 330 ml",
+  "refs": [
+   "water"
+  ],
+  "vessel": "Water bottle and tumbler",
+  "prompt": "a bottle of still water and a tumbler",
+  "build": [
+   "Pour at the table."
+  ],
+  "garnish": "Lemon slice on request",
+  "side": "",
+  "temp": "Chilled",
+  "note": "Always offered with the first order; bring an extra tumbler for the table.",
+  "gen": false
+ },
+ {
+  "id": "softdrinks",
+  "sec": "Zero proof",
+  "name": "Soft drinks",
+  "sub": "Coke, Diet Coke, Thums Up, Sprite",
+  "refs": [
+   "highball"
+  ],
+  "vessel": "Highball glass",
+  "prompt": "a tall glass of cola with ice and lime beside a bottle and a can",
+  "build": [
+   "Fill the glass with ice.",
+   "Pour the soft drink down the side.",
+   "Add a lime wedge."
+  ],
+  "garnish": "Lime wedge",
+  "side": "",
+  "temp": "Ice cold",
+  "note": "Open at the table so the fizz is part of the service.",
+  "gen": false
+ },
+ {
+  "id": "tonic",
+  "sec": "Zero proof",
+  "name": "Tonic or ginger ale",
+  "sub": "Over ice with lime",
+  "refs": [
+   "highball"
+  ],
+  "vessel": "Highball glass",
+  "prompt": "a tall highball of tonic over ice with lime",
+  "build": [
+   "Fill with ice.",
+   "Pour tonic or ginger ale.",
+   "Add a lime wheel."
+  ],
+  "garnish": "Lime wheel",
+  "side": "",
+  "temp": "Ice cold",
+  "note": "The same mixers we use in the cocktails, on their own.",
+  "gen": false
  }
 ]

@@ -77,6 +77,7 @@ def section(sec):
     return '<section class="sec%s" id="s-%s"><h2>%s</h2><p class="kick">%s</p>%s<div class="items">%s</div></section>' % (
         ' sets' if sec.get('sets') else '', sec['id'], esc(sec['t'].lower()), esc(sec['k']), strip, ''.join(item(sec, i, w) for i, w in zip(sec['items'], single_flags(sec['items']))))
 CSS = open(os.path.join(HERE, 'menus.css')).read()
+BRAND = json.load(open(os.path.join(HERE, 'brand-snippets.json')))
 def page(kind):
     secs = menu[kind]
     food = kind == 'food'
@@ -92,11 +93,11 @@ def page(kind):
     other = 'drinks-menu.html' if food else 'food-menu.html'
     n = sum(len(s['items']) for s in secs)
     return ('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
-      '<title>Dumplings &amp; Draught · %s menu with photos</title><meta name="theme-color" content="#efe3d0">'
+      '<title>dimo · %s menu with photos</title><meta name="theme-color" content="#F3E9D2">'
       '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-      '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Yellowtail&display=swap">'
+      '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Fredoka:wght@400;500;600&display=swap">'
       '<style>%s</style></head><body><div class="wrap"><header class="hd"><p class="eyebrow">Betalbatim · a short walk from the Arabian Sea · working name</p>'
-      '<h1>dumplings &amp; draught</h1><p class="tag">%s</p><p class="lede">%s</p>'
+      '<h1>' + BRAND['wordmark'] + '</h1>' + BRAND['signs'] + '<p class="tag">%s</p><p class="lede">%s</p>'
       '<nav class="sw" aria-label="Menus"><a href="food-menu.html"%s>Food</a><a href="drinks-menu.html"%s>Drinks</a></nav></header>'
       '<div class="legend">%s</div><nav class="jump">%s</nav><main>%s</main><footer class="mf">%s</footer></div></body></html>') % (
       title, CSS, tag, lede, ' aria-current="page"' if food else '', '' if food else ' aria-current="page"', legend,

@@ -26,6 +26,16 @@ The menu source of truth is `food.html` and `drinks.html` in the Dream repo (`~/
 9. **Record it.** `node src/check-menu.mjs --update` so the hook goes quiet.
 10. Tell the owner what changed on each surface.
 
+## Furnishings (the fourth view)
+
+The furnishings schedule follows the **Simplex room** (`~/Documents/Code/Dream/Simplex`: 4.9 × 8.8 m, 18 covers inside + 8 in the garden), not the menu. When the Simplex layout or the 3D model changes (tables, bar, lights, AC), update it:
+
+1. Edit `src/furnishings_data.py`: one tuple per line in each `grp(...)` (code, name, size, material, qty, unit, low and high unit price in INR, phase 1 or 2, where, note, image id). Prices are planning ranges, not quotes. Codes (S1, T1, B1, L1, C1, ...) are what the two plans use.
+2. Edit `src/furnishing_plans.py` if a piece moves: it draws `img/furnishings/furniture-plan.svg` and `ceiling-plan.svg` from the same x/z coordinates as the Simplex model (x from the right wall -2.45 to the left wall +2.45, z from the shopfront 0 to the back wall 8.8) and prints the fan clearance checks.
+3. Images (free, Google Flow, same project as the rest): prompts are in `src/furnishing-jobs.py`; run `src/gen-furnishings.sh [id...]` (runs one at a time, because the gflow profile allows one process; it skips ids that exist, so delete a `img/furnishings/<id>.jpg` to redo it). Room shots use screenshots of the Simplex 3D model in `src/furnishing-refs/` as the layout reference.
+4. `node src/build.mjs` regenerates `furnishings.json`, both plans and `index.html`; it reports missing images.
+5. Commit and push as usual.
+
 ## Files
 
 - `index.html`: generated, do not edit by hand.

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>dimo · Menu, crockery and plating</title>
-<meta name="description" content="The full dimo package for Betalbatim: food and drinks menu, crockery and glassware list, and a plating guide for every dish and drink.">
+<meta name="description" content="The full dimo package for Betalbatim: food and drinks menu, crockery and glassware list, a plating guide for every dish and drink, and the furnishings schedule for the room.">
 <meta property="og:title" content="dimo · dim sum, bao, draught">
 <meta property="og:description" content="Menu, crockery and plating for a Pan-Asian dim sum and craft-beer pub in Betalbatim, Goa.">
 <meta property="og:image" content="img/plating/crystal.jpg">
@@ -179,6 +179,37 @@ td.why{color:var(--muted)}
 .setting ol{margin:0;padding-left:20px;display:grid;gap:7px}
 .setting li b{font-family:var(--display)}
 
+
+/* ---------- furnishings */
+.fhero{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:14px}
+.fhero figure{margin:0;border:2px solid var(--ink);border-radius:12px;overflow:hidden;position:relative;background:var(--shade)}
+.fhero figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.fhero .stack{display:grid;gap:14px}
+.fhero figcaption,.fstrip figcaption{position:absolute;left:8px;bottom:8px;font:600 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:6px 9px;border-radius:999px}
+@media (max-width:760px){.fhero{grid-template-columns:1fr}.fhero .stack{grid-template-columns:1fr 1fr}}
+.fnav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.fnav::-webkit-scrollbar{display:none}.fnav .btn{flex:none}
+.fstrip{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;margin-bottom:16px}
+.fstrip figure{margin:0;position:relative;border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--shade)}
+.fstrip img{width:100%;aspect-ratio:4/3;object-fit:cover}.fstrip img[src$='materials.jpg']{aspect-ratio:1000/520}
+.fplan{display:grid;gap:12px}
+.fplan img{width:100%;height:auto;border:1.5px solid var(--ink);border-radius:10px;background:#FBF7EF;max-height:none}
+.fplan .open{font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{display:grid;gap:5px;width:104px}.sw i{display:block;height:56px;border-radius:8px;border:1.5px solid var(--ink)}.sw b{font:600 11px/1.2 var(--mono)}.sw span{font-size:11.5px;color:var(--muted);line-height:1.3}
+table.ft{min-width:900px}
+table.ft td.cd{font:700 12px/1.3 var(--mono);color:var(--orange);white-space:nowrap}
+table.ft td.nm{font:700 14px/1.3 var(--display);min-width:170px}
+table.ft td.nm small{display:block;font:500 11.5px/1.4 var(--mono);color:var(--olive);margin-top:3px}
+table.ft td.pr{font:600 12.5px/1.3 var(--mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+table.ft td.pr small{display:block;color:var(--muted);font-weight:500}
+table.ft .ph{display:inline-block;font:600 9.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:3px 5px;border-radius:4px;color:var(--paper);background:var(--olive);margin-top:5px}
+table.ft .ph.p2{background:var(--muted)}
+table.ft td.nt{color:var(--muted);font-size:12.5px;min-width:200px}
+table.ft tr.sum td{font:700 13px/1.2 var(--mono);border-top:2px solid var(--ink);background:var(--shade)}
+.facts2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+.fk{padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px;display:grid;gap:4px;align-content:start}
+.fk b{font:700 15px/1.3 var(--display)}.fk span{font-size:13.5px;color:var(--muted)}.fk em{font:600 12px/1.3 var(--mono);font-style:normal;color:var(--orange)}
+
 footer.site{border-top:2px solid var(--ink);padding-block:22px 40px;display:grid;gap:8px;font-size:12px;color:var(--muted)}
 footer.site b{color:var(--ink)}
 </style>
@@ -192,6 +223,7 @@ footer.site b{color:var(--ink)}
       <a href="#menu" data-tab="menu">Menu</a>
       <a href="#crockery" data-tab="crockery">Crockery</a>
       <a href="#plating" data-tab="plating">Plating</a>
+      <a href="#furnishings" data-tab="furnishings">Furnishings</a>
     </nav>
   </div>
 </header>
@@ -201,7 +233,7 @@ footer.site b{color:var(--ink)}
   <h1><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="dimo" viewBox="-10 -191.7 459 252"><g><path transform="translate(0.00 0) scale(0.20000 -0.20000)" d="M255 -8Q210 -8 168.5 11.5Q127 31 95 66Q63 101 44.5 146.5Q26 192 26 243Q26 292 44.5 336.5Q63 381 95.5 415.5Q128 450 169 470Q210 490 255 490Q303 490 340 471Q360 460 377 444V642Q377 661 379.5 678.5Q382 696 397 707Q412 718 449 718Q486 718 501.5 707.5Q517 697 520.5 680Q524 663 524 643V67Q524 48 520.5 30.5Q517 13 501.5 2Q486 -9 450 -9Q416 -9 399 2Q382 13 377 36V38Q361 23 341 12Q305 -8 255 -8ZM275 140Q302 140 323.5 153.5Q345 167 358.5 190Q372 213 372 241Q372 270 359 292.5Q346 315 324 328Q302 341 274 341Q247 341 224.5 328Q202 315 189.5 292.5Q177 270 177 241Q177 213 190 190Q203 167 226 153.5Q249 140 275 140Z" fill="currentColor"/><path transform="translate(115.80 0) scale(0.20000 -0.20000)" d="M111.8 -9.5Q75.5 -9.5 59.6 1.4Q43.8 12.2 40.5 29.6Q37.2 47 37.2 66.2V415.2Q37.2 434.5 40.9 451.5Q44.5 468.5 60.4 479.2Q76.2 490 112.8 490Q149.2 490 164.6 479.1Q180 468.2 183.6 450.9Q187.2 433.5 187.2 413.2V65.2Q187.2 46 183.6 28.6Q180 11.2 164.5 0.9Q149 -9.5 111.8 -9.5Z" fill="currentColor"/><path transform="translate(163.60 0) scale(0.20000 -0.20000)" d="M114 -9Q78 -9 62 2Q46 13 43 30Q40 47 40 67V417Q40 437 43.5 453.5Q47 470 63 480.5Q79 491 116 491Q153 491 170 476Q185 463 187 435Q196 447 212 460Q228 473 249.5 482.5Q271 492 296 492Q329 492 355.5 482.5Q382 473 403.5 454.5Q425 436 441 408Q455 428 475 447Q495 466 522.5 479Q550 492 584 492Q642 492 682.5 462.5Q723 433 744 378Q765 323 765 245V66Q765 47 761.5 29.5Q758 12 742 1.5Q726 -9 689 -9Q652 -9 636.5 2Q621 13 617.5 30.5Q614 48 614 67V246Q614 277 607 298Q600 319 585.5 330.5Q571 342 549 342Q526 342 510 331.5Q494 321 486 299.5Q478 278 478 245V66Q478 46 473 28.5Q468 11 451.5 0.5Q435 -10 399 -9Q363 -8 348 3Q333 14 330 31.5Q327 49 327 67V246Q327 277 320 298.5Q313 320 299 331Q285 342 262 342Q237 342 221 329Q205 316 197.5 294.5Q190 273 190 246V66Q190 46 186.5 29Q183 12 167 1.5Q151 -9 114 -9Z" fill="currentColor"/><path transform="translate(327.00 0) scale(0.20000 -0.20000)" d="M280.8 -17.2Q233.8 -17.2 187.5 1.4Q141.2 20 103.2 54.1Q65.2 88.2 42.9 135.6Q20.5 183 20.5 240.5Q20.5 294.5 40.9 341.4Q61.2 388.2 97 424Q132.8 459.8 179.2 480.1Q225.8 500.5 278.8 500.5Q351 500.5 409.5 466Q468 431.5 503 372.9Q538 314.2 538 241.5Q538 181.2 515.4 133.5Q492.8 85.8 455.4 52Q418 18.2 372.4 0.5Q326.8 -17.2 280.8 -17.2ZM278.8 133.5Q302.8 133.5 327.8 145.5Q352.8 157.5 369.8 181.9Q386.8 206.2 386.8 242.8Q386.8 275 372.9 299Q359 323 334.4 336.4Q309.8 349.8 277.8 349.8Q248.2 349.8 224.4 335.8Q200.5 321.8 186.1 297.4Q171.8 273 171.8 241.8Q171.8 205.8 188.4 181.5Q205 157.2 229.8 145.4Q254.5 133.5 278.8 133.5Z" fill="currentColor"/><g transform="translate(108.33 -173.81) scale(0.6334)"><path d="M6 62 C6 40 24 24 50 24 C76 24 94 40 94 62 C94 74 82 80 50 80 C18 80 6 74 6 62 Z" fill="currentColor"/><circle cx="50" cy="23" r="7.5" fill="currentColor"/><path d="M50 28 Q35.0 38.0 20 52" fill="none" class="pl" stroke-width="3.6" stroke-linecap="round"/><path d="M50 28 Q42.5 44.0 35 64" fill="none" class="pl" stroke-width="3.6" stroke-linecap="round"/><path d="M50 28 Q57.5 44.0 65 64" fill="none" class="pl" stroke-width="3.6" stroke-linecap="round"/><path d="M50 28 Q65.0 38.0 80 52" fill="none" class="pl" stroke-width="3.6" stroke-linecap="round"/><path d="M40 8 C34 3 46 -3 40 -9" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M58 8 C52 3 64 -3 58 -9" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></g></g></svg></h1><div class="dsigns"><svg role="img" aria-label="Dim Sum" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -8 308 138"><title>DIM SUM</title><g transform="translate(0 0)"><rect x="0" y="0" width="300" height="124" rx="14" fill="#F3E9D2"/><rect x="7" y="7" width="286" height="110" rx="8" fill="none" stroke="#D9531E" stroke-width="2.2" opacity=".95"/><circle cx="66.0" cy="9" r="3.6" fill="#B58A3C"/><circle cx="234.0" cy="9" r="3.6" fill="#B58A3C"/><circle cx="16" cy="108" r="3.2" fill="#B58A3C"/><circle cx="284" cy="108" r="3.2" fill="#B58A3C"/><g fill="#D9531E"><path transform="translate(24.27 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H562Q752 1760 848 1654.5Q944 1549 944 1346V522Q944 272 856.5 136Q769 0 550 0ZM432 311H493Q590 311 590 405V1313Q590 1401 566.5 1426.5Q543 1452 471 1452H432Z"/><path transform="translate(61.29 85.75) scale(0.03391 -0.03391)" d="M62 0V1760H402V0Z"/><path transform="translate(79.80 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H614L762 687L909 1760H1450V0H1128V1268L926 0H610L396 1268V0Z"/><path transform="translate(153.44 85.75) scale(0.03391 -0.03391)" d="M496 -16Q255 -16 148.5 104Q42 224 42 486V658H390V438Q390 377 408.5 342.5Q427 308 473 308Q521 308 539.5 336Q558 364 558 428Q558 509 542 563.5Q526 618 486.5 667.5Q447 717 377 783L219 933Q42 1100 42 1315Q42 1540 146.5 1658Q251 1776 449 1776Q691 1776 792.5 1647Q894 1518 894 1255H536V1376Q536 1412 515.5 1432Q495 1452 460 1452Q418 1452 398.5 1428.5Q379 1405 379 1368Q379 1331 399 1288Q419 1245 478 1189L681 994Q742 936 793 871.5Q844 807 875 721.5Q906 636 906 513Q906 265 814.5 124.5Q723 -16 496 -16Z"/><path transform="translate(188.26 85.75) scale(0.03391 -0.03391)" d="M485 -16Q265 -16 161 107.5Q57 231 57 471V1760H399V485Q399 441 404 400.5Q409 360 427 334Q445 308 485 308Q526 308 544 333.5Q562 359 566.5 400Q571 441 571 485V1760H913V471Q913 231 809 107.5Q705 -16 485 -16Z"/><path transform="translate(223.92 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H614L762 687L909 1760H1450V0H1128V1268L926 0H610L396 1268V0Z"/></g></g></svg><svg role="img" aria-label="Cabin" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -8 308 138"><title>CABIN</title><g transform="translate(0 0)"><rect x="0" y="0" width="300" height="124" rx="14" fill="#D6402A"/><rect x="7" y="7" width="286" height="110" rx="8" fill="none" stroke="#F3E9D2" stroke-width="2.2" opacity=".95"/><circle cx="66.0" cy="9" r="3.6" fill="#B58A3C"/><circle cx="234.0" cy="9" r="3.6" fill="#B58A3C"/><circle cx="16" cy="108" r="3.2" fill="#B58A3C"/><circle cx="284" cy="108" r="3.2" fill="#B58A3C"/><g fill="#F3E9D2"><path transform="translate(69.36 85.75) scale(0.03391 -0.03391)" d="M488 -16Q297 -16 180.5 103Q64 222 64 436V1248Q64 1504 165.5 1640Q267 1776 496 1776Q621 1776 718.5 1730Q816 1684 872 1592.5Q928 1501 928 1362V1058H578V1318Q578 1397 558 1424.5Q538 1452 496 1452Q447 1452 430 1416.5Q413 1381 413 1322V441Q413 368 434.5 338Q456 308 496 308Q541 308 559.5 345Q578 382 578 441V758H932V425Q932 193 815 88.5Q698 -16 488 -16Z"/><path transform="translate(105.06 85.75) scale(0.03391 -0.03391)" d="M30 0 200 1760H797L964 0H631L606 284H394L372 0ZM419 565H579L502 1460H486Z"/><path transform="translate(141.54 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H555Q747 1760 834.5 1666.5Q922 1573 922 1358V1281Q922 1157 877.5 1080Q833 1003 742 979Q861 949 901.5 838.5Q942 728 942 569Q942 398 910 270Q878 142 794 71Q710 0 555 0ZM422 1097H494Q543 1097 557 1135Q571 1173 571 1226V1403Q571 1488 496 1488H422ZM457 310Q594 310 594 440V660Q594 735 571.5 778.5Q549 822 487 822H422V312Q444 310 457 310Z"/><path transform="translate(177.55 85.75) scale(0.03391 -0.03391)" d="M62 0V1760H402V0Z"/><path transform="translate(196.06 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H440L602 917V1760H942V0H598L422 880V0Z"/></g></g></svg><svg role="img" aria-label="Seoul" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -8 308 138"><title>SEOUL</title><g transform="translate(0 0)"><rect x="0" y="0" width="300" height="124" rx="14" fill="#9E2A1D"/><rect x="7" y="7" width="286" height="110" rx="8" fill="none" stroke="#F3E9D2" stroke-width="2.2" opacity=".95"/><circle cx="66.0" cy="9" r="3.6" fill="#B58A3C"/><circle cx="234.0" cy="9" r="3.6" fill="#B58A3C"/><circle cx="16" cy="108" r="3.2" fill="#B58A3C"/><circle cx="284" cy="108" r="3.2" fill="#B58A3C"/><g fill="#F3E9D2"><path transform="translate(67.00 85.75) scale(0.03391 -0.03391)" d="M496 -16Q255 -16 148.5 104Q42 224 42 486V658H390V438Q390 377 408.5 342.5Q427 308 473 308Q521 308 539.5 336Q558 364 558 428Q558 509 542 563.5Q526 618 486.5 667.5Q447 717 377 783L219 933Q42 1100 42 1315Q42 1540 146.5 1658Q251 1776 449 1776Q691 1776 792.5 1647Q894 1518 894 1255H536V1376Q536 1412 515.5 1432Q495 1452 460 1452Q418 1452 398.5 1428.5Q379 1405 379 1368Q379 1331 399 1288Q419 1245 478 1189L681 994Q742 936 793 871.5Q844 807 875 721.5Q906 636 906 513Q906 265 814.5 124.5Q723 -16 496 -16Z"/><path transform="translate(101.82 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H782V1420H436V1077H768V746H436V343H805V0Z"/><path transform="translate(133.18 85.75) scale(0.03391 -0.03391)" d="M498 -16Q287 -16 175.5 111.5Q64 239 64 480V1316Q64 1542 174.5 1659Q285 1776 498 1776Q711 1776 821.5 1659Q932 1542 932 1316V480Q932 239 820.5 111.5Q709 -16 498 -16ZM501 308Q581 308 581 463V1322Q581 1452 503 1452Q415 1452 415 1319V461Q415 379 435 343.5Q455 308 501 308Z"/><path transform="translate(169.73 85.75) scale(0.03391 -0.03391)" d="M485 -16Q265 -16 161 107.5Q57 231 57 471V1760H399V485Q399 441 404 400.5Q409 360 427 334Q445 308 485 308Q526 308 544 333.5Q562 359 566.5 400Q571 441 571 485V1760H913V471Q913 231 809 107.5Q705 -16 485 -16Z"/><path transform="translate(205.40 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H430V300H792V0Z"/></g></g></svg><svg role="img" aria-label="Draught" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -8 308 138"><title>DRAUGHT</title><g transform="translate(0 0)"><rect x="0" y="0" width="300" height="124" rx="14" fill="#2F7A5B"/><rect x="7" y="7" width="286" height="110" rx="8" fill="none" stroke="#F3E9D2" stroke-width="2.2" opacity=".95"/><circle cx="66.0" cy="9" r="3.6" fill="#B58A3C"/><circle cx="234.0" cy="9" r="3.6" fill="#B58A3C"/><circle cx="16" cy="108" r="3.2" fill="#B58A3C"/><circle cx="284" cy="108" r="3.2" fill="#B58A3C"/><g fill="#F3E9D2"><path transform="translate(26.81 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H562Q752 1760 848 1654.5Q944 1549 944 1346V522Q944 272 856.5 136Q769 0 550 0ZM432 311H493Q590 311 590 405V1313Q590 1401 566.5 1426.5Q543 1452 471 1452H432Z"/><path transform="translate(63.83 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H618Q753 1760 822 1698.5Q891 1637 914.5 1526.5Q938 1416 938 1267Q938 1123 901.5 1037Q865 951 764 918Q847 901 880.5 835.5Q914 770 914 666V0H567V689Q567 766 535.5 784.5Q504 803 434 803V0ZM436 1108H521Q594 1108 594 1267Q594 1370 578 1402Q562 1434 518 1434H436Z"/><path transform="translate(99.70 85.75) scale(0.03391 -0.03391)" d="M30 0 200 1760H797L964 0H631L606 284H394L372 0ZM419 565H579L502 1460H486Z"/><path transform="translate(136.18 85.75) scale(0.03391 -0.03391)" d="M485 -16Q265 -16 161 107.5Q57 231 57 471V1760H399V485Q399 441 404 400.5Q409 360 427 334Q445 308 485 308Q526 308 544 333.5Q562 359 566.5 400Q571 441 571 485V1760H913V471Q913 231 809 107.5Q705 -16 485 -16Z"/><path transform="translate(171.85 85.75) scale(0.03391 -0.03391)" d="M441 -16Q64 -16 64 524V1283Q64 1776 496 1776Q674 1776 769 1704.5Q864 1633 900 1496Q936 1359 936 1162H592V1318Q592 1375 576.5 1413.5Q561 1452 512 1452Q451 1452 431.5 1411Q412 1370 412 1321V468Q412 397 430.5 352.5Q449 308 503 308Q559 308 577.5 352.5Q596 397 596 470V721H502V1025H932V0H791L731 148Q639 -16 441 -16Z"/><path transform="translate(208.30 85.75) scale(0.03391 -0.03391)" d="M78 0V1760H428V1131H594V1760H944V0H594V798H428V0Z"/><path transform="translate(245.73 85.75) scale(0.03391 -0.03391)" d="M229 0V1422H20V1760H790V1422H581V0Z"/></g></g></svg></div>
   <p class="tag">Pan-Asian, pub-style: dim sum, bao, Thai curries and cold craft beer</p>
   <div class="arches" id="arches" aria-hidden="true"></div>
-  <p class="lede">Indo-Chinese the way the old cabins of the City of Joy cook it, hand-folded dim sum, a short run from Seoul to Bangkok, and three craft taps from up the coast. This page holds the whole package: what we serve, what we serve it in, and how every plate and glass leaves the pass.</p>
+  <p class="lede">Indo-Chinese the way the old cabins of the City of Joy cook it, hand-folded dim sum, a short run from Seoul to Bangkok, and three craft taps from up the coast. This page holds the whole package: what we serve, what we serve it in, how every plate and glass leaves the pass, and how the room is furnished.</p>
   <div class="facts" id="facts"></div>
 </section>
 
@@ -315,11 +347,28 @@ footer.site b{color:var(--ink)}
   <div id="plist"></div>
 </div>
 
+
+<!-- ================================================= FURNISHINGS -->
+<div class="view" id="v-furnishings" hidden>
+  <div class="view-head">
+    <p class="eyebrow">What it sits on, hangs from and blows through</p>
+    <h2>furnishings</h2>
+    <p class="muted" id="fLede"></p>
+  </div>
+  <div class="fhero" id="fHero"></div>
+  <div class="sticky-sub"><div class="sub-tabs fnav" id="fnav"></div></div>
+  <section id="f-look" aria-labelledby="h-look"></section>
+  <section id="f-plans" aria-labelledby="h-plans"></section>
+  <div id="fgroups"></div>
+  <section id="f-budget" aria-labelledby="h-budget"></section>
+  <section id="f-checks" aria-labelledby="h-checks"></section>
+</div>
+
 </main>
 
 <footer class="site"><div class="wrap">
   <p><b>dimo</b> is a working name. Betalbatim, Goa. Prices in ₹, taxes extra. Alcohol is served only to guests aged 21 and over; please drink responsibly.</p>
-  <p>Menu, crockery list and plating guide for the fit-out and opening. Dish, crockery and plating images were generated with Google Flow as visual targets and show the style, not a specific supplier's product.</p>
+  <p>Menu, crockery list, plating guide and furnishings schedule for the fit-out and opening. Dish, crockery, plating and room images were generated with Google Flow as visual targets and show the style, not a specific supplier's product. Furnishing prices are planning ranges, not quotes.</p>
 </div></footer>
 
 <script>
@@ -340,12 +389,12 @@ const nDish=DATA.food.reduce((n,s)=>n+s.items.length,0), nDrink=DATA.drinks.redu
 $('#facts').innerHTML=[[nDish,'menu lines'],[nDrink,'drinks'],[DATA.crock.items.filter(i=>i[6]>0).length,'pieces of serveware'],[DATA.plating.length,'plating cards']].map(([n,t])=>`<span><b>${n}</b>${t}</span>`).join('');
 
 /* ---------- tabs / routing */
-const TABS=['menu','crockery','plating'];
+const TABS=['menu','crockery','plating','furnishings'];
 function setTab(t,instant){
   if(!TABS.includes(t))t='menu';
   TABS.forEach(x=>{$('#v-'+x).hidden=x!==t});
   $$('.tabs a').forEach(a=>{if(a.dataset.tab===t)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-  document.title=({menu:'Menu',crockery:'Crockery',plating:'Plating'})[t]+' · dimo';
+  document.title=({menu:'Menu',crockery:'Crockery',plating:'Plating',furnishings:'Furnishings'})[t]+' · dimo';
 }
 function go(tab,id){
   setTab(tab);
@@ -443,7 +492,48 @@ $('#pnav').addEventListener('click',e=>{
   const b=e.target.closest('[data-pf]');if(b){pfilter=b.dataset.pf;renderPlating();return}
   const a=e.target.closest('[data-jumpsec]');if(a){e.preventDefault();document.getElementById(a.dataset.jumpsec).scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}});
 
-renderMenu();renderCmap();renderCrock();renderPlating();
+
+/* ---------- furnishings */
+const FU=DATA.furn;
+const rs=n=>'₹'+Math.round(n).toLocaleString('en-IN'), lk=n=>(n/1e5).toFixed(1);
+const FIMG=(id,cap)=>`<figure><img src="img/furnishings/${id}.jpg" alt="${esc(cap)}" loading="lazy"><figcaption>${esc(cap)}</figcaption></figure>`;
+const PAL=[['#A9533A','Brick','burnt-red slips'],['#2B2B2B','Floor black','porcelain checker'],['#E9E4D8','Floor white','porcelain checker'],['#C69C6D','Acacia','plank tops'],['#2F7A5B','Emerald','back-bar mosaic'],['#D9531E','dimo orange','enamel, neon, seat pads'],['#B8862A','Brass','rail, gantry, lanterns'],['#D8C3A0','Sand velvet','bar stools'],['#B98A58','Jute','pendants'],['#CFD7B2','Olive','back bar, server station'],['#1B1714','Black steel','trestles, mesh, rods']];
+function renderFurn(){
+  const nL=FU.groups.reduce((n,g)=>n+g.items.length,0);
+  $('#fLede').textContent=`The furniture, fittings, lights, fans and finishes for the Simplex room (4.9 × 8.8 m, 18 covers inside + 8 in the garden), taken from the 3D model and written as ${nL} buy-able lines with sizes, materials, quantities, positions and planning prices. Each line has a code that appears on the two plans.`;
+  $('#fHero').innerHTML=`${FIMG('hero-room','The room from the door')}<div class="stack">${FIMG('hero-bar','The bar')}${FIMG('hero-garden','The beer garden')}</div>`;
+  $('#fnav').innerHTML=[['f-look','Look'],['f-plans','Plans'],...FU.groups.map(g=>['fg-'+g.id,g.title.split(' ')[0].replace(',','')]),['f-budget','Budget'],['f-checks','Checks']].map(([id,t])=>`<a class="btn" href="#furnishings" data-fj="${id}">${esc(t)}</a>`).join('');
+  $('#f-look').innerHTML=`<h3 id="h-look" class="script" style="font-size:40px;margin-bottom:6px">the look in one line</h3>
+   <p style="margin-bottom:16px">A Hong Kong tea-house in a Goan taverna: red brick, a black-and-white checker floor, cane, brass and warm 2200 K filament light, with one emerald wall and one glowing bar. Every piece is wipe-clean, salt-proof and sized for a 4.9 m wide room.</p>
+   <div class="fstrip"><figure><img src="img/furnishings/materials.jpg" alt="Material board" loading="lazy"><figcaption>Material board</figcaption></figure><div class="swatches" style="align-content:start">${PAL.map(([c,n,u])=>`<div class="sw"><i style="background:${c}"></i><b>${n}</b><span>${u}</span></div>`).join('')}</div></div>`;
+  $('#f-plans').innerHTML=`<h3 id="h-plans" class="script" style="font-size:40px;margin-bottom:6px">two plans</h3>
+   <div class="sub-tabs" id="fpt" style="margin-bottom:10px"><button class="btn" type="button" data-fp="furniture" aria-pressed="true">Furniture &amp; finishes</button><button class="btn" type="button" data-fp="ceiling" aria-pressed="false">Ceiling: lights, fans, ACs</button></div>
+   <div class="fplan"><img id="fpimg" src="img/furnishings/furniture-plan.svg" alt="Furniture and finishes plan with item codes"><a class="open" id="fpopen" href="img/furnishings/furniture-plan.svg" target="_blank" rel="noopener">Open full size</a></div>`;
+  $('#fgroups').innerHTML=FU.groups.map(g=>{
+    const imgs=[...new Set(g.items.map(i=>i.img).filter(Boolean))];
+    const cap=id=>{const it=g.items.find(i=>i.img===id);return it.name};
+    const rows=g.items.map(i=>`<tr id="fi-${i.code}"><td class="cd">${i.code}</td><td class="nm">${esc(i.name)}<small>${esc(i.size)}</small><span class="ph${i.phase===2?' p2':''}">${i.phase===2?'Phase 2':'To open'}</span></td><td>${esc(i.mat)}</td><td class="pr">${i.qty} <small>${esc(i.unit)}</small></td><td>${esc(i.where)}</td><td class="pr">${i.unit==='lot'?'lot price':rs(i.lo)+'–'+rs(i.hi)}${i.unit==='lot'?'':'<small>each</small>'}</td><td class="pr">${rs(i.tlo)}<small>to ${rs(i.thi)}</small></td><td class="nt">${esc(i.note||'')}</td></tr>`).join('');
+    const extra=g.id==='lighting'?`<div class="facts2" style="margin:6px 0 18px">${FU.lux.map(([a,b,c])=>`<div class="fk"><b>${esc(a)}</b><em>${esc(b)}</em><span>${esc(c)}</span></div>`).join('')}</div>
+      <div class="mapwrap" style="margin-bottom:16px"><table style="min-width:640px"><thead><tr><th>Scene</th><th>When</th><th>Pendants</th><th>Bar</th><th>Neon</th><th>Gallery + lanterns</th><th>Garden</th></tr></thead><tbody>${FU.scenes.map(r=>`<tr>${r.map((c,k)=>`<td${k===0?' class="dish"':''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+      <div class="mapwrap" style="margin-bottom:16px"><table style="min-width:640px"><thead><tr><th>Circuit</th><th>What it feeds</th><th>Control</th><th>Range</th></tr></thead><tbody>${FU.circuits.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+      <p class="note" style="margin-bottom:18px">Connected lighting load is about <b>${FU.wattTotal} W</b> (${FU.watts.map(([a,b])=>a+' '+b+' W').join(' · ')}). All of it is on the power backup.</p>`:'';
+    return `<section id="fg-${g.id}"><div class="grp-h"><h3>${esc(g.title.toLowerCase())}</h3><span>${g.items.length} lines · ${rs(g.tlo)} to ${rs(g.thi)}</span></div><p class="muted" style="margin-bottom:14px">${esc(g.sub)}</p>
+     ${imgs.length?`<div class="fstrip">${imgs.map(id=>FIMG(id,cap(id))).join('')}</div>`:''}${extra}
+     <div class="mapwrap"><table class="ft"><thead><tr><th>Code</th><th>Item</th><th>Material &amp; finish</th><th>Qty</th><th>Where</th><th>Planning price</th><th>Line total</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div></section>`}).join('');
+  const T=FU.total;
+  $('#f-budget').innerHTML=`<h3 id="h-budget" class="script" style="font-size:40px;margin-bottom:6px">what it adds up to</h3>
+   <p class="muted" style="margin-bottom:12px">Planning ranges, supply and fit, GST extra. These are not quotes.</p>
+   <div class="mapwrap"><table style="min-width:560px"><thead><tr><th>Group</th><th>Lines</th><th>All lines (₹ lakh)</th><th>To open (₹ lakh)</th></tr></thead><tbody>${FU.groups.map(g=>`<tr><td class="dish">${esc(g.title)}</td><td>${g.items.length}</td><td>${lk(g.tlo)} – ${lk(g.thi)}</td><td>${lk(g.p1lo)} – ${lk(g.p1hi)}</td></tr>`).join('')}<tr class="sum"><td>Total</td><td>${FU.groups.reduce((n,g)=>n+g.items.length,0)}</td><td>${lk(T.lo)} – ${lk(T.hi)}</td><td>${lk(T.p1lo)} – ${lk(T.p1hi)}</td></tr></tbody></table></div>
+   <h4 style="font:700 17px var(--display);margin:22px 0 10px">Where to save</h4>
+   <div class="facts2">${FU.saves.map(([a,b,lo,hi])=>`<div class="fk"><b>${esc(a)}</b><span>${esc(b)}</span><em>saves about ₹${lk(lo)}–${lk(hi)} lakh</em></div>`).join('')}</div>`;
+  $('#f-checks').innerHTML=`<h3 id="h-checks" class="script" style="font-size:40px;margin-bottom:14px">design checks</h3><div class="rules">${FU.checks.map(([a,b])=>`<div class="rule"><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join('')}</div>
+   <p class="muted" style="margin-top:18px">Room images are generated with Google Flow from screenshots of the 3D model. They show the intent, not a supplier's product, and they differ from the model in small ways (for example, the woven pendants are shown in rattan). The schedule and the plans govern.</p>`;
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-fp]');if(b){const k=b.dataset.fp;$('#fpimg').src=`img/furnishings/${k}-plan.svg`;$('#fpopen').href=`img/furnishings/${k}-plan.svg`;$$('#fpt [data-fp]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));return}
+  const a=e.target.closest('[data-fj]');if(a){e.preventDefault();const el=document.getElementById(a.dataset.fj);if(el)el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}});
+
+renderMenu();renderCmap();renderCrock();renderPlating();renderFurn();
 const init=(location.hash||'#menu').slice(1);
 setTab(TABS.includes(init)?init:'menu');
 addEventListener('hashchange',()=>{const t=location.hash.slice(1);if(TABS.includes(t))setTab(t)});

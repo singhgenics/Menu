@@ -135,6 +135,18 @@ LUX=[('Dining tables','100–150 lux at the table top, 2200 K','Pendants + lamps
 CIRCUITS=[('A','Pendants (all)','2-channel dimmer','0–100%'),('B','Bar: gantry, front glow, back bar','dimmer','0–100%'),('C','Gallery track + lanterns','switch + dimmer','0–100%'),
           ('D','Neon signs','timer','on/off'),('E','Garden: festoon, pendants, path','own RCD','switch'),('F','Kitchen, washroom, server','switch','on/off'),('G','Safety','always on','—')]
 
+GALLERY=[
+ ('The room','The dining room by day, by evening and late, and from the street.',[('hero-room','From the door, evening'),('room-from-bar','Back towards the street'),('room-lunch','Lunch: daylight, pendants low'),('room-late','Late: neon and 40% light'),('facade','The facade at dusk')]),
+ ('The bar','Counter, back bar, glass rack and the service corner.',[('hero-bar','The bar'),('bar-from-door','From the entrance'),('barfront','Front panel, marble and brass rail'),('bar-taps','Brass tap tower, three taps'),('backbar-detail','Back bar: shelves, board, POS nook'),('bartender-side','Bartender side'),('gantry','Floating brass glass rack'),('service','Server station'),('pass-view','The pass and the kitchen door')]),
+ ('Tables & seating','Every chair, stool, bench and table, in place and on their own.',[('table-left','Left window tables'),('booth-right','Right window tables'),('table-dimsum','A table laid for dim sum'),('chair','S1 cane-back chair'),('stool','S2 velvet bar stool'),('table','T1 plank table'),('bench','S3 + T4 teak garden set'),('tabletop','Table-top set: lamp, number, caddy')]),
+ ('Lighting','Pendants, lanterns, neon and the gallery track.',[('pendants','Jute globe pendants'),('lanterns','Brass lanterns by the spiral duct'),('neonwall','"settle up here" and the gallery wall'),('neon-bao','"bao, baby?" on the beam')]),
+ ('Air & fans','Double height, slow fans, a high split AC.',[('fan-ac','Ceiling fan and split AC'),('ceiling-beams','Beams, clouds and gantry from below')]),
+ ('Walls, floors & art','Brick, checker, emerald mosaic, enamel signs and the BAO mural.',[('materials','Material board'),('detail-floor-brick','Checker floor meets brick'),('detail-mosaic','Emerald mosaic and marble'),('detail-signs','dimo enamel signs'),('mural-bao','BAO mural')]),
+ ('Entry & washroom','Where guests arrive wet, and the tiny hand-wash lobby.',[('entry','Entry: mat, umbrellas, hooks'),('washroom','Hand-wash lobby'),('wc-door','Sliding WC door from the aisle')]),
+ ('Beer garden','Pergola, teak, mist and monsoon curtains.',[('hero-garden','Dusk'),('garden-day','Afternoon'),('garden-monsoon','Monsoon, curtains down'),('garden-mist','Mist fan and misting line')]),
+ ('Plans','Both plans are vector drawings; open them full size.',[('furniture-plan','Furniture & finishes plan'),('ceiling-plan','Ceiling plan: lights, fans, ACs')]),
+]
+
 def item(code):
     return next(i for g in G for i in g['items'] if i['code']==code)
 def span(codes, k=1.0):
@@ -162,7 +174,7 @@ def main():
     here=os.path.dirname(os.path.abspath(__file__))
     allv=sum(g['tlo'] for g in G),sum(g['thi'] for g in G)
     p1=sum(g['p1lo'] for g in G),sum(g['p1hi'] for g in G)
-    data=dict(groups=G,total=dict(lo=allv[0],hi=allv[1],p1lo=p1[0],p1hi=p1[1]),watts=WATTS,wattTotal=sum(w for _,w in WATTS),scenes=SCENES,lux=LUX,circuits=CIRCUITS,saves=saves(),checks=design_checks())
+    data=dict(groups=G,total=dict(lo=allv[0],hi=allv[1],p1lo=p1[0],p1hi=p1[1]),watts=WATTS,wattTotal=sum(w for _,w in WATTS),scenes=SCENES,lux=LUX,circuits=CIRCUITS,saves=saves(),checks=design_checks(),gallery=GALLERY)
     json.dump(data,open(os.path.join(here,'furnishings.json'),'w'),ensure_ascii=False)
     n=sum(len(g['items']) for g in G)
     print(f'furnishings.json: {len(G)} groups, {n} lines, total ₹{allv[0]/1e5:.1f}–{allv[1]/1e5:.1f} lakh (phase 1 ₹{p1[0]/1e5:.1f}–{p1[1]/1e5:.1f} lakh), lighting {sum(w for _,w in WATTS)} W')

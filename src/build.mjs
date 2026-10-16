@@ -23,6 +23,6 @@ fs.writeFileSync(path.join(ROOT, 'index.html'), html);
 const missing = plating.flatMap(p => [p.id, ...(p.vars || []).map(v => v.img)]).filter(id => !fs.existsSync(path.join(ROOT, 'img/plating', id + '.jpg'))).map(id => 'plating/' + id)
   .concat(crock.items.filter(i => i[2] && !fs.existsSync(path.join(ROOT, 'img/crockery', i[2] + '.jpg'))).map(i => 'crockery/' + i[2]));
 console.log(`built index.html: ${food.reduce((n, s) => n + s.items.length, 0)} food lines, ${drinks.reduce((n, s) => n + s.items.length, 0)} drink lines, ${crock.items.length} crockery items, ${plating.length} plating cards`);
-const missingF = furn.groups.flatMap(g => [g.img, ...g.items.map(i => i.img)]).filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).filter(id => !fs.existsSync(path.join(ROOT, 'img/furnishings', id + '.jpg')));
+const missingF = [...furn.groups.flatMap(g => [g.img, ...g.items.map(i => i.img)]), ...furn.gallery.flatMap(g => g[2].map(x => x[0]).filter(id => !id.endsWith('-plan')))].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).filter(id => !fs.existsSync(path.join(ROOT, 'img/furnishings', id + '.jpg')));
 if (missingF.length) missing.push(...missingF.map(id => 'furnishings/' + id));
 console.log('missing images:', missing.length ? missing.join(', ') : 'none');

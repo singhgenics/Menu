@@ -210,6 +210,28 @@ table.ft tr.sum td{font:700 13px/1.2 var(--mono);border-top:2px solid var(--ink)
 .fk{padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px;display:grid;gap:4px;align-content:start}
 .fk b{font:700 15px/1.3 var(--display)}.fk span{font-size:13.5px;color:var(--muted)}.fk em{font:600 12px/1.3 var(--mono);font-style:normal;color:var(--orange)}
 
+
+.gal-nav{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 4px}
+.gal-sec{margin-top:26px;scroll-margin-top:130px}
+.gal-sec h4{font:600 30px/1 var(--script);color:var(--orange)}
+.gal-sec p{font-size:13px;color:var(--muted);margin:4px 0 12px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:12px}
+.gal.plans{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+.gal button{appearance:none;padding:0;margin:0;border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--shade);cursor:zoom-in;position:relative;display:block;text-align:left;color:inherit;min-width:0}
+.gal button img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .35s}
+.gal.plans button img{aspect-ratio:auto;object-fit:contain;background:#FBF7EF}
+.gal button:hover img{transform:scale(1.03)}.gal.plans button:hover img{transform:none}
+.gal button span{position:absolute;left:6px;bottom:6px;right:6px;font:600 10px/1.25 var(--mono);letter-spacing:.05em;text-transform:uppercase;background:color-mix(in srgb,var(--ink) 88%,transparent);color:var(--paper);padding:5px 8px;border-radius:999px;width:max-content;max-width:calc(100% - 12px)}
+.gal.plans button span{position:static;display:block;border-radius:0;width:auto;max-width:none;padding:8px 10px}
+#lb{position:fixed;inset:0;z-index:100;background:rgba(20,15,12,.92);display:grid;grid-template-rows:1fr auto;padding:16px;gap:10px}
+#lb[hidden]{display:none}
+#lb .stage{display:grid;place-items:center;min-height:0}
+#lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;background:#FBF7EF}
+#lb .bar2{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#F3E9D2;font:600 12px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase}
+#lb .bar2 div{display:flex;gap:8px}
+#lb .bar2 button{appearance:none;border:1.5px solid #F3E9D2;background:transparent;color:#F3E9D2;border-radius:999px;font:600 12px/1 var(--mono);padding:9px 13px;cursor:pointer}
+#lb .bar2 button:hover{background:#F3E9D2;color:#1B1714}
+
 footer.site{border-top:2px solid var(--ink);padding-block:22px 40px;display:grid;gap:8px;font-size:12px;color:var(--muted)}
 footer.site b{color:var(--ink)}
 </style>
@@ -359,12 +381,14 @@ footer.site b{color:var(--ink)}
   <div class="sticky-sub"><div class="sub-tabs fnav" id="fnav"></div></div>
   <section id="f-look" aria-labelledby="h-look"></section>
   <section id="f-plans" aria-labelledby="h-plans"></section>
+  <section id="f-gallery" aria-labelledby="h-gallery"></section>
   <div id="fgroups"></div>
   <section id="f-budget" aria-labelledby="h-budget"></section>
   <section id="f-checks" aria-labelledby="h-checks"></section>
 </div>
 
 </main>
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer"><div class="stage"><img id="lbimg" alt=""></div><div class="bar2"><span id="lbcap"></span><div><button type="button" id="lbprev" aria-label="Previous">←</button><button type="button" id="lbnext" aria-label="Next">→</button><button type="button" id="lbx" aria-label="Close">Close</button></div></div></div>
 
 <footer class="site"><div class="wrap">
   <p><b>dimo</b> is a working name. Betalbatim, Goa. Prices in ₹, taxes extra. Alcohol is served only to guests aged 21 and over; please drink responsibly.</p>
@@ -502,7 +526,7 @@ function renderFurn(){
   const nL=FU.groups.reduce((n,g)=>n+g.items.length,0);
   $('#fLede').textContent=`The furniture, fittings, lights, fans and finishes for the Simplex room (4.9 × 8.8 m, 18 covers inside + 8 in the garden), taken from the 3D model and written as ${nL} buy-able lines with sizes, materials, quantities, positions and planning prices. Each line has a code that appears on the two plans.`;
   $('#fHero').innerHTML=`${FIMG('hero-room','The room from the door')}<div class="stack">${FIMG('hero-bar','The bar')}${FIMG('hero-garden','The beer garden')}</div>`;
-  $('#fnav').innerHTML=[['f-look','Look'],['f-plans','Plans'],...FU.groups.map(g=>['fg-'+g.id,g.title.split(' ')[0].replace(',','')]),['f-budget','Budget'],['f-checks','Checks']].map(([id,t])=>`<a class="btn" href="#furnishings" data-fj="${id}">${esc(t)}</a>`).join('');
+  $('#fnav').innerHTML=[['f-look','Look'],['f-plans','Plans'],['f-gallery','Gallery'],...FU.groups.map(g=>['fg-'+g.id,g.title.split(' ')[0].replace(',','')]),['f-budget','Budget'],['f-checks','Checks']].map(([id,t])=>`<a class="btn" href="#furnishings" data-fj="${id}">${esc(t)}</a>`).join('');
   $('#f-look').innerHTML=`<h3 id="h-look" class="script" style="font-size:40px;margin-bottom:6px">the look in one line</h3>
    <p style="margin-bottom:16px">A Hong Kong tea-house in a Goan taverna: red brick, a black-and-white checker floor, cane, brass and warm 2200 K filament light, with one emerald wall and one glowing bar. Every piece is wipe-clean, salt-proof and sized for a 4.9 m wide room.</p>
    <div class="fstrip"><figure><img src="img/furnishings/materials.jpg" alt="Material board" loading="lazy"><figcaption>Material board</figcaption></figure><div class="swatches" style="align-content:start">${PAL.map(([c,n,u])=>`<div class="sw"><i style="background:${c}"></i><b>${n}</b><span>${u}</span></div>`).join('')}</div></div>`;
@@ -533,7 +557,24 @@ document.addEventListener('click',e=>{
   const b=e.target.closest('[data-fp]');if(b){const k=b.dataset.fp;$('#fpimg').src=`img/furnishings/${k}-plan.svg`;$('#fpopen').href=`img/furnishings/${k}-plan.svg`;$$('#fpt [data-fp]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));return}
   const a=e.target.closest('[data-fj]');if(a){e.preventDefault();const el=document.getElementById(a.dataset.fj);if(el)el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}});
 
-renderMenu();renderCmap();renderCrock();renderPlating();renderFurn();
+
+/* gallery */
+const GAL=FU.gallery.flatMap(([t,sub,its])=>its.map(([id,cap])=>({id,cap,sec:t,src:id.endsWith('-plan')?`img/furnishings/${id}.svg`:`img/furnishings/${id}.jpg`})));
+function renderGallery(){
+  const nImg=GAL.filter(g=>!g.id.endsWith('-plan')).length;
+  $('#f-gallery').innerHTML=`<h3 id="h-gallery" class="script" style="font-size:40px;margin-bottom:6px">gallery</h3>
+   <p class="muted">${nImg} room and product images and the two plans, grouped by section. Tap any image to enlarge; use the arrow keys to move through them.</p>
+   <div class="gal-nav">${FU.gallery.map(([t,,its],i)=>`<a class="btn" href="#furnishings" data-fj="gs-${i}">${esc(t)} · ${its.length}</a>`).join('')}</div>
+   ${FU.gallery.map(([t,sub,its],i)=>`<div class="gal-sec" id="gs-${i}"><h4>${esc(t.toLowerCase())}</h4><p>${esc(sub)}</p><div class="gal${t==='Plans'?' plans':''}">${its.map(([id,cap])=>{const k=GAL.findIndex(g=>g.id===id);return `<button type="button" data-lb="${k}"><img src="${GAL[k].src}" alt="${esc(cap)}" loading="lazy"><span>${esc(cap)}</span></button>`}).join('')}</div></div>`).join('')}`;
+}
+let lbi=0;
+function lbShow(i){lbi=(i+GAL.length)%GAL.length;const g=GAL[lbi];$('#lbimg').src=g.src;$('#lbimg').alt=g.cap;$('#lbcap').textContent=`${g.sec} · ${g.cap} · ${lbi+1}/${GAL.length}`;$('#lb').hidden=false;document.body.style.overflow='hidden'}
+function lbClose(){$('#lb').hidden=true;document.body.style.overflow=''}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-lb]');if(b){lbShow(+b.dataset.lb);return}
+  if(e.target.id==='lbx'||e.target.id==='lb'||e.target.classList.contains('stage'))lbClose();else if(e.target.id==='lbprev')lbShow(lbi-1);else if(e.target.id==='lbnext')lbShow(lbi+1)});
+document.addEventListener('keydown',e=>{if($('#lb').hidden)return;if(e.key==='Escape')lbClose();else if(e.key==='ArrowLeft')lbShow(lbi-1);else if(e.key==='ArrowRight')lbShow(lbi+1)});
+
+renderMenu();renderCmap();renderCrock();renderPlating();renderFurn();renderGallery();
 const init=(location.hash||'#menu').slice(1);
 setTab(TABS.includes(init)?init:'menu');
 addEventListener('hashchange',()=>{const t=location.hash.slice(1);if(TABS.includes(t))setTab(t)});

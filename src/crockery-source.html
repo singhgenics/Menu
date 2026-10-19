@@ -118,7 +118,7 @@ footer a{color:var(--muted)}
   <p class="eyebrow">Betalbatim · Cabin East · fit-out</p>
   <h1 class="script">crockery, glass &amp; cutlery</h1>
   <p class="sub">What every dish and drink is served in, and what to buy</p>
-  <p>Built from the updated food menu (about 40 choices), the drinks menu and the warm cabin-and-beer-garden look. Sized for 26 covers plus the bar. Tick items off as you buy them; ticks are saved in this browser.</p>
+  <p>Built from the updated food menu (about 40 choices), the drinks menu and the warm cabin-and-beer-garden look. Sized for 28 covers plus the bar. Tick items off as you buy them; ticks are saved in this browser.</p>
   <div class="progress" aria-live="polite">
     <span id="pText">0 of 0 bought</span>
     <span class="bar" aria-hidden="true"><i id="pBar"></i></span>
@@ -184,7 +184,7 @@ footer a{color:var(--muted)}
   <div class="head">
     <p class="eyebrow">Buying checklist</p>
     <h2 id="h-list" class="script">the buying list</h2>
-    <p class="muted">Quantities are for 26 covers and a 3-person bar. Anything a guest eats or drinks from is counted at about three per cover: one in use, one in the wash, one spare. Add 10% for breakage on ceramics and glass. Product images show the style to buy, not a specific product.</p>
+    <p class="muted">Quantities are for 28 covers and a 3-person bar. Anything a guest eats or drinks from is counted at about three per cover: one in use, one in the wash, one spare. Add 10% for breakage on ceramics and glass. Product images show the style to buy, not a specific product.</p>
   </div>
   <div class="tabs" id="filters" role="group" aria-label="Show group"></div>
   <div id="list"></div>
@@ -278,62 +278,62 @@ footer a{color:var(--muted)}
 const GROUPS={cover:['Per cover','On every table setting'],food:['Food serving','From the pass to the table'],service:['Table & service','Shared on each table'],beer:['Beer','Three taps, two bottles, pitchers, paddles'],spirits:['Whisky, vodka & cocktails','Neat, on the rocks, tall and up'],zero:['Zero-proof & coffee','Sodas, water, brewed coffee'],tools:['Bar tools','Behind the bar']};
 // [id, group, photo|null, name, spec, used for, qty, unit]
 const ITEMS=[
- ['side','cover','side','Side plate, 7.5"','Stoneware, sand-cream glaze with darker rim','Eating plate; underplate for steamer baskets and soup bowls',93,'pcs'],
- ['rice','cover','rice','Rice bowl','~11 cm, 300 ml, reactive glaze','Rice, noodles and curry at the table; jasmine rice',78,'pcs'],
- ['dip','cover','dip','Dipping dish','~8 cm, 50 ml, glazed','Soy, chilli vinegar, kasundi, chilli mayo, black vinegar, gochujang mayo',102,'pcs'],
- ['cspoon','cover','cspoon','Porcelain soup spoon','White porcelain, ~14 cm','Wonton Kenobi, Hot & Bothered, Coconut Cuddle (tom kha)',78,'pcs'],
- ['chop','cover','chop','Reusable chopsticks','Square-edged, dark fibreglass or lacquered wood, dishwasher-safe','One pair per cover',93,'pairs'],
- ['crest','cover','crest','Chopstick rest','Ceramic, glaze to match the stoneware','One per cover',37,'pcs'],
- ['cutlery','cover','cutlery','Dinner fork & dinner spoon','Matte brushed stainless steel, one range','Rice, noodles, darsaan; for guests who prefer them',56,'each'],
- ['teaspoon','cover','teaspoon','Teaspoon','Same stainless range as the forks','Coffee, ice cream, sugar',37,'pcs'],
- ['napkin','cover','napkin','Cotton napkin','Oatmeal khadi with olive stripe; or printed paper napkins','One per cover',111,'pcs'],
- ['water','cover','water','Water glass','~300 ml straight tumbler, tempered','Water from the carafe at every cover',78,'pcs'],
+ ['side','cover','side','Side plate, 7.5"','Stoneware, sand-cream glaze with darker rim','Eating plate; underplate for steamer baskets and soup bowls',100,'pcs'],
+ ['rice','cover','rice','Rice bowl','~11 cm, 300 ml, reactive glaze','Rice, noodles and curry at the table; jasmine rice',84,'pcs'],
+ ['dip','cover','dip','Dipping dish','~8 cm, 50 ml, glazed','Soy, chilli vinegar, kasundi, chilli mayo, black vinegar, gochujang mayo',110,'pcs'],
+ ['cspoon','cover','cspoon','Porcelain soup spoon','White porcelain, ~14 cm','Wonton Kenobi, Hot & Bothered, Coconut Cuddle (tom kha)',84,'pcs'],
+ ['chop','cover','chop','Reusable chopsticks','Square-edged, dark fibreglass or lacquered wood, dishwasher-safe','One pair per cover',100,'pairs'],
+ ['crest','cover','crest','Chopstick rest','Ceramic, glaze to match the stoneware','One per cover',40,'pcs'],
+ ['cutlery','cover','cutlery','Dinner fork & dinner spoon','Matte brushed stainless steel, one range','Rice, noodles, darsaan; for guests who prefer them',60,'each'],
+ ['teaspoon','cover','teaspoon','Teaspoon','Same stainless range as the forks','Coffee, ice cream, sugar',40,'pcs'],
+ ['napkin','cover','napkin','Cotton napkin','Oatmeal khadi with olive stripe; or printed paper napkins','One per cover',120,'pcs'],
+ ['water','cover','water','Water glass','~300 ml straight tumbler, tempered','Water from the carafe at every cover',84,'pcs'],
 
  ['susan','food','susan','Lazy susan','50 cm wooden turntable; fits a 75 cm 4-top','Cabin feast for four: four soups plus five shared dishes on one turning table',2,'pcs'],
- ['steamer6','food','steamer6','Bamboo steamer, 6"','Steel-banded rim, with lid; holds 4 dim sum','Crystal Clear, Siu Mai Goodness, Prawn to Be Wild; happy-hour dumplings',37,'baskets + lids'],
+ ['steamer6','food','steamer6','Bamboo steamer, 6"','Steel-banded rim, with lid; holds 4 dim sum','Crystal Clear, Siu Mai Goodness, Prawn to Be Wild; happy-hour dumplings',40,'baskets + lids'],
  ['steamer8','food','steamer8','Bamboo steamer, 8"','Steel-banded, stackable, with lid','Steamer for two: two tiers, 8 dim sum then 2 bao',6,'baskets + 4 lids'],
- ['liner','food','liner','Steamer liners','Perforated parchment rounds 6" and 8", or reusable silicone','Under every dumpling so skins don\'t tear',1850,'rounds a month'],
- ['enplate','food','enplate','Enamel plate, 10"','White enamel, olive or rust rolled rim','Cabin Fever, Honey Trap, happy-hour Cabin Fever; Slap Happy salad on request',37,'pcs'],
- ['cabinplate','food','cabinplate','Large deep plate, 12"','White enamel or white stoneware, with a well','Holy Basil, Batman! rice bowl with fried egg; Bowl game lunch',22,'pcs'],
- ['basket','food','basket','Fry basket, paper-lined','Black wire or enamel basket ~25 × 15 cm; printed greaseproof paper','Salt & Pepa (mushroom, chonak, prawns), K-Pop Wings, Fry Hard',28,'baskets'],
- ['paper','food','paper','Printed greaseproof paper','Food-safe, branded, cut to basket size','Lining every fried item',2800,'sheets a month'],
- ['enbowl','food','enbowl','Small enamel bowl','~14 cm, white with dark rim','Bone and shell bowl for wings and prawn tails',15,'pcs'],
- ['bao','food','bao','Long rectangular plate','~30 × 12 cm, matte white or charcoal','All three bao (Bao Down, Fever Pitch, Seoul Mate), 2 to a plate',22,'pcs'],
- ['soup','food','soup','Soup bowl','~14 cm, 450 ml, rust or olive glaze','Wonton Kenobi, Hot & Bothered, Coconut Cuddle; Fire Starters wontons in chilli oil; Cabin feast soups',37,'pcs'],
- ['noodle','food','noodle','Wide shallow bowl','~23 cm, 900 ml, sand glaze','Noodle Around (Hakka noodles), Suey Generis khao suey, Slap Happy papaya salad',26,'pcs'],
- ['oval','food','oval','Oval sharing platter','~30 cm, olive or cream glaze','Rice Rice Baby (burnt garlic veg, chicken and mixed fried rice)',22,'pcs'],
- ['claypot','food','claypot','Small claypot with stand','~600 ml glazed earthenware, with lid','Man, Churian! gravy and Green With Envy Thai green curry; keeps hot on the table',19,'pots'],
-  ['toptray','food','toptray','Divided topping tray','~25 cm stoneware, 5 compartments','Suey Generis khao suey: crispy noodles, shallots, fried garlic, lime, chilli flakes',7,'pcs'],
- ['dessert','food','dessert','Dessert bowl','~15 cm stoneware, shallow','Honey, I Shrunk the Noodles (darsaan) and Sticky Situation (coconut sticky rice), each with ice cream',22,'pcs'],
+ ['liner','food','liner','Steamer liners','Perforated parchment rounds 6" and 8", or reusable silicone','Under every dumpling so skins don\'t tear',2000,'rounds a month'],
+ ['enplate','food','enplate','Enamel plate, 10"','White enamel, olive or rust rolled rim','Cabin Fever, Honey Trap, happy-hour Cabin Fever; Slap Happy salad on request',40,'pcs'],
+ ['cabinplate','food','cabinplate','Large deep plate, 12"','White enamel or white stoneware, with a well','Holy Basil, Batman! rice bowl with fried egg; Bowl game lunch',24,'pcs'],
+ ['basket','food','basket','Fry basket, paper-lined','Black wire or enamel basket ~25 × 15 cm; printed greaseproof paper','Salt & Pepa (mushroom, chonak, prawns), K-Pop Wings, Fry Hard',30,'baskets'],
+ ['paper','food','paper','Printed greaseproof paper','Food-safe, branded, cut to basket size','Lining every fried item',3000,'sheets a month'],
+ ['enbowl','food','enbowl','Small enamel bowl','~14 cm, white with dark rim','Bone and shell bowl for wings and prawn tails',16,'pcs'],
+ ['bao','food','bao','Long rectangular plate','~30 × 12 cm, matte white or charcoal','All three bao (Bao Down, Fever Pitch, Seoul Mate), 2 to a plate',24,'pcs'],
+ ['soup','food','soup','Soup bowl','~14 cm, 450 ml, rust or olive glaze','Wonton Kenobi, Hot & Bothered, Coconut Cuddle; Fire Starters wontons in chilli oil; Cabin feast soups',40,'pcs'],
+ ['noodle','food','noodle','Wide shallow bowl','~23 cm, 900 ml, sand glaze','Noodle Around (Hakka noodles), Suey Generis khao suey, Slap Happy papaya salad',28,'pcs'],
+ ['oval','food','oval','Oval sharing platter','~30 cm, olive or cream glaze','Rice Rice Baby (burnt garlic veg, chicken and mixed fried rice)',24,'pcs'],
+ ['claypot','food','claypot','Small claypot with stand','~600 ml glazed earthenware, with lid','Man, Churian! gravy and Green With Envy Thai green curry; keeps hot on the table',20,'pots'],
+  ['toptray','food','toptray','Divided topping tray','~25 cm stoneware, 5 compartments','Suey Generis khao suey: crispy noodles, shallots, fried garlic, lime, chilli flakes',8,'pcs'],
+ ['dessert','food','dessert','Dessert bowl','~15 cm stoneware, shallow','Honey, I Shrunk the Noodles (darsaan) and Sticky Situation (coconut sticky rice), each with ice cream',24,'pcs'],
  ['board','food','board','Wooden serving board','~40 × 25 cm with handle; mango or acacia','Steamer for two: two stacked baskets, a plate of bao and dips',6,'pcs'],
- ['serve','food','serve','Serving spoons & noodle tongs','Matte stainless, same range as cutlery','Shared rice, noodles, gravy and curry',28,'spoons + 11 tongs'],
+ ['serve','food','serve','Serving spoons & noodle tongs','Matte stainless, same range as cutlery','Shared rice, noodles, gravy and curry',30,'spoons + 12 tongs'],
 
- ['sauces','service','sauces','Condiment set','Caddy with 3 glass cruets: soy, green chillies in vinegar, chilli oil','One per table, the Kolkata cabin habit',11,'caddies + 33 cruets'],
- ['cutcup','service','cutcup','Cutlery cup','Glass or enamel cup','Forks and spoons standing on each table',11,'pcs'],
- ['enmug','service','enmug','Enamel mug','~350 ml, white with dark rim','Chopstick holder or bill cup; staff chai',11,'pcs'],
- ['carafe','service','carafe','Water carafe, 1 L','Clear glass, narrow neck','Water on every table',11,'pcs'],
- ['coaster','service','coaster','Coasters','Printed thick card, branded','Under every glass, bar and garden',930,'a month'],
- ['bill','service','bill','Bill tray','Small enamel tray to match the cabin plates','Bills and the card machine',9,'pcs'],
+ ['sauces','service','sauces','Condiment set','Caddy with 3 glass cruets: soy, green chillies in vinegar, chilli oil','One per table, the Kolkata cabin habit',10,'caddies + 30 cruets'],
+ ['cutcup','service','cutcup','Cutlery cup','Glass or enamel cup','Forks and spoons standing on each table',10,'pcs'],
+ ['enmug','service','enmug','Enamel mug','~350 ml, white with dark rim','Chopstick holder or bill cup; staff chai',10,'pcs'],
+ ['carafe','service','carafe','Water carafe, 1 L','Clear glass, narrow neck','Water on every table',10,'pcs'],
+ ['coaster','service','coaster','Coasters','Printed thick card, branded','Under every glass, bar and garden',1000,'a month'],
+ ['bill','service','bill','Bill tray','Small enamel tray to match the cabin plates','Bills and the card machine',10,'pcs'],
 
- ['pint','beer','pint','Pint glass, 500 ml','Nonic or straight, tempered, with a fill line','Large pours of Comrade Crisp, Gose Bumps and the guest tap; Kings and Budweiser bottles',45,'pcs'],
- ['beer330','beer','beer330','Beer glass, 330 ml','Straight-sided, tempered, fill line','Small pours; happy-hour 330 taps and Kings; somaek',45,'pcs'],
+ ['pint','beer','pint','Pint glass, 500 ml','Nonic or straight, tempered, with a fill line','Large pours of Comrade Crisp, Gose Bumps and the guest tap; Kings and Budweiser bottles',48,'pcs'],
+ ['beer330','beer','beer330','Beer glass, 330 ml','Straight-sided, tempered, fill line','Small pours; happy-hour 330 taps and Kings; somaek',48,'pcs'],
  ['pitcher','beer','pitcher','Beer pitcher, 1.5 L','Clear glass or polycarbonate for the garden','Pitcher of Comrade Crisp or a craft tap',6,'pcs'],
- ['paddle','beer','paddle3','Tasting paddle + taster glasses','Wooden paddle with 3 holes; 150 ml taster glasses','Tasting paddle: all three taps, 3 × 150 ml',6,'paddles + 19 glasses'],
+ ['paddle','beer','paddle3','Tasting paddle + taster glasses','Wooden paddle with 3 holes; 150 ml taster glasses','Tasting paddle: all three taps, 3 × 150 ml',6,'paddles + 20 glasses'],
 
- ['nosing','spirits','nosing','Whisky nosing glass','Glencairn-style tulip, ~175 ml','Single malts neat: Paul John, Amrut, Glenlivet, Talisker',22,'pcs'],
+ ['nosing','spirits','nosing','Whisky nosing glass','Glencairn-style tulip, ~175 ml','Single malts neat: Paul John, Amrut, Glenlivet, Talisker',24,'pcs'],
  ['flight','spirits','flight','Whisky flight board','Wooden board for 3 nosing glasses, chalk or card notes','Single malt flight with water and chilli peanuts',4,'boards + 4 water droppers'],
- ['rocks','spirits','rocks','Rocks glass','Double old fashioned, ~300 ml, heavy base','Whisky on the rocks, tamarind chilli margarita, Soju Yakult',33,'pcs'],
- ['highball','spirits','highball','Highball glass','~350 ml, tall and straight','Whisky highballs, Toki highball, coconut feni highball, Sichuan G&T, Kimchi Mary, vodka tonic',45,'pcs'],
- ['coupe','spirits','coupe','Coupe glass','~180 ml stemmed coupe','Kokum feni sour, lychee & lemongrass martini',22,'pcs'],
- ['shot','spirits','shot','Shot glass','30/60 ml, heavy base, freezer-safe','Chilled vodka shots, house infusions, soju, somaek drop',33,'pcs'],
- ['soju','spirits','soju','Soju glass','Small 50 ml tumbler','Soju neat, served with the bottle',11,'pcs'],
+ ['rocks','spirits','rocks','Rocks glass','Double old fashioned, ~300 ml, heavy base','Whisky on the rocks, tamarind chilli margarita, Soju Yakult',36,'pcs'],
+ ['highball','spirits','highball','Highball glass','~350 ml, tall and straight','Whisky highballs, Toki highball, coconut feni highball, Sichuan G&T, Kimchi Mary, vodka tonic',48,'pcs'],
+ ['coupe','spirits','coupe','Coupe glass','~180 ml stemmed coupe','Kokum feni sour, lychee & lemongrass martini',24,'pcs'],
+ ['shot','spirits','shot','Shot glass','30/60 ml, heavy base, freezer-safe','Chilled vodka shots, house infusions, soju, somaek drop',36,'pcs'],
+ ['soju','spirits','soju','Soju glass','Small 50 ml tumbler','Soju neat, served with the bottle',12,'pcs'],
  ['ice','spirits','ice','Large-ice moulds','Silicone 5 cm cube trays; clear-ice box if budget allows','One big cube for whisky and the margarita',6,'trays'],
 
  ['highball2','zero','highball','Highball (shared)','Same highball as cocktails','Fresh lime soda, kokum soda, iced tea, soft drinks, tonic',0,'counted above'],
- ['straws','zero','straws','Straws','Bamboo or paper, no plastic','Sodas, iced tea, highballs on request',930,'a month'],
- ['cup','zero','cup','Coffee cup & saucer','~200 ml, white or sand glaze','Brewed coffee, black or with milk',22,'sets'],
- ['milk','zero','milk','Milk jug & sugar pot','Small ceramic jug ~150 ml, lidded sugar pot','With every coffee',7,'each'],
- ['irish','zero','irish','Irish coffee glass','Stemmed toddy glass with handle, ~240 ml','Irish coffee: coffee, Jameson, sugar, cold cream',11,'pcs'],
+ ['straws','zero','straws','Straws','Bamboo or paper, no plastic','Sodas, iced tea, highballs on request',1000,'a month'],
+ ['cup','zero','cup','Coffee cup & saucer','~200 ml, white or sand glaze','Brewed coffee, black or with milk',24,'sets'],
+ ['milk','zero','milk','Milk jug & sugar pot','Small ceramic jug ~150 ml, lidded sugar pot','With every coffee',8,'each'],
+ ['irish','zero','irish','Irish coffee glass','Stemmed toddy glass with handle, ~240 ml','Irish coffee: coffee, Jameson, sugar, cold cream',12,'pcs'],
 
  ['shaker','tools','shaker','Boston shaker set','Two weighted stainless tins','Feni sour, lychee martini, margarita, Soju Yakult',3,'sets'],
  ['bartools','tools','bartools','Bar tool kit','Jigger 30/60 ml, Hawthorne + fine strainer, bar spoon, muddler, bottle opener (Kings, Budweiser, soju, soft drinks)','Every cocktail; opening bottled beer, soju and soft drinks',3,'kits'],

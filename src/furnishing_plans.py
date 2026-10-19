@@ -66,17 +66,18 @@ def base(p, faint=False):
 # =============================================================== FURNITURE PLAN
 def furniture():
     p=Pen(); base(p)
-    # right wall tables (T1) + chairs (S1)
-    for z0,z1 in ((0.15,1.35),(1.8,3.0)):
-        p.rect(-2.02,-1.28,z0,z1,'#c69c6d'); p.tag(-1.65,(z0+z1)/2,'T1')
-    for z in (0.45,1.05,2.1,2.7):
-        for x in (-2.2,-1.12): p.rect(x-0.22,x+0.22,z-0.22,z+0.22,'#efe2c8','#8f6a4a',1,None,1,3)
-    # left tables
-    p.rect(1.25,1.95,0.15,1.35,'#c69c6d'); p.tag(1.6,0.75,'T2')
-    p.rect(1.25,1.95,1.8,2.4,'#c69c6d'); p.tag(1.6,2.1,'T3')
-    for z in (0.45,1.05,2.1):
-        for x in (0.92,2.2): p.rect(x-0.22,x+0.22,z-0.22,z+0.22,'#efe2c8','#8f6a4a',1,None,1,3)
-    p.tag(-1.12,2.1,'S1','#2F7A5B'); p.tag(0.92,2.1,'S1','#2F7A5B')
+    # right wall: two tables for 4 (T1) end-on to the wall, 1.0 m apart, 8 cane chairs (S1)
+    for z0,z1 in ((0.65,1.30),(2.30,2.95)):
+        p.rect(-2.45,-1.25,z0,z1,'#c69c6d'); p.tag(-1.85,(z0+z1)/2,'T1')
+        for x in (-2.15,-1.55):
+            for zc in (z0-0.22,z1+0.22): p.rect(x-0.22,x+0.22,zc-0.22,zc+0.22,'#efe2c8','#8f6a4a',1,None,1,3)
+    p.tag(-1.55,1.52,'S1','#2F7A5B')
+    # left wall: sofa (S5) with three square tables for 2 (T2), 0.375 m apart, one cane chair each
+    p.rect(X1-0.5,X1,0.15,2.7,'#d9c3a0','#8f6a4a',1.2,None,1,4); p.tag(X1-0.25,1.425,'S5','#2F7A5B')
+    for z0,z1 in ((0.15,0.75),(1.125,1.725),(2.1,2.7)):
+        p.rect(1.4,2.0,z0,z1,'#c69c6d'); p.tag(1.7,(z0+z1)/2,'T2')
+        p.rect(1.18-0.22,1.18+0.22,(z0+z1)/2-0.22,(z0+z1)/2+0.22,'#efe2c8','#8f6a4a',1,None,1,3)
+    p.tag(1.18,1.425,'S1','#2F7A5B')
     # bar
     BBF=X1-0.4
     p.rect(BBF,X1,2.72,5.37,'#cfd7b2','#4a4038',1); p.tag(2.25,4.05,'B5')
@@ -93,26 +94,28 @@ def furniture():
     p.rect(X0,X0+0.12,0.74,0.82,'#c9a227','#8a6420',1); p.tag(-2.8,0.78,'D4','#8f4a32'); p.tag(-2.8,1.3,'E2','#2F7A5B')
     # entry mat
     p.rect(-0.6,0.6,0.05,0.5,'#c8b890','#8a7a62',1,'4 3'); p.tag(0,0.28,'E1','#2F7A5B')
-    # garden
-    for tx in (-1.5,1.5):
-        p.rect(tx-0.38,tx+0.38,-1.68,-0.48,'#d6b27e'); p.tag(tx,-1.08,'T4')
-        for s2 in (-1,1):
-            p.rect(tx+s2*0.62-0.18,tx+s2*0.62+0.18,-1.68,-0.48,'#f3e8d6','#8f5634',1); p.tag(tx+s2*0.62,-1.08,'S3','#2F7A5B')
+    # garden: table for 6 on two benches with backs (left half), two tables for 2 with cane chairs (right half)
+    p.rect(1.5-0.38,1.5+0.38,-1.92,-0.22,'#d6b27e'); p.tag(1.5,-1.07,'T3')
+    for s2 in (-1,1):
+        p.rect(1.5+s2*0.62-0.18,1.5+s2*0.62+0.18,-1.92,-0.22,'#f3e8d6','#8f5634',1); p.tag(1.5+s2*0.62,-1.07,'S3','#2F7A5B')
+    for za,zb in ((-1.92,-1.32),(-0.87,-0.27)):
+        zc=(za+zb)/2; p.rect(-2.0,-1.3,za,zb,'#d6b27e'); p.tag(-1.65,zc,'T4')
+        for x in (-2.22,-1.08): p.rect(x-0.22,x+0.22,zc-0.22,zc+0.22,'#efe2c8','#8f6a4a',1,None,1,3)
     p.rect(-0.35,0.3,-2.6,-2.45,'#222','#222',1); p.text(0,-2.52,'chalkboard',7,'#fff'); p.tag(0.0,-2.75,'D6','#8f4a32')
     p.text(0,-2.95,'BEER GARDEN · 5.3 × 2.0 m',11,'#6a5d4e')
     # washroom fittings
     p.tag(-2.05,5.7,'W4','#4a6070'); p.tag(-2.05,3.9,'W2','#4a6070')
     # labels on floor
-    p.text(-0.55,1.2,'WINDOW TABLES · 4 + 4',10,'#6a5d4e',weight=700,rot=90); p.text(0.45,1.2,'4 + 2',10,'#6a5d4e',weight=700,rot=90)
-    p.text(-0.55,4.5,'1.55 m aisle',10,'#6a5d4e',weight=600,rot=90)
+    p.text(-0.7,1.8,'WINDOW TABLES · 4 + 4',10,'#6a5d4e',weight=700,rot=90); p.text(0.8,1.4,'SOFA · 3 + 3',10,'#6a5d4e',weight=700,rot=90)
+    p.text(-0.55,4.5,'1.5 m aisle',10,'#6a5d4e',weight=600,rot=90)
     # finishes key (left-hand strip text)
     p.text(0.0,0.75,'F1 checker floor',9,'#9a8d7a')
     # dims
-    return build('Furniture &amp; finishes plan', '18 covers inside + 8 in the garden · every piece has a code from the Furnishings schedule below · tables 0.45 m apart, entry 1.60 m clear', p.o, 330, legend_furn())
+    return build('Furniture &amp; finishes plan', '18 covers inside + 10 in the garden · every piece has a code from the Furnishings schedule below · central aisle about 2.2 m, sofa tables 0.375 m apart', p.o, 330, legend_furn())
 
 def legend_furn():
-    rows=[('T1','Table for 4 · 1.20 × 0.74 (2)'),('T2','Table for 4 · 1.20 × 0.70 (1)'),('T3','Table for 2 · 0.60 × 0.70 (1)'),('T4','Garden table · 1.20 × 0.76 (2)'),
-          ('S1','Cane chair (14 inside + 2 spare)'),('S2','Velvet bar stool (4 + 1)'),('S3','Teak garden bench (4)'),('B1','Bar counter 2.20 × 0.75 × 1.04'),
+    rows=[('T1','Table for 4 · 1.20 × 0.65 (2)'),('T2','Table for 2 · 0.60 × 0.60 (3)'),('T3','Garden table for 6 · 1.70 × 0.76 (1)'),('T4','Garden table for 2 · 0.70 × 0.60 (2)'),
+          ('S1','Cane chair (15 + 2 spare)'),('S2','Velvet bar stool (4 + 1)'),('S3','Teak garden bench (2)'),('S5','Left sofa 2.55 × 0.50 (3 seats)'),('B1','Bar counter 2.20 × 0.75 × 1.04'),
           ('B4','Brass foot rail'),('B5','Back bar 2.65 × 0.40'),('B8','Brass glass-rack gantry (overhead)'),('B10','Server station 0.80 × 0.50'),
           ('B11','POS nook'),('D4','Portrait over the meter'),('D6','A-frame chalkboard'),('E1','Recessed coir mat'),('E2','Umbrella stand + coat hooks'),
           ('W2','Corner basin set'),('W4','WC set')]
@@ -125,7 +128,7 @@ def legend_furn():
 
 # =============================================================== CEILING PLAN
 PEND=[]
-for (cx,cz,n) in ((-1.65,0.75,3),(-1.65,2.4,3),(1.6,0.75,3),(1.6,2.1,1),(-1.5,-1.08,3),(1.5,-1.08,3)):
+for (cx,cz,n) in ((-2.0,0.975,1),(-1.5,0.975,1),(-2.0,2.625,1),(-1.5,2.625,1),(1.7,0.45,1),(1.7,1.425,1),(1.7,2.4,1),(-1.65,-1.62,1),(-1.65,-0.57,1),(1.5,-1.07,3)):
     for i in range(n):
         dz=0 if n==1 else (i-(n-1)/2)*0.34; dx=0 if n==1 else (0.07 if i%2 else -0.07)
         PEND.append((cx+dx,cz+dz))

@@ -246,6 +246,7 @@ footer.site b{color:var(--ink)}
       <a href="#crockery" data-tab="crockery">Crockery</a>
       <a href="#plating" data-tab="plating">Plating</a>
       <a href="#furnishings" data-tab="furnishings">Furnishings</a>
+      <a href="table-setting.html">Table</a>
     </nav>
   </div>
 </header>
@@ -429,7 +430,7 @@ function go(tab,id){
     else scrollTo({top:document.querySelector('.hero').offsetHeight>0?document.querySelector('.hero').offsetHeight:0,behavior:reduce?'auto':'smooth'});
   });
 }
-$$('.tabs a, .logo').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(a.getAttribute('href').slice(1)||'menu')}));
+$$('.tabs a[data-tab], .logo').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(a.getAttribute('href').slice(1)||'menu')}));
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(!a)return;e.preventDefault();
   const [tab,id]=a.dataset.go.split(':');
   if(tab==='plating'&&pfilter!=='all'){pfilter='all';renderPlating()}

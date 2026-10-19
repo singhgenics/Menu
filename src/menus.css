@@ -1,4 +1,4 @@
-:root{--paper:#F3E9D2;--card:#F9F3E6;--ink:#1B1714;--muted:#6a5d4e;--line:#cdb99c;--olive:#2F7A5B;--orange:#D9531E;--veg:#2f7d32;--nonveg:#7a3b1d;
+:root{--paper:#F2E8D2;--card:#F9F3E6;--ink:#1C1714;--muted:#6a5d4e;--line:#cdb99c;--olive:#2F6F57;--orange:#C23B22;--veg:#2f7d32;--nonveg:#7a3b1d;
  --script:'Fredoka','Avenir Next',sans-serif;--display:'Bricolage Grotesque','Avenir Next','Segoe UI',sans-serif;--body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font:14.5px/1.5 var(--body)}

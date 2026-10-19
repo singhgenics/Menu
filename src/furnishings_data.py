@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Furnishings schedule for dimo (Simplex concept 27: 4.9 x 8.8 m shell, 18 covers inside + 8 in the garden).
+"""Furnishings schedule for Cabin East (Simplex concept 27: 4.9 x 8.8 m shell, 18 covers inside + 8 in the garden).
 Writes furnishings.json for build.mjs. Sizes and positions come from the Simplex 3D model / plan (x runs from the right wall, -2.45,
 to the left wall, +2.45; z from the shopfront, 0, to the back wall, 8.8). Prices are planning ranges in INR for 2026 (supply + fit, GST extra),
 NOT quotes: get three quotes before ordering. lo/hi are per unit; 'lot' = one price for the whole line.
@@ -25,7 +25,7 @@ grp('tables', 'Tables', 'Plank tops on black steel trestles. Trestle ends are se
  ('T2','Table for 4 · left wall','1.20 × 0.70 × 0.76 H','As T1',1,'table',9000,13000,1,'z 0.15–1.35, x 1.25–1.95','0.70 deep, 0.04 less than T1, to keep the 1.60 m entry clear.',''),
  ('T3','Table for 2 · left wall','0.60 × 0.70 × 0.76 H','As T1 (single trestle pair)',1,'table',6500,9000,1,'z 1.80–2.40, x 1.25–1.95','0.45 m from T2; the end of the left run, 0.62 m from the bar end.',''),
  ('T4','Garden table for 4','1.20 × 0.76 × 0.76 H','Plantation teak, slatted top with 8 mm gaps for rain · square legs · A4 stainless fixings · oiled',2,'tables',14000,20000,1,'Beer garden, x ±1.5, centre of each bay','Slatted so rain drains through and a spilled pint does not pool.','bench'),
- ('T5','Enamel table-number plate','Ø 0.06 · screwed into the top','Porcelain enamel on steel, dimo orange with cream numerals',8,'plates',250,400,1,'One per table (5 + 2 garden) + 1 spare','Numbers match the order tickets. Same enamel as the four dimo signs.','tabletop'),
+ ('T5','Enamel table-number plate','Ø 0.06 · screwed into the top','Porcelain enamel on steel, Cabin East orange with cream numerals',8,'plates',250,400,1,'One per table (5 + 2 garden) + 1 spare','Numbers match the order tickets. Same enamel as the three Cabin East signs.','tabletop'),
  ('T6','Cordless LED table lamp','Ø 0.09 × 0.19 H · rechargeable','IP54 matte-white and brass, 2200 K, touch dimmer, 8-hour battery, drop-in charging tray',10,'lamps',1400,2600,1,'5 indoor tables (1 each), 2 garden tables (2 each) + 1 spare','The glow on the table is the lamp in the 3D model. Charged on a tray in the server station each afternoon.','tabletop'),
 ])
 
@@ -50,7 +50,7 @@ grp('lighting', 'Lighting', 'Five layers on five circuits, all warm and all dimm
  ('L4','Gantry lighting','2 × 2.0 m strips · 4 downlights','2200 K LED strip 9.6 W/m under both long sides · four Ø 0.035 brass downlights, 3 W',1,'lot',8000,14000,1,'Gantry (B8)','Amber wash on the marble and the hanging glass.','gantry'),
  ('L5','Back-bar shelf lighting','3 × 2.65 m strips · 2 picture lights','2700 K LED 9.6 W/m in aluminium channel, diffuser · brass picture lights over the board',1,'lot',7000,12000,1,'Over B5','Hidden channels on the underside of each shelf.',''),
  ('L6','Black track + gallery spots','Track 3.1 m + 0.9 m · 6 spots 7 W · 24° · 2700 K · CRI 90','Black surface track on the left wall at the ceiling · adjustable heads aimed at the gallery wall',1,'lot',16000,26000,1,'Left wall x 2.05, z 0.4–3.5 and 5.3–6.2','Aim each spot so light falls on the frame, not the guest.','neonwall'),
- ('L7','Neon sign · facade "dımo"','2.10 × 0.82 · IP67','12 V LED neon flex in a clear acrylic backing, dimo orange, 40 W',1,'sign',45000,75000,1,'Shopfront fascia, outside','Outdoor and coastal: marine seal at every joint. On a timer.',''),
+ ('L7','Neon sign · facade "dımo"','2.10 × 0.82 · IP67','12 V LED neon flex in a clear acrylic backing, Cabin East orange, 40 W',1,'sign',45000,75000,1,'Shopfront fascia, outside','Outdoor and coastal: marine seal at every joint. On a timer.',''),
  ('L8','Neon signs · interior','"settle up here" 0.90 × 0.20 · "bao, baby?" 1.15 × 0.32 · "stay a little longer" 1.66 × 0.28','12 V LED neon flex, 2200–2700 K, 8–12 W/m',3,'signs',9000,20000,2,'POS nook (left wall) · hung from the beam at z 4.66 · kitchen upper wall','Phase 2: the room works without them; the bar and pendants carry the evening.','neonwall'),
  ('L9','Wall-arm globe lamp','Ø 0.10 globe on a 0.12 black arm · 1.72 m','Opal glass, black steel, 4 W filament',2,'lamps',2500,4200,2,'Right wall, z 0.2 and 1.68','Soft light over the hooks and the entry.','entry'),
  ('L10','Washroom lights','2 × 7 W 3000 K downlights · LED ring mirror · corner pendant globe','IP44 downlights, ring mirror 12 W, globe at 2.2 m over the basin',1,'lot',6000,11000,1,'Hand-wash lobby + WC','IP44 minimum: the basin is under a pendant.',''),
@@ -81,9 +81,9 @@ grp('finishes', 'Floors, walls & ceiling', 'What the 3D model already shows, wit
  ('F7','Garden floor','10.6 m² · 600 × 600','Matt terracotta-look porcelain, R11, fall 1 in 60 to the road',11,'m²',1200,1900,1,'Beer garden','Slot drain at the shopfront.',''),
 ])
 
-grp('decor', 'Art, signs & plants', 'The identity layer: dimo enamel signs, framed posters, a BAO mural, and plants that survive a Goa monsoon.', [
- ('D1','Gallery wall','14 frames, A3–A2 · track-lit','Black timber frames, acrylic glazing, vintage enamel-sign prints',1,'lot',22000,40000,2,'Left wall, z 0.4–3.5','Print from the Dimo pack; keep one frame empty for a future poster.','neonwall'),
- ('D2','dimo enamel signs','8: DIM SUM, CABIN, SEOUL, DRAUGHT hung 0.38 × 0.157 + 4 wall signs','Porcelain enamel on steel, brand colours',8,'signs',2200,3800,2,'Right wall + over the bar','Colour and wording are in the Dimo brand pack.','neonwall'),
+grp('decor', 'Art, signs & plants', 'The identity layer: Cabin East enamel signs, framed posters, a BAO mural, and plants that survive a Goa monsoon.', [
+ ('D1','Gallery wall','14 frames, A3–A2 · track-lit','Black timber frames, acrylic glazing, vintage enamel-sign prints',1,'lot',22000,40000,2,'Left wall, z 0.4–3.5','Print from the Cabin East brand pack; keep one frame empty for a future poster.','neonwall'),
+ ('D2','Cabin East enamel signs','WOK, STEAM, DRAUGHT hung 0.38 × 0.157 (as in the model) + wall signs','Porcelain enamel on steel, brand colours',8,'signs',2200,3800,2,'Right wall + over the bar','Colour and wording are in the Cabin East brand pack.','neonwall'),
  ('D3','BAO mural','1.6 × 1.0 · hand-painted','Mineral paint on lime plaster, matt varnish',1,'lot',18000,35000,2,'High on the washroom block wall','Local artist; keep a 0.10 margin from the beam.',''),
  ('D4','Portrait over the meter','0.60 × 0.80 · hinged','Brass frame, piano hinge, lift-off keeper',1,'unit',6000,10000,1,'Right wall, z 0.78','The meter must stay reachable for the electricity department.',''),
  ('D5','Plants','Artificial trailing ivy 20 m (FR, UV) · real lemongrass, bougainvillea, ixora in the garden planters','Fire-retardant ivy indoors, real plants outside',1,'lot',14000,25000,1,'Pendants, gantry, garden planters','Real ivy does badly in AC; the model\'s trailing ivy is artificial.','hero-garden'),
@@ -141,7 +141,7 @@ GALLERY=[
  ('Tables & seating','Every chair, stool, bench and table, in place and on their own.',[('table-left','Left window tables'),('booth-right','Right window tables'),('table-dimsum','A table laid for dim sum'),('chair','S1 cane-back chair'),('stool','S2 velvet bar stool'),('table','T1 plank table'),('bench','S3 + T4 teak garden set'),('tabletop','Table-top set: lamp, number, caddy')]),
  ('Lighting','Pendants, lanterns, neon and the gallery track.',[('pendants','Jute globe pendants'),('lanterns','Brass lanterns by the spiral duct'),('neonwall','"settle up here" and the gallery wall'),('neon-bao','"bao, baby?" on the beam')]),
  ('Air & fans','Double height, slow fans, a high split AC.',[('fan-ac','Ceiling fan and split AC'),('ceiling-beams','Beams, clouds and gantry from below')]),
- ('Walls, floors & art','Brick, checker, emerald mosaic, enamel signs and the BAO mural.',[('materials','Material board'),('detail-floor-brick','Checker floor meets brick'),('detail-mosaic','Emerald mosaic and marble'),('detail-signs','dimo enamel signs'),('mural-bao','BAO mural')]),
+ ('Walls, floors & art','Brick, checker, emerald mosaic, enamel signs and the BAO mural.',[('materials','Material board'),('detail-floor-brick','Checker floor meets brick'),('detail-mosaic','Emerald mosaic and marble'),('detail-signs','Cabin East enamel signs'),('mural-bao','BAO mural')]),
  ('Entry & washroom','Where guests arrive wet, and the tiny hand-wash lobby.',[('entry','Entry: mat, umbrellas, hooks'),('washroom','Hand-wash lobby'),('wc-door','Sliding WC door from the aisle')]),
  ('Beer garden','Pergola, teak, mist and monsoon curtains.',[('hero-garden','Dusk'),('garden-day','Afternoon'),('garden-monsoon','Monsoon, curtains down'),('garden-mist','Mist fan and misting line')]),
  ('Plans','Both plans are vector drawings; open them full size.',[('furniture-plan','Furniture & finishes plan'),('ceiling-plan','Ceiling plan: lights, fans, ACs')]),

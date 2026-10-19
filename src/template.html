@@ -457,7 +457,7 @@ function renderMenu(){
     :'<span><span class="badge kol">Cabin classic</span></span><span><span class="badge goa">Konkan touch</span></span>';
   $('#menuNote').innerHTML=kind==='food'
     ?'<span>Prices in ₹, taxes extra. Dim sum come 4 to a basket, bao 2 to a plate.</span><span>Tell us about allergies: shellfish, pork, peanuts, gluten, egg, soy, sesame.</span><span>Drinks are on the drinks menu.</span>'
-    :'<span>Prices in ₹, taxes extra. Spirits are poured in 30 ml / 60 ml.</span><span>Happy hour 4–7 pm daily: 330 ml taps ₹179 · Kings 330 ml ₹99. The guest tap changes every couple of weeks.</span><span>Please drink responsibly. Alcohol is served only to guests aged 21 and over.</span>';
+    :'<span>Prices in ₹, taxes extra. Spirits are poured in 30 ml / 60 ml.</span><span>Happy hour 4–8 pm daily: 330 ml taps ₹179 · Kings 330 ml ₹99. The guest tap changes every couple of weeks.</span><span>Please drink responsibly. Alcohol is served only to guests aged 21 and over.</span>';
   $$('#menuTabs [data-kind]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kind===kind)));
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-pv]');if(!b)return;const f=b.closest('figure'),img=f.querySelector('img');

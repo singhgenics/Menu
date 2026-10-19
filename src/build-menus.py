@@ -89,7 +89,7 @@ def page(kind):
              '<span><span class="badge kol">Cabin classic</span> From the old Chinese cabins of the City of Joy</span><span><span class="badge goa">Konkan touch</span> Made with something from our own coast</span>' + \
              ('<span><b class="heat">••</b> Spice, one to three</span>' if food else '')
     note = ('<span>Prices in ₹, taxes extra. Dim sum come 4 to a basket, bao 2 to a plate.</span><span>Tell us about allergies: shellfish, pork, peanuts, gluten, egg, soy, sesame.</span><span>Drinks are on the drinks menu.</span>' if food else
-            '<span>Prices in ₹, taxes extra. Spirits are poured in 30 ml / 60 ml.</span><span>Happy hour 4–7 pm daily: 330 ml taps ₹179 · Kings 330 ml ₹99. The guest tap changes every couple of weeks.</span><span>Please drink responsibly. Alcohol is served only to guests aged 21 and over.</span><span>Food is on the food menu.</span>')
+            '<span>Prices in ₹, taxes extra. Spirits are poured in 30 ml / 60 ml.</span><span>Happy hour 4–8 pm daily: 330 ml taps ₹179 · Kings 330 ml ₹99. The guest tap changes every couple of weeks.</span><span>Please drink responsibly. Alcohol is served only to guests aged 21 and over.</span><span>Food is on the food menu.</span>')
     other = 'drinks-menu.html' if food else 'food-menu.html'
     n = sum(len(s['items']) for s in secs)
     return ('<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'

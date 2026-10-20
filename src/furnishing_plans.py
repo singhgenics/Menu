@@ -37,7 +37,7 @@ class Pen:
     def text(s,x,z,t,size=11,fill='#2a2420',anchor='middle',weight=500,rot=0):
         a,b=P(x,z); tr=f' transform="rotate({rot} {a:.1f} {b:.1f})"' if rot else ''
         s.o.append(f'<text x="{a:.1f}" y="{b+size*0.35:.1f}" font-size="{size}" fill="{fill}" text-anchor="{anchor}" font-weight="{weight}"{tr}>{t}</text>')
-    def tag(s,x,z,code,fill='#D9531E',tc='#fff'):
+    def tag(s,x,z,code,fill='#B5321C',tc='#fff'):
         a,b=P(x,z); w=7.2*len(code)+10
         s.o.append(f'<rect x="{a-w/2:.1f}" y="{b-9:.1f}" width="{w:.1f}" height="18" rx="9" fill="{fill}"/><text x="{a:.1f}" y="{b+4:.1f}" font-size="11" fill="{tc}" text-anchor="middle" font-weight="700">{code}</text>')
     def raw(s,t): s.o.append(t)
@@ -123,7 +123,7 @@ def legend_furn():
     for i,(c,t) in enumerate(rows):
         y=28+i*26
         w=7.2*len(c)+10
-        o.append(f'<rect x="0" y="{y-9}" width="{w:.0f}" height="18" rx="9" fill="#D9531E"/><text x="{w/2:.0f}" y="{y+4}" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">{c}</text><text x="40" y="{y+4}" font-size="12" fill="#2a2420">{t}</text>')
+        o.append(f'<rect x="0" y="{y-9}" width="{w:.0f}" height="18" rx="9" fill="#B5321C"/><text x="{w/2:.0f}" y="{y+4}" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">{c}</text><text x="40" y="{y+4}" font-size="12" fill="#2a2420">{t}</text>')
     return ''.join(o)
 
 # =============================================================== CEILING PLAN
@@ -173,7 +173,7 @@ def ceiling():
     p.line(X1-0.06,2.78,X1-0.06,5.3,'#ffb04a',4); p.tag(2.2,2.55,'L5','#8a6420')
     # track
     p.line(2.05,0.4,2.05,3.5,'#2a2420',4); p.line(2.1,5.3,2.1,6.2,'#2a2420',4)
-    for k in range(4): z=0.4+(k+0.5)*3.1/4; p.circ(2.05,z,0.05,'#fff','#2a2420',1.4); p.line(2.0,z,1.6,z,'#d9531e',1,'2 2')
+    for k in range(4): z=0.4+(k+0.5)*3.1/4; p.circ(2.05,z,0.05,'#fff','#2a2420',1.4); p.line(2.0,z,1.6,z,'#b5321c',1,'2 2')
     for k in range(2): z=5.3+(k+0.5)*0.9/2; p.circ(2.1,z,0.05,'#fff','#2a2420',1.4)
     p.tag(2.2,1.95,'L6')
     # neon signs
@@ -203,8 +203,8 @@ def ceiling():
     return build('Reflected ceiling plan: lights, fans, ACs', 'Looking up at the ceiling. Pendants (L1), lanterns (L3), fans (C4), splits (C1, C2), gantry (L4), track (L6), neon (L7, L8), speakers (V1) · dashed = beams', p.o, 330, legend_ceil())
 
 def legend_ceil():
-    rows=[('L1','Jute globe pendant ×16','#D9531E'),('L3','Brass lantern ×5','#8a6420'),('L4','Gantry strips + 4 downlights','#8a6420'),('L5','Back-bar strips','#8a6420'),
-          ('L6','Gallery track + 6 spots','#D9531E'),('L7','Neon · facade','#c4530f'),('L8','Neon · interior ×3','#e0245e'),('L9','Wall-arm globes ×2','#8a6420'),
+    rows=[('L1','Jute globe pendant ×16','#B5321C'),('L3','Brass lantern ×5','#8a6420'),('L4','Gantry strips + 4 downlights','#8a6420'),('L5','Back-bar strips','#8a6420'),
+          ('L6','Gallery track + 6 spots','#B5321C'),('L7','Neon · facade','#c4530f'),('L8','Neon · interior ×3','#e0245e'),('L9','Wall-arm globes ×2','#8a6420'),
           ('L10','Washroom lights','#8a6420'),('L11','Garden festoon + path','#8a6420'),('L12','Safety: 3 bulkheads, 2 exit signs','#c8231b'),
           ('C1','AC 2.0 TR front (indoor)','#2a6f8f'),('C2','AC 2.0 TR back (indoor)','#2a6f8f'),('C4','Ceiling fan 1200 mm ×2','#2a2420'),('C5','Garden mist fans + line','#2a6f8f'),
           ('C8','WC exhaust','#2a6f8f'),('V1','Wall speakers ×3','#4a4a4a'),('V3','TV 43"','#4a4a4a')]

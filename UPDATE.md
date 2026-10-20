@@ -19,7 +19,7 @@ The menu source of truth is `food.html` and `drinks.html` in the Dream repo (`~/
    - Regenerate an image only when the dish or vessel changed.
    - **Veg / non-veg options:** every option the menu offers has its own plating photo. `VARS` in `src/plating_data.py` lists the options per dish (label, veg/non-veg mark, image id); the plating cards show them as tabs and the photo menus as one photo per option. To add an option or a photo-less item, add its prompt to `src/plating-variant-jobs.py` and run `src/gen-variants.sh <id>` (free Flow images, same project, writes `img/plating/<id>.jpg`; it skips ids that exist, so delete a file to redo it).
 5. **Rebuild the site.** `node src/build.mjs` (writes `index.html`, reports missing images). Check it in a browser at desktop and phone width.
-6. **Crockery checklist artifact (claude.ai).** Publish `src/crockery-source.html` to https://claude.ai/artifact/MkGM2HfkUPEgK7cZSjz5zv with its photos at `g/<photoId>.jpg` (copy `img/crockery/*.jpg` into a temp folder `g/`). It keeps the owner's ticks stored in the browser under key `dd-crockery-ticks-v2`, so keep item ids stable.
+6. **Crockery checklist.** It lives only on the Menu site now (the Crockery tab, built from `src/crockery-source.html`). The separate claude.ai checklist artifact was deleted on 2026-10-20 at the owner's request; do not recreate it.
 7. **Photo menus.** `python3 src/build-menus.py` rebuilds `food-menu.html` and `drinks-menu.html` (the guest menus with a plated photo beside each dish, text from the live Dream menu, photos from `img/plating`). A new dish needs a plating photo and, if its name differs from its plating card, an entry in `GROUP`/`LINE_IMGS` in the script. Print them to A3 PDF: `chrome --headless=new --no-pdf-header-footer --print-to-pdf=food-menu.pdf food-menu.html` (same for drinks).
 8. **Push.** Commit and push this repo to `main`; GitHub Pages rebuilds at https://singhgenics.github.io/Menu/ . Verify the live page loads with no broken images.
 8a. **Brand.** The pages carry the Cabin East logo (roof, wok and steam lockup) and the three WOK / STEAM / DRAUGHT planks. To re-apply it to the Dream menu pages and to `src/template.html` and `src/brand-snippets.json` here, run `python3 ~/Documents/Code/Dream/CabinEast/src/apply_logo.py` (idempotent; never touches menu data), then rebuild this site (steps 5 and 7). The printed A2 boards (`menu-food.pdf`, `menu-drinks.pdf`, `menu-board.pdf` in the Dream repo) are rebuilt from the live menu by `~/Documents/Code/Dream/CabinEast/src/render_boards.sh` (cream paper, ink section tabs, new logo); run it after any menu change and commit the three PDFs.
@@ -43,7 +43,7 @@ The furnishings schedule follows the **Simplex room** (`~/Documents/Code/Dream/S
 - `index.html`: generated, do not edit by hand.
 - `src/template.html`: page design and scripts.
 - `src/build.mjs`, `src/menu-data.mjs`: build and menu reader.
-- `src/crockery-source.html`: crockery data (also the source of the claude.ai checklist artifact).
+- `src/crockery-source.html`: crockery data (the source of the Crockery tab).
 - `src/plating_data.py`: plating specs and image prompts.
 - `src/check-menu.mjs`, `src/menu.hash`: change detector used by the hook.
 - `src/plating-variant-jobs.py`, `src/gen-variants.sh`: prompts and runner for the option photos and the drinks that had none.

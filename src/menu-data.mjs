@@ -14,9 +14,9 @@ function grab(fn) {
 export function loadMenu() {
   const food = grab('food.html'), drinks = grab('drinks.html');
   // food.html keeps only the food sections, drinks.html only the drinks sections
-  const keepF = ['soups', 'kolkata', 'dimsum', 'bao', 'korean', 'mains', 'curries', 'table', 'sweet'];
+  const keepF = ['soups', 'wok', 'dimsum', 'bao', 'korean', 'mains', 'curries', 'table', 'sweet'];
   const keepD = ['tap', 'spirits', 'vodka', 'cocktails', 'zero', 'coffee'];
-  const ORDER = ['soups', 'kolkata', 'dimsum', 'bao', 'korean', 'mains', 'curries', 'table', 'tap', 'spirits', 'vodka', 'cocktails', 'zero', 'coffee', 'sweet'];
+  const ORDER = ['soups', 'wok', 'dimsum', 'bao', 'korean', 'mains', 'curries', 'table', 'tap', 'spirits', 'vodka', 'cocktails', 'zero', 'coffee', 'sweet'];
   const f = food.filter(x => keepF.includes(x.id)), d = drinks.filter(x => keepD.includes(x.id));
   const sort = (a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id);
   return { food: f.sort(sort), drinks: d.sort(sort) };

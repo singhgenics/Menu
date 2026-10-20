@@ -21,7 +21,7 @@ add('tomkha','Soups','Coconut Cuddle','Tom kha, veg or chicken',['soup'],'Soup b
 add('cabinfever','Cabin starters','Cabin Fever','Chilli, dry: paneer, chicken or pork',['enplate'],'10" enamel plate',
  'dry chilli chicken: crisp golden double-fried chicken pieces tossed with green chilli rings, onion and capsicum squares and a glossy dark soy glaze, piled loosely in a low mound on the white enamel plate with olive rim from the reference image, spring onion greens on top, a small ceramic dish of sliced green chillies in vinegar beside it',
  ['Warm the plate.','Toss the fried protein in the wok on full flame until the sauce catches.','Heap in a low mound, off-centre, so the rim shows.','Scatter onion and capsicum over the top.'],
- 'Spring onion greens','Green chillies in vinegar in a dipping dish','Hot from the wok','Pork version is braised belly, Tangra style, plated the same way. Sauce should cling, never pool.', gen=False)
+ 'Spring onion greens','Green chillies in vinegar in a dipping dish','Hot from the wok','Pork version is braised belly, plated the same way. Sauce should cling, never pool.', gen=False)
 add('honeytrap','Cabin starters','Honey Trap','Honey chilli, potato or chicken',['enplate'],'10" enamel plate',
  'honey chilli potato: golden twice-fried potato fingers coated in a sticky glossy honey-chilli glaze with sesame seeds, red chilli flakes and spring onion rings, stacked loosely in a mound on the white enamel plate with olive rim from the reference image',
  ['Warm the plate.','Toss twice-fried fingers in the hot glaze for 10 seconds.','Stack criss-cross so air gets under them.','Spoon any glaze left in the wok over the top.'],

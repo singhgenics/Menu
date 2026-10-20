@@ -184,7 +184,7 @@ footer a{color:var(--muted)}
   <div class="head">
     <p class="eyebrow">Buying checklist</p>
     <h2 id="h-list" class="script">the buying list</h2>
-    <p class="muted">Quantities are for 28 covers and a 3-person bar. Anything a guest eats or drinks from is counted at about three per cover: one in use, one in the wash, one spare. Add 10% for breakage on ceramics and glass. Product images show the style to buy, not a specific product.</p>
+    <p class="muted">Quantities are for 28 covers and a 3-person bar. Everything on a place setting is counted at two per cover: one in use and one in the wash or spare, so 56 for 28 covers. Ceramics and glass add 10% for breakage (62); steel and chopsticks stay at 56. Food-serving, beer, spirits and bar items are sized by dish and drink, not per cover. Product images show the style to buy, not a specific product.</p>
   </div>
   <div class="tabs" id="filters" role="group" aria-label="Show group"></div>
   <div id="list"></div>
@@ -278,16 +278,16 @@ footer a{color:var(--muted)}
 const GROUPS={cover:['Per cover','On every table setting'],food:['Food serving','From the pass to the table'],service:['Table & service','Shared on each table'],beer:['Beer','Three taps, two bottles, pitchers, paddles'],spirits:['Whisky, vodka & cocktails','Neat, on the rocks, tall and up'],zero:['Zero-proof & coffee','Sodas, water, brewed coffee'],tools:['Bar tools','Behind the bar']};
 // [id, group, photo|null, name, spec, used for, qty, unit]
 const ITEMS=[
- ['side','cover','side','Side plate, 7.5"','Stoneware, sand-cream glaze with darker rim','Eating plate; underplate for steamer baskets and soup bowls',100,'pcs'],
- ['rice','cover','rice','Rice bowl','~11 cm, 300 ml, reactive glaze','Rice, noodles and curry at the table; jasmine rice',84,'pcs'],
- ['dip','cover','dip','Dipping dish','~8 cm, 50 ml, glazed','Soy, chilli vinegar, kasundi, chilli mayo, black vinegar, gochujang mayo',110,'pcs'],
- ['cspoon','cover','cspoon','Porcelain soup spoon','White porcelain, ~14 cm','Wonton Kenobi, Hot & Bothered, Coconut Cuddle (tom kha)',84,'pcs'],
- ['chop','cover','chop','Reusable chopsticks','Square-edged, dark fibreglass or lacquered wood, dishwasher-safe','One pair per cover',100,'pairs'],
- ['crest','cover','crest','Chopstick rest','Ceramic, glaze to match the stoneware','One per cover',40,'pcs'],
- ['cutlery','cover','cutlery','Dinner fork & dinner spoon','Matte brushed stainless steel, one range','Rice, noodles, darsaan; for guests who prefer them',60,'each'],
- ['teaspoon','cover','teaspoon','Teaspoon','Same stainless range as the forks','Coffee, ice cream, sugar',40,'pcs'],
- ['napkin','cover','napkin','Cotton napkin','Oatmeal khadi with olive stripe; or printed paper napkins','One per cover',120,'pcs'],
- ['water','cover','water','Water glass','~300 ml straight tumbler, tempered','Water from the carafe at every cover',84,'pcs'],
+ ['side','cover','side','Side plate, 7.5"','Stoneware, sand-cream glaze with darker rim','Eating plate; underplate for steamer baskets and soup bowls',62,'pcs'],
+ ['rice','cover','rice','Rice bowl','~11 cm, 300 ml, reactive glaze','Rice, noodles and curry at the table; jasmine rice',62,'pcs'],
+ ['dip','cover','dip','Dipping dish','~8 cm, 50 ml, glazed','Soy, chilli vinegar, kasundi, chilli mayo, black vinegar, gochujang mayo',62,'pcs'],
+ ['cspoon','cover','cspoon','Porcelain soup spoon','White porcelain, ~14 cm','Wonton Kenobi, Hot & Bothered, Coconut Cuddle (tom kha)',62,'pcs'],
+ ['chop','cover','chop','Reusable chopsticks','Square-edged, dark fibreglass or lacquered wood, dishwasher-safe','One pair per cover',56,'pairs'],
+ ['crest','cover','crest','Chopstick rest','Ceramic, glaze to match the stoneware','One per cover',62,'pcs'],
+ ['cutlery','cover','cutlery','Dinner fork & dinner spoon','Matte brushed stainless steel, one range','Rice, noodles, darsaan; for guests who prefer them',56,'each'],
+ ['teaspoon','cover','teaspoon','Teaspoon','Same stainless range as the forks','Coffee, ice cream, sugar',56,'pcs'],
+ ['napkin','cover','napkin','Cotton napkin','Oatmeal khadi with olive stripe; or printed paper napkins','One per cover',62,'pcs'],
+ ['water','cover','water','Water glass','~300 ml straight tumbler, tempered','Water from the carafe at every cover',62,'pcs'],
 
  ['susan','food','susan','Lazy susan','50 cm wooden turntable; fits a 75 cm 4-top','Cabin feast for four: four soups plus five shared dishes on one turning table',2,'pcs'],
  ['steamer6','food','steamer6','Bamboo steamer, 6"','Steel-banded rim, with lid; holds 4 dim sum','Crystal Clear, Siu Mai Goodness, Prawn to Be Wild; happy-hour dumplings',40,'baskets + lids'],

@@ -73,7 +73,7 @@ grp('climate', 'Air, fans & ventilation', 'Two ACs cool the room; two slow fans 
 ])
 
 grp('finishes', 'Floors, walls & ceiling', 'What the 3D model already shows, with the actual spec for the contractor. Usually priced in the interior contract, shown here so nothing is missed.', [
- ('F1','Dining + bar floor','≈ 30 m² incl. 10% wastage · 600 × 600 mm','Matt porcelain checker, charcoal #2B2B2B and warm white #E9E4D8, R11 anti-slip, 2 mm joint, laid square',30,'m²',1300,2000,1,'Dining room, bar, entry','R11, because beer and rain meet the entry.','materials'),
+ ('F1','Dining + bar floor','≈ 30 m² incl. 10% wastage · 600 × 600 mm','Matt porcelain checker, charcoal #2B2B2B and warm white #E9E4D8, R11 anti-slip, 2 mm joint, laid square',30,'m²',1300,2000,1,'Dining room, bar, entry','R11, because beer and rain meet the entry.','materials-a'),
  ('F2','Brick wall, left','≈ 24 m² · 12 mm','Burnt-red brick slips, off-white lime pointing, matt sealer',24,'m²',1400,1900,1,'Left wall + bar end','Seal against beer spray; no glossy sealer.','hero-room'),
  ('F3','Reclaimed-wood wall, right','≈ 10 m² · 12–15 mm planks','Reclaimed teak / mixed plank, fire-retardant clear coat, vent gap behind at the meter',10,'m²',2400,3800,1,'Right wall z 0.04–2.28','Fire-retardant coat is not optional. Keep 0.05 m gap from the AC.',''),
  ('F4','Lime-wash plaster + paint','Whole room above the dado','Cream lime-wash, matt, washable to 1.2 m',1,'lot',25000,45000,1,'Walls not covered above','',''),
@@ -142,7 +142,7 @@ GALLERY=[
  ('Tables & seating','Every chair, stool, bench and table, in place and on their own.',[('table-left','Left window tables'),('booth-right','Right window tables'),('table-dimsum','A table laid for dim sum'),('chair','S1 cane-back chair'),('stool','S2 velvet bar stool'),('table','T1 plank table'),('bench','S3 + T4 teak garden set'),('tabletop','Table-top set: lamp, number, caddy')]),
  ('Lighting','Pendants, lanterns, neon and the gallery track.',[('pendants','Jute globe pendants'),('lanterns','Brass lanterns by the spiral duct'),('neonwall','"settle up here" and the gallery wall'),('neon-bao','"bao, baby?" on the beam')]),
  ('Air & fans','Double height, slow fans, a high split AC.',[('fan-ac','Ceiling fan and split AC'),('ceiling-beams','Beams, clouds and gantry from below')]),
- ('Walls, floors & art','Brick, checker, emerald mosaic, enamel signs and the BAO mural.',[('materials','Material board'),('detail-floor-brick','Checker floor meets brick'),('detail-mosaic','Emerald mosaic and marble'),('detail-signs','Cabin East enamel signs'),('mural-bao','BAO mural')]),
+ ('Walls, floors & art','Brick, checker, emerald mosaic, enamel signs and the BAO mural.',[('materials-a','Material board 1: surfaces'),('materials-b','Material board 2: metal, fabric, fittings'),('detail-floor-brick','Checker floor meets brick'),('detail-mosaic','Emerald mosaic and marble'),('detail-signs','Cabin East enamel signs'),('mural-bao','BAO mural')]),
  ('Entry & washroom','Where guests arrive wet, and the tiny hand-wash lobby.',[('entry','Entry: mat, umbrellas, hooks'),('washroom','Hand-wash lobby'),('wc-door','Sliding WC door from the aisle')]),
  ('Beer garden','Pergola, teak, mist and monsoon curtains.',[('hero-garden','Dusk'),('garden-day','Afternoon'),('garden-monsoon','Monsoon, curtains down'),('garden-mist','Mist fan and misting line')]),
  ('Plans','Both plans are vector drawings; open them full size.',[('furniture-plan','Furniture & finishes plan'),('ceiling-plan','Ceiling plan: lights, fans, ACs')]),

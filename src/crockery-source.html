@@ -118,7 +118,7 @@ footer a{color:var(--muted)}
   <p class="eyebrow">Betalbatim · Cabin East · fit-out</p>
   <h1 class="script">crockery, glass &amp; cutlery</h1>
   <p class="sub">What every dish and drink is served in, and what to buy</p>
-  <p>Built from the updated food menu (about 40 choices), the drinks menu and the warm cabin-and-beer-garden look. Sized for 28 covers plus the bar. Tick items off as you buy them; ticks are saved in this browser.</p>
+  <p>Built from the updated food menu (about 44 choices), the drinks menu and the warm cabin-and-beer-garden look. Sized for 28 covers plus the bar. Tick items off as you buy them; ticks are saved in this browser.</p>
   <div class="progress" aria-live="polite">
     <span id="pText">0 of 0 bought</span>
     <span class="bar" aria-hidden="true"><i id="pBar"></i></span>
@@ -296,7 +296,7 @@ const ITEMS=[
  ['liner','food','liner','Steamer liners','Perforated parchment rounds 6" and 8", or reusable silicone','Under every dumpling so skins don\'t tear',2000,'rounds a month'],
  ['enplate','food','enplate','Enamel plate, 10"','White enamel, olive or rust rolled rim','Cabin Fever, Honey Trap, happy-hour Cabin Fever; Slap Happy salad on request',40,'pcs'],
  ['cabinplate','food','cabinplate','Large deep plate, 12"','White enamel or white stoneware, with a well','Holy Basil, Batman! rice bowl with fried egg; Bowl game lunch',24,'pcs'],
- ['basket','food','basket','Fry basket, paper-lined','Black wire or enamel basket ~25 × 15 cm; printed greaseproof paper','Salt & Pepa (mushroom, chonak, prawns), K-Pop Wings, Fry Hard',30,'baskets'],
+ ['basket','food','basket','Fry basket, paper-lined','Black wire or enamel basket ~25 × 15 cm; printed greaseproof paper','Salt & Pepa (mushroom, chonak, prawns), Wonton More (veg, chicken), K-Pop Wings, Fry Hard',36,'baskets'],
  ['paper','food','paper','Printed greaseproof paper','Food-safe, branded, cut to basket size','Lining every fried item',3000,'sheets a month'],
  ['enbowl','food','enbowl','Small enamel bowl','~14 cm, white with dark rim','Bone and shell bowl for wings and prawn tails',16,'pcs'],
  ['bao','food','bao','Long rectangular plate','~30 × 12 cm, matte white or charcoal','All three bao (Bao Down, Fever Pitch, Seoul Mate), 2 to a plate',24,'pcs'],
@@ -305,7 +305,7 @@ const ITEMS=[
  ['oval','food','oval','Oval sharing platter','~30 cm, olive or cream glaze','Rice Rice Baby (burnt garlic veg, chicken and mixed fried rice)',24,'pcs'],
  ['claypot','food','claypot','Small claypot with stand','~600 ml glazed earthenware, with lid','Man, Churian! gravy and Green With Envy Thai green curry; keeps hot on the table',20,'pots'],
   ['toptray','food','toptray','Divided topping tray','~25 cm stoneware, 5 compartments','Suey Generis khao suey: crispy noodles, shallots, fried garlic, lime, chilli flakes',8,'pcs'],
- ['dessert','food','dessert','Dessert bowl','~15 cm stoneware, shallow','Honey, I Shrunk the Noodles (darsaan) and Sticky Situation (coconut sticky rice), each with ice cream',24,'pcs'],
+ ['dessert','food','dessert','Dessert and salad bowl','~15 cm stoneware, shallow','Honey, I Shrunk the Noodles (darsaan), Sticky Situation (coconut sticky rice), Scoop There It Is (ice cream) and Smash Hit (smashed cucumber salad)',36,'pcs'],
  ['board','food','board','Wooden serving board','~40 × 25 cm with handle; mango or acacia','Steamer for two: two stacked baskets, a plate of bao and dips',6,'pcs'],
  ['serve','food','serve','Serving spoons & noodle tongs','Matte stainless, same range as cutlery','Shared rice, noodles, gravy and curry',30,'spoons + 12 tongs'],
 
@@ -340,7 +340,8 @@ const ITEMS=[
  ['bartools','tools','bartools','Bar tool kit','Jigger 30/60 ml, Hawthorne + fine strainer, bar spoon, muddler, bottle opener (Kings, Budweiser, soju, soft drinks)','Every cocktail; opening bottled beer, soju and soft drinks',2,'kits'],
  ['squeezer','tools','squeezer','Citrus squeezer','Hand press, stainless or enamel','Fresh lime soda, margarita, G&T, sours',2,'pcs'],
  ['icebucket','tools','icebucket','Ice bucket, scoop & tongs','Insulated bucket; stainless scoop and tongs','Bar well and table ice for highballs; chilling Kings and Budweiser bottles at garden tables',4,'sets'],
- ['rim','tools','rim','Rimming dish & garnish tray','Shallow rim dish; lidded garnish tray','Chilli-salt and gochugaru rims; lime, lychee, lemon twists',2,'each']
+ ['rim','tools','rim','Rimming dish & garnish tray','Shallow rim dish; lidded garnish tray','Chilli-salt and gochugaru rims; lime, lychee, lemon twists',2,'each'],
+ ['icescoop','tools','icescoop','Ice cream scoop, dipper well & 3 topping pots','Stainless scoop (~50 ml) with a dipper well; three lidded stainless pots','Scoop There It Is: two scoops, and the three toppings kept at the pass (palm jaggery syrup, sesame-peanut crunch, chocolate sauce)',2,'sets']
 ];
 const BY=Object.fromEntries(ITEMS.map(i=>[i[0],i]));
 const FOOD=[
@@ -351,7 +352,8 @@ const FOOD=[
  ['Cabin starters',[
   ['Cabin Fever','Chilli, dry: paneer, chicken or pork','enplate','Green chillies in vinegar in a dipping dish','The cabin plate. Red-brown wok food pops on white.'],
   ['Honey Trap','Honey chilli: potato or chicken','enplate','Toothpicks at the bar','A sticky glaze needs a plate with a well, not paper.'],
-  ['Salt & Pepa','Mushroom, chonak or prawns','basket','Kasundi mayo in a dipping dish, enamel bowl for prawn tails','Paper keeps the batter crisp.']]],
+  ['Salt & Pepa','Mushroom, chonak or prawns','basket','Kasundi mayo in a dipping dish, enamel bowl for prawn tails','Paper keeps the batter crisp.'],
+  ['Wonton More','Fried wontons with sweet chilli, veg or chicken, 6','basket','Sweet chilli dip in a dipping dish','Paper-lined basket keeps the wrappers crisp; the dip stays on the side.']]],
  ['Dim sum',[
   ['Crystal Clear','Crystal veg dumplings, 4','steamer6','Side plate under the basket, soy-chilli dip','Translucent skins: the lid-off moment.'],
   ['Fire Starters','Chicken wontons in chilli oil','soup','Black vinegar in a dipping dish','Served in a bowl because the chilli oil pools.'],
@@ -364,7 +366,8 @@ const FOOD=[
  ['Seoul to Bangkok',[
   ['K-Pop Wings','Korean fried wings, 6','basket','Enamel bowl for bones, wet wipes','Pub food, eaten with a pint in the other hand.'],
   ['Fry Hard','Kimchi fries','basket','Gochujang mayo on top','The basket goes under the torch without cracking.'],
-  ['Slap Happy','Raw papaya salad','noodle','Serving spoons','A wide bowl lets the salad be tossed at the table.']]],
+  ['Slap Happy','Raw papaya salad','noodle','Serving spoons','A wide bowl lets the salad be tossed at the table.'],
+  ['Smash Hit','Smashed cucumber salad','dessert','Chopsticks, chilli oil from the caddy','A small shallow bowl keeps it cold and shows the dressing.']]],
  ['Noodles & rice',[
   ['Noodle Around','Hakka noodles: veg, chicken or mixed','noodle','Rice bowls, noodle tongs, chilli vinegar from the caddy','A wide bowl lets noodles be lifted out.'],
   ['Rice Rice Baby','Fried rice: burnt garlic veg, chicken or mixed','oval','Rice bowls, serving spoon','Mounded on an oval, the cabin way.'],
@@ -376,7 +379,8 @@ const FOOD=[
   ['Suey Generis','Khao suey, veg or chicken','noodle','Divided topping tray: crispy noodles, shallots, fried garlic, lime, chilli flakes','The tray makes it a build-it-yourself bowl.']]],
  ['Sweet',[
   ['Honey, I Shrunk the Noodles','Darsaan with ice cream','dessert','Dessert spoon','Honey noodles beside one scoop.'],
-  ['Sticky Situation','Coconut sticky rice with ice cream','dessert','Dessert spoon','Dark glaze shows off the white scoop.']]],
+  ['Sticky Situation','Coconut sticky rice with ice cream','dessert','Dessert spoon','Dark glaze shows off the white scoop.'],
+  ['Scoop There It Is','Ice cream: 2 scoops, 1 topping','dessert','Dessert spoon, topping pots on the pass','A chilled dark bowl keeps the scoops firm and shows the colours.']]],
  ['For the table',[
   ['Steamer for two','2 baskets of dim sum + 2 bao','board','Two-tier 8" steamer for the baskets, long plate for the bao, dips','One board, carried out as a stack.'],
   ['Cabin feast for four','4 soups + Cabin Fever, Salt & Pepa, Noodle Around, green curry with rice, darsaan','susan','Four soup bowls and spoons first; shared dishes on the lazy susan','Five shared dishes for four people fit only if the table turns.'],

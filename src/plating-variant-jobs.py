@@ -34,3 +34,10 @@ JOBS = {
  'softdrinks': (['highball'], D+"a tall glass of dark cola with ice and a lime wedge beside a glass bottle of cola and a can of lemon-lime soda, labels plain with no readable text."+DRINK_TAIL),
  'tonic': (['highball'], D+"a tall highball glass of ice and tonic water with a lime wheel, beside a small glass bottle of tonic, the label plain with no readable text."+DRINK_TAIL),
 }
+
+JOBS.update({
+ 'wontonmore': (['basket','dip'], F+"six crisp golden fried chicken wontons with pleated, blistered wrappers, stacked loosely in a black wire basket lined with kraft greaseproof paper, spring onion rings and sesame seeds on top, a small white ceramic dipping dish of glossy red-orange sweet chilli sauce beside the basket."+FOOD_TAIL),
+ 'wontonmore-veg': (['basket','dip'], F+"six crisp golden fried vegetable wontons with pleated, blistered wrappers, one broken open to show a filling of carrot, water chestnut and edamame, stacked loosely in a black wire basket lined with kraft greaseproof paper, spring onion rings and sesame seeds on top, a small white ceramic dipping dish of glossy red-orange sweet chilli sauce beside the basket."+FOOD_TAIL),
+ 'smashhit': (['dessert'], F+"Chinese smashed cucumber salad: rough smashed chunks of cucumber glistening with dressing, sliced garlic, a spoon of red chilli oil, toasted sesame seeds and coriander leaves, heaped in a shallow charcoal stoneware bowl."+FOOD_TAIL),
+ 'scoop': (['dessert'], F+"two scoops of ice cream, one vanilla and one pale tender coconut, in a shallow dark charcoal stoneware bowl, warm palm jaggery syrup drizzled over them, a spoonful of toasted sesame and crushed peanut crunch on top, a stainless dessert spoon beside the bowl."+FOOD_TAIL),
+})

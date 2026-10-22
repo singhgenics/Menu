@@ -30,6 +30,10 @@ add('saltpepa','Cabin starters','Salt & Pepa','Salt & pepper: mushroom, chonak o
  'salt and pepper fried prawns: five golden crisp prawns tossed with garlic crumbs, crushed black pepper, green chilli rings and spring onion, in a black wire basket lined with kraft greaseproof paper, a small ceramic dish of pale kasundi mayo beside it',
  ['Line the basket with a sheet of greaseproof paper, corners up.','Fry the protein once, drain on a rack for 10 seconds.','Toss with salt, pepper and garlic crumbs in the wok.','Pile in the basket, prawns tails up (5 to a serve).'],
  'Fried garlic crumbs, green chilli rings, spring onion','Kasundi mayo in a dipping dish','Hot, straight from the fryer','Chonak goes in as fillet fingers, mushrooms as halves. Paper takes up the oil, so replace it for every order.')
+add('wontonmore','Cabin starters','Wonton More','Fried wontons with sweet chilli: veg or chicken',['basket','dip'],'Paper-lined fry basket, dipping dish',
+ 'six crisp golden fried chicken wontons with pleated, blistered wrappers, stacked loosely in a black wire basket lined with kraft greaseproof paper, spring onion rings and sesame seeds on top, a small white ceramic dipping dish of glossy red-orange sweet chilli sauce beside the basket',
+ ['Line the basket with a sheet of greaseproof paper, corners up.','Fry six wontons at 170 °C for about 3 minutes until blistered and golden.','Drain on a rack for 10 seconds.','Stack in the basket and scatter spring onion and sesame.'],
+ 'Spring onion rings, sesame seeds','Sweet chilli dip in a dipping dish','Hot, straight from the fryer','Chicken wontons go in the non-veg oil, veg wontons in the veg oil. Keep the sweet chilli dip warm at room temperature, never hot, so it stays sticky.')
 add('crystal','Dim sum','Crystal Clear','Crystal veg dumplings, 4',['steamer6'],'6" bamboo steamer on a side plate',
  'a small bamboo steamer basket with lid off holding four translucent wheat-starch vegetable dumplings, carrots and green edamame visible through the skin, on a perforated parchment liner, set on a cream side plate, a small ceramic dish of soy-chilli dip beside it, soft steam',
  ['Wet the liner and lay it in the basket.','Place four dumplings with 1 cm between them.','Steam 6 minutes, lid on.','Carry out lidded, set the basket on a side plate.'],
@@ -70,6 +74,10 @@ add('slaphappy','Seoul to Bangkok','Slap Happy','Raw papaya salad',['noodle'],'W
  'a Thai raw green papaya salad in a wide shallow stoneware bowl: shredded green papaya, long beans, halved cherry tomatoes, crushed roasted peanuts, a lime wedge and red chilli slices, glossy with dressing',
  ['Pound the dressing and beans in the mortar.','Add the papaya and bruise lightly.','Pile high in the bowl, tomatoes on top.','Finish with peanuts.'],
  'Crushed peanuts, lime wedge, chilli slices','Lime wedge','Cold, made to order','Pound to order so it stays crunchy. Serve within 2 minutes.')
+add('smashhit','Seoul to Bangkok','Smash Hit','Smashed cucumber salad',['dessert'],'Small shallow stoneware bowl',
+ 'Chinese smashed cucumber salad: rough smashed chunks of cucumber glistening with dressing, sliced garlic, a spoon of red chilli oil, toasted sesame seeds and coriander leaves, in a shallow charcoal stoneware bowl',
+ ['Smash the cucumber with the flat of the knife and tear into chunks.','Salt for 5 minutes and pour off the water.','Toss with garlic, black vinegar and chilli oil.','Heap in a small bowl, sesame and coriander on top.'],
+ 'Toasted sesame, coriander','Chopsticks; extra chilli oil from the caddy','Cold, made to order','Salted cucumber is drained so the dressing clings. Make it to order: it turns watery after 10 minutes.')
 add('noodlearound','Noodles & rice','Noodle Around','Hakka noodles: veg, chicken or mixed',['noodle'],'Wide shallow bowl, noodle tongs',
  'Hakka noodles tossed dry on high heat with chicken, prawn, egg strips, shredded cabbage, carrot and spring onion, heaped in a wide shallow sand-glazed stoneware bowl with spring onion greens on top, a pair of stainless noodle tongs beside it',
  ['Warm the bowl.','Lift the noodles from the wok with tongs and swirl into a nest.','Rest the protein on top.','Add the chilli vinegar on the side.'],
@@ -106,6 +114,10 @@ add('sticky','Sweet','Sticky Situation','Coconut sticky rice with ice cream',['d
  'coconut sticky rice dessert: warm sticky rice in a shallow dark charcoal stoneware bowl with coconut cream poured over, palm jaggery syrup, toasted sesame and one scoop of vanilla ice cream, a stainless dessert spoon',
  ['Warm the bowl slightly.','Mound the sticky rice and pour over the warm salted coconut.','Drizzle palm jaggery.','Add one scoop of ice cream and sprinkle sesame.'],
  'Toasted sesame','None','Rice warm, ice cream cold','Pour the coconut at the table edge so it stays glossy.')
+add('scoop','Sweet','Scoop There It Is','Ice cream: 2 scoops, 1 topping',['dessert'],'Small shallow stoneware bowl, dessert spoon',
+ 'two scoops of ice cream, one vanilla and one pale tender coconut, in a shallow dark charcoal stoneware bowl, warm palm jaggery syrup drizzled over them, a spoonful of toasted sesame and crushed peanut crunch on top, a stainless dessert spoon',
+ ['Chill the bowl in the freezer.','Scoop two flavours with a warm scoop.','Add the guest\'s topping: warm palm jaggery, sesame-peanut crunch or chocolate sauce.','Serve with a dessert spoon.'],
+ 'The chosen topping','None','Ice cream cold, jaggery syrup warm','Three flavours: vanilla, tender coconut, kokum. Dip the scoop in the warm well between scoops. Never refreeze melted ice cream.')
 add('steamer2','For the table','Steamer for two','2 baskets of dim sum + 2 bao',['board','steamer8','bao'],'Serving board, 8" two-tier steamer, long plate',
  'a wooden serving board carrying a two-tier bamboo steamer with the lid lifted to show dumplings, beside a long rectangular charcoal plate with two bao buns and two small ceramic dipping dishes',
  ['Steam the dim sum and bao separately.','Stack the two baskets on the board.','Put the bao plate beside them.','Add two dipping dishes.'],
@@ -214,6 +226,7 @@ VARS = {
  'cabinfever':[('paneer','Paneer','v','cabinfever-paneer'),('chicken','Chicken','nv','cabinfever'),('pork','Pork','nv','cabinfever-pork')],
  'honeytrap':[('potato','Potato','v','honeytrap'),('chicken','Chicken','nv','honeytrap-chicken')],
  'saltpepa':[('mushroom','Mushroom','v','saltpepa-mushroom'),('chonak','Chonak','nv','saltpepa-chonak'),('prawns','Prawns','nv','saltpepa')],
+ 'wontonmore':[('veg','Veg','v','wontonmore-veg'),('chicken','Chicken','nv','wontonmore')],
  'noodlearound':[('veg','Veg','v','noodlearound-veg'),('chicken','Chicken','nv','noodlearound-chicken'),('mixed','Mixed','nv','noodlearound')],
  'ricebaby':[('veg','Burnt garlic veg','v','ricebaby'),('chicken','Chicken','nv','ricebaby-chicken'),('mixed','Mixed','nv','ricebaby-mixed')],
  'manchurian':[('veg','Veg','v','manchurian'),('chicken','Chicken','nv','manchurian-chicken')],

@@ -214,6 +214,43 @@
   ]
  },
  {
+  "id": "wontonmore",
+  "sec": "Cabin starters",
+  "name": "Wonton More",
+  "sub": "Fried wontons with sweet chilli: veg or chicken",
+  "refs": [
+   "basket",
+   "dip"
+  ],
+  "vessel": "Paper-lined fry basket, dipping dish",
+  "prompt": "six crisp golden fried chicken wontons with pleated, blistered wrappers, stacked loosely in a black wire basket lined with kraft greaseproof paper, spring onion rings and sesame seeds on top, a small white ceramic dipping dish of glossy red-orange sweet chilli sauce beside the basket",
+  "build": [
+   "Line the basket with a sheet of greaseproof paper, corners up.",
+   "Fry six wontons at 170 °C for about 3 minutes until blistered and golden.",
+   "Drain on a rack for 10 seconds.",
+   "Stack in the basket and scatter spring onion and sesame."
+  ],
+  "garnish": "Spring onion rings, sesame seeds",
+  "side": "Sweet chilli dip in a dipping dish",
+  "temp": "Hot, straight from the fryer",
+  "note": "Chicken wontons go in the non-veg oil, veg wontons in the veg oil. Keep the sweet chilli dip warm at room temperature, never hot, so it stays sticky.",
+  "gen": true,
+  "vars": [
+   {
+    "k": "veg",
+    "label": "Veg",
+    "mk": "v",
+    "img": "wontonmore-veg"
+   },
+   {
+    "k": "chicken",
+    "label": "Chicken",
+    "mk": "nv",
+    "img": "wontonmore"
+   }
+  ]
+ },
+ {
   "id": "crystal",
   "sec": "Dim sum",
   "name": "Crystal Clear",
@@ -431,6 +468,28 @@
   "side": "Lime wedge",
   "temp": "Cold, made to order",
   "note": "Pound to order so it stays crunchy. Serve within 2 minutes.",
+  "gen": true
+ },
+ {
+  "id": "smashhit",
+  "sec": "Seoul to Bangkok",
+  "name": "Smash Hit",
+  "sub": "Smashed cucumber salad",
+  "refs": [
+   "dessert"
+  ],
+  "vessel": "Small shallow stoneware bowl",
+  "prompt": "Chinese smashed cucumber salad: rough smashed chunks of cucumber glistening with dressing, sliced garlic, a spoon of red chilli oil, toasted sesame seeds and coriander leaves, in a shallow charcoal stoneware bowl",
+  "build": [
+   "Smash the cucumber with the flat of the knife and tear into chunks.",
+   "Salt for 5 minutes and pour off the water.",
+   "Toss with garlic, black vinegar and chilli oil.",
+   "Heap in a small bowl, sesame and coriander on top."
+  ],
+  "garnish": "Toasted sesame, coriander",
+  "side": "Chopsticks; extra chilli oil from the caddy",
+  "temp": "Cold, made to order",
+  "note": "Salted cucumber is drained so the dressing clings. Make it to order: it turns watery after 10 minutes.",
   "gen": true
  },
  {
@@ -718,6 +777,28 @@
   "side": "None",
   "temp": "Rice warm, ice cream cold",
   "note": "Pour the coconut at the table edge so it stays glossy.",
+  "gen": true
+ },
+ {
+  "id": "scoop",
+  "sec": "Sweet",
+  "name": "Scoop There It Is",
+  "sub": "Ice cream: 2 scoops, 1 topping",
+  "refs": [
+   "dessert"
+  ],
+  "vessel": "Small shallow stoneware bowl, dessert spoon",
+  "prompt": "two scoops of ice cream, one vanilla and one pale tender coconut, in a shallow dark charcoal stoneware bowl, warm palm jaggery syrup drizzled over them, a spoonful of toasted sesame and crushed peanut crunch on top, a stainless dessert spoon",
+  "build": [
+   "Chill the bowl in the freezer.",
+   "Scoop two flavours with a warm scoop.",
+   "Add the guest's topping: warm palm jaggery, sesame-peanut crunch or chocolate sauce.",
+   "Serve with a dessert spoon."
+  ],
+  "garnish": "The chosen topping",
+  "side": "None",
+  "temp": "Ice cream cold, jaggery syrup warm",
+  "note": "Three flavours: vanilla, tender coconut, kokum. Dip the scoop in the warm well between scoops. Never refreeze melted ice cream.",
   "gen": true
  },
  {

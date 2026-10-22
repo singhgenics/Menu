@@ -13,7 +13,5 @@ Open `index.html` in a browser; there is nothing to build or install.
 
 ## Menus with photos
 
-- Food: [food-menu.html](food-menu.html) · [PDF](food-menu.pdf)
-- Drinks: [drinks-menu.html](drinks-menu.html) · [PDF](drinks-menu.pdf)
 
 Self-contained (photos embedded), responsive on screen, A3 when printed. Built with `python3 src/build-menus.py`.
